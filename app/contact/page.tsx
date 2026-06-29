@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Mail, Phone, MapPin, Globe, Compass, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Compass, MessageSquare, ArrowUpRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import Link from 'next/link';
 
 // Custom component to reveal text word-by-word with a calming stagger
@@ -27,6 +28,60 @@ function RevealHeading({ children, className = "" }: { children: string; classNa
 export default function ContactPage() {
   const [reachOutFor, setReachOutFor] = useState<'Legal' | 'Consulting' | 'Both'>('Both');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [activeOffice, setActiveOffice] = useState<'hyderabad' | 'lucknow' | 'cuttack' | 'shimla'>('hyderabad');
+
+  const offices = [
+    {
+      id: 'hyderabad',
+      city: 'Hyderabad',
+      title: 'Hyderabad Office',
+      address: [
+        'House No 8-3-A/413, Krishna Nagar,',
+        'Yusufguda, Hyderabad, Telangana'
+      ],
+      phone: '+91 (40) 6600 0000',
+      mapSrc: 'https://maps.google.com/maps?q=Krishna%20Nagar,%20Yusufguda,%20Hyderabad&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      googleMapsUrl: 'https://maps.google.com/?q=Krishna+Nagar,+Yusufguda,+Hyderabad'
+    },
+    {
+      id: 'lucknow',
+      city: 'Lucknow',
+      title: 'Lucknow Office',
+      address: [
+        '110, First Floor Durgma Tower,',
+        'Lalbagh, Lucknow, Uttar Pradesh'
+      ],
+      phone: '+91 (522) 4000 000',
+      mapSrc: 'https://maps.google.com/maps?q=Durgma%20Tower,%20Lalbagh,%20Lucknow&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      googleMapsUrl: 'https://maps.google.com/?q=Durgma+Tower,+Lalbagh,+Lucknow'
+    },
+    {
+      id: 'cuttack',
+      city: 'Cuttack',
+      title: 'Cuttack Office',
+      address: [
+        'Plot No C/71, Sector 8,',
+        'CDA, Cuttack, Odisha'
+      ],
+      phone: '+91 (671) 2000 000',
+      mapSrc: 'https://maps.google.com/maps?q=Sector%208,%20CDA,%20Cuttack&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      googleMapsUrl: 'https://maps.google.com/?q=Sector+8,+CDA,+Cuttack'
+    },
+    {
+      id: 'shimla',
+      city: 'Shimla',
+      title: 'Shimla Office',
+      address: [
+        'Anoop Sood Building, Paras Dass Gardan,',
+        'Near CPRI, Shimla - 171001, Himachal Pradesh'
+      ],
+      phone: '+91 (177) 2000 000',
+      mapSrc: 'https://maps.google.com/maps?q=CPRI,%20Shimla&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      googleMapsUrl: 'https://maps.google.com/?q=CPRI,+Shimla'
+    }
+  ];
+
+  const currentOffice = offices.find((o) => o.id === activeOffice) || offices[0];
 
   // Intersection Observer for scroll-triggered entrance animations
   useEffect(() => {
@@ -89,10 +144,13 @@ export default function ContactPage() {
             
             {/* Left 7 Columns: Contact Form */}
             <div className="lg:col-span-7">
-              <div className="scroll-fade-up space-y-8">
+              <div className="scroll-fade-up p-8 sm:p-10 md:p-12 bg-white/70 backdrop-blur-xl border border-white/80 rounded-[2px] shadow-xl hover:shadow-2xl hover:-translate-y-1.5 hover:border-primary-gold/40 transition-all duration-500 ease-out group relative overflow-hidden space-y-8">
+                {/* Mouse entrance ambient glow accent */}
+                <div className="absolute -top-24 -right-24 w-56 h-56 bg-primary-gold/15 rounded-full blur-3xl group-hover:bg-primary-gold/25 group-hover:scale-125 transition-all duration-700 pointer-events-none" />
+                <div className="absolute -bottom-24 -left-24 w-56 h-56 bg-primary-navy/10 rounded-full blur-3xl group-hover:bg-primary-navy/15 transition-all duration-700 pointer-events-none" />
                 
                 {isSubmitted ? (
-                  <div className="text-center py-12 space-y-4 bg-white/20 border border-primary-navy/10 p-8 rounded-[1px]">
+                  <div className="relative z-10 text-center py-12 space-y-4 bg-white/40 backdrop-blur-md border border-primary-navy/10 p-8 rounded-[1px]">
                     <div className="w-16 h-16 bg-primary-navy/5 border border-primary-navy rounded-full flex items-center justify-center mx-auto text-primary-navy mb-6 animate-pulse">
                       <Compass className="w-8 h-8 text-primary-gold" />
                     </div>
@@ -108,36 +166,36 @@ export default function ContactPage() {
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
                     <div>
                       <h3 className="font-serif text-xl md:text-2xl text-primary-navy font-light tracking-tight mb-2">
                         Submit Secure Enquiry
                       </h3>
-                      <p className="font-sans text-[10px] md:text-xs text-primary-navy/50 leading-relaxed font-light mb-6">
+                      <p className="font-sans text-[10px] md:text-xs text-primary-navy/60 leading-relaxed font-light mb-6">
                         All communications are processed under strict NDA protocols.
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/50 mb-2">
+                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/60 mb-2 font-semibold">
                           Name
                         </label>
                         <input
                           required
                           type="text"
-                          className="w-full bg-transparent border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:outline-none focus:border-primary-gold transition-colors duration-300 font-sans"
+                          className="w-full bg-white/60 backdrop-blur-sm border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:bg-white focus:outline-none focus:border-primary-gold focus:shadow-sm transition-all duration-300 font-sans"
                           placeholder="Your name or entity"
                         />
                       </div>
 
                       <div>
-                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/50 mb-2">
-                          Organisation <span className="text-primary-navy/30">(Optional)</span>
+                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/60 mb-2 font-semibold">
+                          Organisation <span className="text-primary-navy/40 font-normal">(Optional)</span>
                         </label>
                         <input
                           type="text"
-                          className="w-full bg-transparent border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:outline-none focus:border-primary-gold transition-colors duration-300 font-sans"
+                          className="w-full bg-white/60 backdrop-blur-sm border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:bg-white focus:outline-none focus:border-primary-gold focus:shadow-sm transition-all duration-300 font-sans"
                           placeholder="Organisation name"
                         />
                       </div>
@@ -145,25 +203,25 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/50 mb-2">
+                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/60 mb-2 font-semibold">
                           Email address
                         </label>
                         <input
                           required
                           type="email"
-                          className="w-full bg-transparent border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:outline-none focus:border-primary-gold transition-colors duration-300 font-sans"
+                          className="w-full bg-white/60 backdrop-blur-sm border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:bg-white focus:outline-none focus:border-primary-gold focus:shadow-sm transition-all duration-300 font-sans"
                           placeholder="email@domain.com"
                         />
                       </div>
 
                       <div>
-                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/50 mb-2">
+                        <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/60 mb-2 font-semibold">
                           Phone number
                         </label>
                         <input
                           required
                           type="tel"
-                          className="w-full bg-transparent border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:outline-none focus:border-primary-gold transition-colors duration-300 font-sans"
+                          className="w-full bg-white/60 backdrop-blur-sm border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:bg-white focus:outline-none focus:border-primary-gold focus:shadow-sm transition-all duration-300 font-sans"
                           placeholder="+91 99000 00000"
                         />
                       </div>
@@ -171,7 +229,7 @@ export default function ContactPage() {
 
                     {/* Radio Cards for Reach Out Objective */}
                     <div>
-                      <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/50 mb-3">
+                      <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/60 mb-3 font-semibold">
                         I am reaching out for
                       </label>
                       <div className="flex gap-2 sm:gap-3">
@@ -182,8 +240,8 @@ export default function ContactPage() {
                             onClick={() => setReachOutFor(option)}
                             className={`flex-1 text-center py-3 text-[10px] md:text-xs font-semibold tracking-wider uppercase border transition-all duration-300 ${
                               reachOutFor === option
-                                ? 'bg-primary-navy border-primary-navy text-white font-bold'
-                                : 'bg-transparent border-primary-navy/15 text-primary-navy/60 hover:text-primary-navy hover:border-primary-navy/45'
+                                ? 'bg-primary-navy border-primary-navy text-white font-bold shadow-md'
+                                : 'bg-white/50 border-primary-navy/15 text-primary-navy/70 hover:text-primary-navy hover:border-primary-navy/45 hover:bg-white'
                             }`}
                           >
                             {option}
@@ -193,20 +251,20 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/50 mb-2">
+                      <label className="block font-sans text-[10px] tracking-[0.2em] uppercase text-primary-navy/60 mb-2 font-semibold">
                         Message
                       </label>
                       <textarea
                         required
                         rows={4}
-                        className="w-full bg-transparent border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:outline-none focus:border-primary-gold transition-colors duration-300 font-sans resize-none"
+                        className="w-full bg-white/60 backdrop-blur-sm border border-primary-navy/15 px-4 py-3 text-xs md:text-sm text-primary-navy placeholder:text-primary-navy/35 focus:bg-white focus:outline-none focus:border-primary-gold focus:shadow-sm transition-all duration-300 font-sans resize-none"
                         placeholder="Please describe the parameters of your enquiry..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full bg-primary-navy hover:bg-primary-gold hover:text-primary-navy text-white text-xs font-semibold tracking-[0.2em] uppercase py-4 transition-all duration-300 hover-target"
+                      className="w-full bg-primary-navy hover:bg-primary-gold-dark text-white text-xs font-semibold tracking-[0.2em] uppercase py-4 transition-all duration-300 hover-target shadow-lg hover:shadow-xl"
                     >
                       Start the Conversation
                     </button>
@@ -222,34 +280,33 @@ export default function ContactPage() {
               {/* Office Details */}
               <div className="scroll-fade-up space-y-6">
                 <span className="font-sans text-[10px] tracking-[0.25em] text-primary-navy/40 uppercase font-bold block">
-                  OFFICE LOCATIONS
+                  OFFICE LOCATIONS & PRACTICE PRESENCE
                 </span>
                 
-                <div className="space-y-6">
-                  {/* Hyderabad */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 border border-primary-navy/10 rounded-[1px] flex items-center justify-center flex-shrink-0 text-primary-navy bg-white/5">
-                      <MapPin className="w-4.5 h-4.5 text-primary-gold" />
+                <div className="space-y-4">
+                  {offices.map((off) => (
+                    <div key={off.id} className="flex items-start gap-3.5 p-3.5 bg-white/5 border border-primary-navy/10 rounded-[1px]">
+                      <MapPin className="w-4 h-4 text-primary-gold flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="font-serif text-sm font-semibold text-primary-navy">{off.title}</h4>
+                        <p className="font-sans text-xs text-primary-navy/75 leading-relaxed font-light mt-0.5">
+                          {off.address.join(' ')}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-serif text-lg font-semibold text-primary-navy">India</h4>
-                      <p className="font-sans text-xs md:text-sm text-primary-navy/70 leading-relaxed font-light">
-                        Hyderabad, Telangana
-                      </p>
-                    </div>
-                  </div>
+                  ))}
+                </div>
 
-                  {/* International Enquiries */}
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 border border-primary-navy/10 rounded-[1px] flex items-center justify-center flex-shrink-0 text-primary-navy bg-white/5">
-                      <Globe className="w-4.5 h-4.5 text-primary-gold" />
-                    </div>
-                    <div>
-                      <h4 className="font-serif text-lg font-semibold text-primary-navy">International Enquiries</h4>
-                      <p className="font-sans text-xs md:text-sm text-primary-navy/70 leading-relaxed font-light">
-                        GCC, UK, US, South Korea — remote and on-ground engagement available
-                      </p>
-                    </div>
+                <div className="pt-2 border-t border-primary-navy/10 space-y-2">
+                  <span className="font-sans text-[9px] tracking-[0.2em] text-primary-navy/40 uppercase font-bold block">
+                    PRACTICE FOOTPRINT CITIES
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['Delhi', 'Mumbai', 'Pune', 'Shimla', 'Chandigarh', 'Kolkata', 'Hyderabad', 'Lucknow', 'Cuttack'].map((city, idx) => (
+                      <span key={idx} className="bg-primary-navy/5 border border-primary-navy/10 px-2 py-0.5 text-[9px] font-semibold text-primary-navy uppercase tracking-wider">
+                        {city}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -307,95 +364,86 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 3. FORMAL FOOTER */}
-      <footer className="relative w-full bg-bg-warm text-primary-navy/60 py-16 px-6 md:px-16 border-t border-primary-navy/10">
-        <div className="max-w-7xl mx-auto">
+      {/* 3. OFFICE LOCATIONS MAP SECTION */}
+      <section className="relative w-full bg-white py-20 px-6 md:px-16 border-t border-white/10 text-white">
+        <div className="max-w-7xl mx-auto space-y-8 scroll-fade-up">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            
-            {/* Column 1: Brand */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <h3 className="font-serif text-lg md:text-xl tracking-[0.2em] uppercase text-primary-navy mb-6">
-                ARVENTIS PARTNERS
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-primary-navy/70 leading-relaxed font-light">
-                Elite advisory for the architecture of international commerce and the preservation of legal integrity.
-              </p>
+              <span className="font-sans text-xs tracking-[0.3em] uppercase text-primary-gold font-bold block mb-3">
+                GLOBAL PRESENCE
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-black">
+                Our Office Locations
+              </h2>
             </div>
 
-            {/* Column 2: Offices */}
-            <div>
-              <h4 className="font-sans text-[10px] tracking-[0.25em] uppercase text-primary-navy/40 font-bold mb-6">
-                OFFICES
-              </h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 mt-0.5 text-primary-gold flex-shrink-0" />
-                  <span className="font-serif text-sm text-primary-navy hover:text-primary-gold transition-colors duration-300">
-                    HYDERABAD OFFICE
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 mt-0.5 text-primary-gold flex-shrink-0" />
-                  <span className="font-serif text-sm text-primary-navy hover:text-primary-gold transition-colors duration-300">
-                    LONDON HQ
-                  </span>
-                </li>
-              </ul>
+            {/* City Selection Tabs (matching reference UI) */}
+            <div className="flex items-center gap-2 bg-primary-navy/5 p-1.5 border border-primary-navy/15 rounded-[2px] self-start md:self-auto">
+              {offices.map((office) => (
+                <button
+                  key={office.id}
+                  onClick={() => setActiveOffice(office.id as any)}
+                  className={`px-6 py-2.5 text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
+                    activeOffice === office.id
+                      ? 'bg-primary-gold text-primary-navy shadow-md font-bold'
+                      : 'text-primary-navy/70 hover:text-primary-navy hover:bg-primary-navy/10'
+                  }`}
+                >
+                  {office.city}
+                </button>
+              ))}
             </div>
-
-            {/* Column 3: Engage */}
-            <div>
-              <h4 className="font-sans text-[10px] tracking-[0.25em] uppercase text-primary-navy/40 font-bold mb-6">
-                ENGAGE
-              </h4>
-              <ul className="space-y-3 font-sans text-xs tracking-[0.15em] uppercase">
-                <li>
-                  <Link href="/contact" className="text-primary-navy/80 hover:text-primary-gold transition-colors duration-300 hover-target">
-                    INTERNATIONAL ENQUIRIES
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#terms" className="text-primary-navy/80 hover:text-primary-gold transition-colors duration-300 hover-target">
-                    TERMS OF ENGAGEMENT
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 4: Links */}
-            <div>
-              <h4 className="font-sans text-[10px] tracking-[0.25em] uppercase text-primary-navy/40 font-bold mb-6">
-                LEGAL COMPLIANCE
-              </h4>
-              <ul className="space-y-3 font-sans text-xs tracking-[0.15em] uppercase">
-                <li>
-                  <Link href="/#privacy" className="text-primary-navy/80 hover:text-primary-gold transition-colors duration-300 hover-target">
-                    PRIVACY POLICY
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#ethics" className="text-primary-navy/80 hover:text-primary-gold transition-colors duration-300 hover-target">
-                    ETHICS CODE
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
           </div>
 
-          {/* Bottom Row */}
-          <div className="border-t border-primary-navy/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-[9px] md:text-[10px] tracking-[0.18em] uppercase text-primary-navy/40 font-semibold">
-            <p>
-              © 2026 ARVENTIS PARTNERS. ALL RIGHTS RESERVED. SEC1 COMPLIANCE.
-            </p>
-            <p className="max-w-md md:text-right leading-relaxed text-primary-navy/35">
-              NOTE: THIS WEBSITE IS FOR INFORMATIONAL PURPOSES ONLY AND DOES NOT CONSTITUTE A FORMAL BINDING OFFER.
-            </p>
+          {/* Interactive Map & Floating Overlay Card Container */}
+          <div className="relative w-full h-[520px] md:h-[580px] overflow-hidden rounded-[2px] border border-white/15 shadow-2xl bg-[#081226]">
+            {/* Styled Map iframe */}
+            <iframe
+              key={currentOffice.id}
+              title={`${currentOffice.city} Office Map`}
+              src={currentOffice.mapSrc}
+              className="w-full h-full border-0 filter contrast-[1.05] saturate-[0.85] grayscale-[0.2]"
+              loading="lazy"
+            />
+
+            {/* Floating Info Card Overlay (Matching reference screenshot layout) */}
+            <div className="absolute top-4 left-4 right-4 md:top-8 md:left-8 md:right-auto z-20 md:w-96 bg-[#081226]/95 backdrop-blur-md border border-primary-gold/30 text-white p-6 sm:p-8 shadow-2xl space-y-6">
+              <div>
+                <h3 className="font-serif text-3xl font-light tracking-tight text-white mb-4">
+                  {currentOffice.city}
+                </h3>
+                <div className="space-y-1.5 font-sans text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                  {currentOffice.address.map((line, idx) => (
+                    <p key={idx}>{line}</p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-white/10 space-y-4">
+                <p className="font-sans text-xs text-white/80">
+                  <span className="text-primary-gold font-medium">Voice:</span> {currentOffice.phone}
+                </p>
+
+                <a
+                  href={currentOffice.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.15em] uppercase text-primary-gold hover:text-white transition-colors duration-300 group"
+                >
+                  <span>Open in Google Maps</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
-      </footer>
+      </section>
+
+      {/* Shared Footer */}
+      <Footer />
 
     </div>
   );

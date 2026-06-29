@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import ServiceDrawerItem from '../../components/ServiceDrawerItem';
+import Footer from '@/app/components/Footer';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
@@ -190,9 +191,7 @@ export default function ConsultingPage() {
           </div>
 
           <div>
-            <span className="font-sans text-xs tracking-[0.3em] uppercase text-primary-gold font-bold block mb-4">
-              PRACTICE AREA OVERVIEW
-            </span>
+            
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-white mb-6 max-w-4xl">
               <RevealHeading>ARVENTIS CONSULTING</RevealHeading>
             </h1>
@@ -234,25 +233,7 @@ export default function ConsultingPage() {
         </div>
       </section>
 
-      {/* Engagement Footer CTA */}
-      <section className="relative w-full bg-primary-navy py-20 px-6 md:px-16 border-t border-white/10 text-center">
-        <div className="max-w-4xl mx-auto space-y-6 scroll-fade-up">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white">
-            Initiate a Strategy Engagement
-          </h2>
-          <p className="font-sans text-sm md:text-base text-white/70 font-light max-w-2xl mx-auto">
-            Discuss your expansion goals, operating model, or commercial restructuring directly with our strategy practice lead.
-          </p>
-          <div className="pt-4">
-            <Link
-              href="/contact"
-              className="inline-block bg-primary-gold hover:bg-primary-gold-dark text-primary-navy text-xs font-bold tracking-[0.2em] uppercase px-10 py-4 transition-all duration-300 hover-target shadow-xl"
-            >
-              SCHEDULE MANDATE CONSULTATION
-            </Link>
-          </div>
-        </div>
-      </section>
+     <Footer/>
     </div>
   );
 }

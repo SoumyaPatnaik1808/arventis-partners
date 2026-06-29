@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, ExternalLink, ShieldCheck, Award, Briefcase, Building2 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import { getPersonBySlug } from '../peopleData';
+import Footer from '@/app/components/Footer';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -79,7 +80,11 @@ export default function DedicatedProfilePage({ params }: PageProps) {
               alt={person.name}
               fill
               priority
-              className="object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700 ease-out"
+              className={`${
+                person.category === 'Founding Partner'
+                  ? 'object-contain object-center p-4'
+                  : 'object-cover object-top'
+              } filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700 ease-out`}
               sizes="(max-width: 1024px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/90 via-transparent to-transparent z-10" />
@@ -211,14 +216,8 @@ export default function DedicatedProfilePage({ params }: PageProps) {
                   <span>INSTAGRAM</span>
                 </a>
 
-                {/* Mandate CTA */}
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-primary-gold hover:bg-white text-primary-navy font-sans text-xs font-bold tracking-[0.2em] uppercase px-6 py-3.5 transition-all duration-300 shadow-md hover-target ml-auto"
-                >
-                  <span>INITIATE MANDATE</span>
-                  <ExternalLink size={14} />
-                </Link>
+               
+                
               </div>
             </div>
 
@@ -228,16 +227,7 @@ export default function DedicatedProfilePage({ params }: PageProps) {
       </section>
 
       {/* Footer CTA */}
-      <section className="relative w-full bg-primary-navy py-16 px-6 md:px-16 border-t border-white/10 text-center">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="font-serif text-3xl sm:text-4xl font-light text-white">
-            Engage Our Partners
-          </h2>
-          <p className="font-sans text-sm text-white/70 font-light max-w-2xl mx-auto">
-            Direct access to senior partners for confidential advisory across corporate strategy and legal representation.
-          </p>
-        </div>
-      </section>
+      <Footer/>
     </div>
   );
 }

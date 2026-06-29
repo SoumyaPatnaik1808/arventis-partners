@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { ALL_PEOPLE, MemberProfile } from './peopleData';
+import Footer from '../components/Footer';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
@@ -75,9 +76,10 @@ export default function OurPeoplePage() {
 
   const foundingPartners = ALL_PEOPLE.filter((p) => p.category === 'Founding Partner');
   const consultancyMembers = ALL_PEOPLE.filter((p) => p.slug === 'anshuman-mohanty');
-  const legalMembersRow1 = ALL_PEOPLE.filter((p) =>
-    ['kumar-suman', 'yash', 'sweta', 'adarsh'].includes(p.slug)
-  );
+  const legalMembersRow1Order = ['kumar-suman', 'yash', 'sweta', 'adarsh'];
+  const legalMembersRow1 = legalMembersRow1Order
+    .map((slug) => ALL_PEOPLE.find((p) => p.slug === slug))
+    .filter((p): p is MemberProfile => p !== undefined);
   const legalMembersRow2 = ALL_PEOPLE.filter((p) =>
     ['advocate-1', 'advocate-2', 'advocate-3', 'advocate-4'].includes(p.slug)
   );
@@ -94,7 +96,11 @@ export default function OurPeoplePage() {
             src={member.image}
             alt={member.name}
             fill
-            className="object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700 ease-out"
+            className={`${
+              member.category === 'Founding Partner'
+                ? 'object-contain object-center p-2'
+                : 'object-cover object-top'
+            } filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700 ease-out`}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/90 via-primary-navy/20 to-transparent z-10" />
@@ -175,11 +181,9 @@ export default function OurPeoplePage() {
             PEOPLE & LEADERSHIP
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-white mb-6">
-            <RevealHeading>JUDGMENT, APPLIED.</RevealHeading>
+            <RevealHeading>OUR PEOPLE.</RevealHeading>
           </h1>
-          <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/70 font-light leading-relaxed max-w-2xl transition-delay-300">
-            One firm. Two disciplines. Senior leaders and specialist advocates who stay in the room from commercial strategy to courtroom advocacy.
-          </p>
+        
         </div>
       </section>
 
@@ -224,9 +228,7 @@ export default function OurPeoplePage() {
 
           {/* Legal Row 1 (4 Members) */}
           <div className="space-y-6">
-            <h3 className="font-serif text-2xl font-light text-primary-navy tracking-wide border-l-2 border-primary-gold pl-4">
-              Senior Bench & Specialist Counsel (Row 1)
-            </h3>
+          
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {legalMembersRow1.map(renderCard)}
             </div>
@@ -234,9 +236,7 @@ export default function OurPeoplePage() {
 
           {/* Legal Row 2 (4 Members) */}
           <div className="space-y-6 pt-6 border-t border-primary-navy/10">
-            <h3 className="font-serif text-2xl font-light text-primary-navy tracking-wide border-l-2 border-primary-gold pl-4">
-              Specialist Advocates (Row 2)
-            </h3>
+           
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {legalMembersRow2.map(renderCard)}
             </div>
@@ -245,24 +245,7 @@ export default function OurPeoplePage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="relative w-full bg-primary-navy py-20 px-6 md:px-16 border-t border-white/10 text-center">
-        <div className="max-w-4xl mx-auto space-y-6 scroll-fade-up">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white">
-            Engage Our Leadership
-          </h2>
-          <p className="font-sans text-sm md:text-base text-white/70 font-light max-w-2xl mx-auto">
-            Direct access to founding partners and specialist advocates for confidential mandate evaluations across strategy and legal advocacy.
-          </p>
-          <div className="pt-4">
-            <Link
-              href="/contact"
-              className="inline-block bg-primary-gold hover:bg-primary-gold-dark text-primary-navy text-xs font-bold tracking-[0.2em] uppercase px-10 py-4 transition-all duration-300 hover-target shadow-xl"
-            >
-              INITIATE MANDATE DISCUSSION
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Footer/>
     </div>
   );
 }

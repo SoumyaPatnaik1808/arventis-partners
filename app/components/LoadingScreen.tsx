@@ -103,7 +103,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           ref={textRef}
           className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-[0.25em] text-[#faf6ee] font-normal leading-normal uppercase"
         >
-          ARVENTIS & PARTNERS
+          ARVENTIS PARTNERS
         </h1>
         <p
           ref={subtitleRef}

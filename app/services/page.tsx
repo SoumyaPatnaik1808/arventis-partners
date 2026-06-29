@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
@@ -64,7 +65,7 @@ export default function ServicesPage() {
       <section className="relative w-full bg-[#081226] pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-16 border-b border-white/10 text-white">
         <div className="max-w-7xl mx-auto relative z-10">
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-normal text-white mb-6">
-            <RevealHeading>OUR SERVICES</RevealHeading>
+            <RevealHeading>SERVICES</RevealHeading>
           </h1>
           
         </div>
@@ -331,81 +332,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 4. FORMAL FOOTER */}
-      <footer className="relative w-full bg-bg-warm text-primary-navy/60 py-16 px-6 md:px-16 border-t border-primary-navy/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            <div>
-              <h3 className="font-serif text-lg md:text-xl tracking-[0.2em] uppercase text-primary-navy mb-6">
-                ARVENTIS PARTNERS
-              </h3>
-              <p className="font-sans text-xs sm:text-sm text-primary-navy/70 leading-relaxed font-light">
-                Elite advisory for the architecture of international commerce and the preservation of legal integrity.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-sans text-[10px] tracking-[0.25em] uppercase text-primary-navy/40 font-bold mb-6">
-                OFFICES
-              </h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 mt-0.5 text-primary-gold flex-shrink-0" />
-                  <span className="font-serif text-sm text-primary-navy hover:text-primary-gold transition-colors duration-300">
-                    HYDERABAD OFFICE
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <MapPin className="w-3.5 h-3.5 mt-0.5 text-primary-gold flex-shrink-0" />
-                  <span className="font-serif text-sm text-primary-navy hover:text-primary-gold transition-colors duration-300">
-                    LONDON HQ
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-sans text-[10px] tracking-[0.25em] uppercase text-primary-navy/40 font-bold mb-6">
-                ENGAGE
-              </h4>
-              <ul className="space-y-3 font-sans text-xs tracking-[0.15em] uppercase">
-                <li>
-                  <Link href="/contact" className="text-primary-navy/80 hover:text-primary-gold transition-colors duration-300 hover-target">
-                    INTERNATIONAL ENQUIRIES
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-sans text-[10px] tracking-[0.25em] uppercase text-primary-navy/40 font-bold mb-6">
-                PRACTICE AREAS
-              </h4>
-              <ul className="space-y-3 font-sans text-xs tracking-[0.15em] uppercase">
-                <li>
-                  <Link href="/services/consulting" className="text-primary-navy/80 hover:text-primary-gold transition-colors duration-300 hover-target">
-                    STRATEGY CONSULTING
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/legal" className="text-primary-navy/80 hover:text-primary-gold transition-colors duration-300 hover-target">
-                    LEGAL COUNSEL
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-primary-navy/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-[9px] md:text-[10px] tracking-[0.18em] uppercase text-primary-navy/40 font-semibold">
-            <p>
-              © 2026 ARVENTIS PARTNERS. ALL RIGHTS RESERVED. SEC1 COMPLIANCE.
-            </p>
-            <p className="max-w-md md:text-right leading-relaxed text-primary-navy/35">
-              NOTE: THIS WEBSITE IS FOR INFORMATIONAL PURPOSES ONLY AND DOES NOT CONSTITUTE A FORMAL BINDING OFFER.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import ServiceDrawerItem from '../../components/ServiceDrawerItem';
+import Footer from '../../components/Footer';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
@@ -251,7 +252,7 @@ export default function LegalPage() {
               src="/suman.png"
               alt="Kumar Suman Headshot"
               fill
-              className="object-cover object-top filter contrast-[1.05]"
+              className="object-contain object-center p-4 filter contrast-[1.05]"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/90 via-primary-navy/20 to-transparent z-10" />
@@ -334,6 +335,8 @@ export default function LegalPage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

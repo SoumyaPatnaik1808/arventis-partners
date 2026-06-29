@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
@@ -31,24 +32,24 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-16 flex items-center justify-between transition-all duration-700 ${
-        isMenuOpen ? 'bg-transparent border-b border-primary-navy/10' : 'bg-[#081226]/80 backdrop-blur-md border-b border-white/5'
+      <header className={`fixed top-0 left-0 w-full z-50 h-20 md:h-24 px-6 md:px-16 flex items-center justify-between transition-all duration-700 ${
+        isMenuOpen ? 'bg-white border-b border-primary-navy/10' : 'bg-white/95  border-b border-primary-navy/10 shadow-md'
       }`}>
-        {/* Left column spacer */}
-        <div className="flex-1 flex justify-start" />
-
-        {/* Center column: Branding (dead-centered via absolute positioning) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
+        {/* Left column: Extended Logo covering full height of navbar */}
+        <div className="flex-1 flex items-center justify-start h-full my-0 py-0 z-20 ml-2 sm:ml-6 md:ml-10 lg:ml-12">
           <Link 
             href="/" 
             onClick={() => setIsMenuOpen(false)}
-            className="hover-target group inline-block whitespace-nowrap"
+            className="hover-target inline-flex items-center h-full my-0 py-0 relative transition-transform duration-300 hover:scale-[1.01]"
           >
-            <span className={`font-serif text-base sm:text-xl md:text-2xl tracking-[0.2em] uppercase transition-colors duration-700 font-medium ${
-              isMenuOpen ? 'text-primary-navy group-hover:text-primary-gold-dark' : 'text-white group-hover:text-primary-gold'
-            }`}>
-              ARVENTIS PARTNERS
-            </span>
+            <Image
+              src="/logo-final.png"
+              alt="Arventis Partners Logo"
+              width={350}
+              height={100}
+              priority
+              className="h-full w-auto object-contain my-0 py-0 "
+            />
           </Link>
         </div>
 
@@ -57,11 +58,9 @@ export default function Navbar() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation menu"
-            className={`relative z-50 p-2 transition-colors duration-700 focus:outline-none hover-target ${
-              isMenuOpen ? 'text-primary-navy hover:text-primary-gold-dark' : 'text-white hover:text-primary-gold'
-            }`}
+            className="relative z-50 p-2 transition-colors duration-300 focus:outline-none hover-target text-primary-navy hover:text-primary-gold-dark"
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
       </header>
@@ -73,7 +72,7 @@ export default function Navbar() {
         }`}
       >
         {/* Header spacer */}
-        <div className="relative z-10 pt-12 md:pt-16" />
+        <div className="relative z-10 pt-16 md:pt-24" />
 
         {/* Navigation links */}
         <nav className="relative z-10 flex flex-col items-center justify-center space-y-6 md:space-y-10 my-auto text-center">
@@ -103,4 +102,3 @@ export default function Navbar() {
     </>
   );
 }
-
