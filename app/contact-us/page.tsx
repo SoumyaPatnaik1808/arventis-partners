@@ -1,9 +1,28 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ReCAPTCHA from 'react-google-recaptcha';
+
+// Custom component to reveal text word-by-word with a calming stagger
+function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
+  const words = children.split(' ');
+  return (
+    <span className={`reveal-text flex flex-wrap justify-center gap-x-2 gap-y-1 ${className}`}>
+      {words.map((word, idx) => (
+        <span key={idx} className="reveal-text-line inline-block overflow-hidden">
+          <span
+            className="reveal-text-word"
+            style={{ transitionDelay: `${idx * 0.04}s` }}
+          >
+            {word}
+          </span>
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export default function ContactUsPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,9 +36,38 @@ export default function ContactUsPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     organisation: '',
     message: '',
   });
+
+  // Intersection Observer for scroll-triggered reveal animations
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const revealElements = document.querySelectorAll('.reveal-text');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains('reveal-text')) {
+              entry.target.classList.add('reveal-text-active');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const onCaptchaChange = (token: string | null) => {
     setCaptchaToken(token);
@@ -45,7 +93,7 @@ export default function ContactUsPage() {
           name: formData.name,
           email: formData.email,
           organisation: formData.organisation || 'Not Specified',
-          phone: 'Not Specified',
+          phone: formData.phone,
           message: `Service of Interest: ${serviceInterest}\n\nEnquiry details:\n${formData.message || 'No custom message provided.'}`,
           captchaToken
         }),
@@ -54,7 +102,7 @@ export default function ContactUsPage() {
       const result = await res.json();
       if (result.success) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', organisation: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', organisation: '', message: '' });
         setServiceInterest('Consulting');
       } else {
         setErrorMessage(result.error || 'Failed to submit enquiry. Please try again.');
@@ -79,25 +127,29 @@ export default function ContactUsPage() {
         
         {/* Animated transparent heading banner */}
         <div className="text-center pt-10 pb-6 w-full max-w-4xl mx-auto z-10">
-          <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#000000] tracking-wide leading-tight animate-slide-fade-in-up">
-            Thank You for Showing Your Interest
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#000000] tracking-wide leading-tight px-4 flex justify-center text-center">
+            <RevealHeading>Thank You for Showing Your Interest</RevealHeading>
           </h1>
         </div>
 
         {/* Form panel container */}
         <div className="w-full max-w-3xl bg-white border border-[#000000]/10 p-6 md:p-12 shadow-lg rounded-[1px] relative z-10">
           {isSubmitted ? (
-            <div className="text-center py-16 space-y-6 animate-fade-in">
-              <div className="w-16 h-16 bg-[#000000]/5 border border-[#000000]/10 rounded-full flex items-center justify-center mx-auto text-[#000000] mb-4">
-                <span className="text-2xl">&#10003;</span>
+            <div className="text-center py-16 space-y-4 animate-fade-in flex flex-col items-center">
+              <div className="relative mb-6">
+                {/* Background jagged circle imitation */}
+                <div className="absolute inset-0 bg-[#fa0249] rounded-full scale-110 opacity-20 blur-sm rotate-45"></div>
+                <div className="relative w-24 h-24 bg-[#fa0249] rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>
+                </div>
               </div>
-              <h3 className="font-serif text-3xl font-light text-[#000000]">Thank You</h3>
-              <p className="font-sans text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                We have received your request. Our team will review your enquiry and a partner will get in touch with you shortly.
+              <h3 className="font-serif text-3xl md:text-4xl font-medium text-black whitespace-nowrap">Thank You For Contacting Us</h3>
+              <p className="font-sans text-base md:text-lg text-slate-600 max-w-md mx-auto whitespace-nowrap">
+                Our Team will reach you shortly
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="mt-6 inline-flex justify-center bg-[#000000] hover:bg-[#fa0249] hover:text-white text-white font-bold text-xs tracking-widest uppercase px-8 py-4 transition-all duration-300 rounded-[1px]"
+                className="mt-8 inline-flex justify-center bg-neutral-800 hover:bg-[#fa0249] text-white font-medium text-sm px-8 py-3 transition-all duration-300 rounded-full"
               >
                 Submit Another Inquiry
               </button>
@@ -145,6 +197,22 @@ export default function ContactUsPage() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
                     placeholder="Your email address"
+                  />
+                </div>
+
+                {/* Phone field */}
+                <div>
+                  <label htmlFor="phone" className="block font-sans text-xs uppercase tracking-widest text-[#000000] font-bold mb-2">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="phone"
+                    required
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
+                    placeholder="Your phone number"
                   />
                 </div>
 

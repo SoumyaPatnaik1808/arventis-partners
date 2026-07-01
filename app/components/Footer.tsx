@@ -7,18 +7,21 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className="relative w-full bg-white text-black py-12 sm:py-16 px-4 sm:px-6 md:px-16 border-t border-black/10 font-sans">
+    <footer className="relative w-full bg-white text-black py-6 sm:py-8 px-4 sm:px-6 md:px-16 border-t border-black/10 font-sans">
       <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
         
         {/* 1. TOP BRAND HEADER & PARALLEL DISCLAIMER / SECONDARY LINKS */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
           {/* Left: Brand Header */}
           <div className="flex items-center justify-start py-2">
             <Image
-            src="/logo-final.png"
-            alt="Arventis footer logo"
-            width={400}
-            height={400}/>
+              src="/logo-final.png"
+              alt="Arventis footer logo"
+              width={450}
+              height={100}
+              unoptimized
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain mix-blend-multiply filter contrast-[1.08]"
+            />
           </div>
 
           {/* Right: Disclaimer, FAQ & Legal Links (Parallel with ARVENTIS PARTNERS) */}

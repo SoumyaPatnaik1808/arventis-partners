@@ -224,7 +224,7 @@ export default function LegalPage() {
           <div>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 bg-black/5 hover:bg-[#fa0249] hover:text-white text-black text-xs tracking-[0.2em] font-bold uppercase px-5 py-3 transition-all duration-300 hover-target border border-black/10 shadow-md"
+              className="inline-flex items-center gap-2 bg-black/5 hover:bg-[#fa0249] hover:text-white text-black text-xs tracking-[0.2em] font-bold uppercase border border-black/10 px-5 py-3 transition-all duration-300 hover-target"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>BACK TO OUR SERVICES</span>
@@ -233,52 +233,15 @@ export default function LegalPage() {
 
           <div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-black mb-6 max-w-4xl">
-              <RevealHeading className="text-black">ARVENTIS LEGAL</RevealHeading>
+              <RevealHeading>ARVENTIS LEGAL</RevealHeading>
             </h1>
-            <p className="scroll-fade-up font-sans text-base sm:text-lg md:text-xl text-black/85 font-light leading-relaxed max-w-3xl transition-delay-300">
-              Courtroom credibility and surgical advocacy across trial courts, high courts, arbitral tribunals, and the Supreme Court of India.
+            <p className="scroll-fade-up font-sans text-base sm:text-lg md:text-xl text-black/70 font-light leading-relaxed max-w-3xl transition-delay-300">
+              Elite advocacy and legal counsel delivered by Supreme Court practitioners. Protecting commercial interests, navigating high-stakes disputes, and structuring defensible compliance frameworks.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Leadership & Practice Overview Section */}
-      <section className="relative w-full bg-white py-12 md:py-16 px-6 md:px-16 text-black border-b border-black/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5 bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up flex flex-col">
-            <div className="relative h-[380px] w-full bg-white">
-              <Image
-                src="/Suman.jpg"
-                alt="Kumar Suman Headshot"
-                fill
-                className="object-contain object-center p-4"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
-            <div className="p-6 bg-white border-t border-black/5 text-black">
-              <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-wide text-black">
-                KUMAR SUMAN
-              </h2>
-              <p className="font-sans text-xs tracking-wider text-black/60 uppercase mt-1">Advocate, Delhi University</p>
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 space-y-6 scroll-fade-up transition-delay-200">
-            <h3 className="font-serif text-3xl sm:text-4xl font-light leading-snug text-black">
-              Accountable for real outcomes in <span className="whitespace-nowrap">high-stakes</span> disputes.
-            </h3>
-            <div className="h-[1px] w-16 bg-[#fa0249] my-4" />
-            <div className="space-y-4 font-sans text-sm md:text-base text-black/75 leading-relaxed font-light">
-              <p>
-                Kumar Suman has built his practice across a decade of advocacy, litigation, and public interest law. His focus spans arbitration, land acquisition, infrastructure, and constitutional writ matters.
-              </p>
-              <p>
-                Arventis Legal fields a specialist bench of advocates covering civil litigation, corporate compliance, employment, IP, and real estate.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Practice Accordions Section */}
       <section className="relative w-full bg-white py-12 md:py-16 px-6 md:px-16 text-black">

@@ -218,7 +218,7 @@ export default function DedicatedProfilePage({ params }: PageProps) {
       </section>
 
       {/* CONTACT CTA SECTION */}
-      <section className="relative w-full bg-black py-20 px-6 md:px-16 border-t border-white/10 text-left text-white z-20">
+      <section className="relative w-full bg-black py-10 md:py-12 px-6 md:px-16 border-t border-white/10 text-left text-white z-20">
         <div className="max-w-7xl mx-auto space-y-6 scroll-fade-up">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-white">
             Let's Start the Conversation

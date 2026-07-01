@@ -3,7 +3,7 @@ import Link from 'next/link'
 const ContactUs = () => {
   return (
    <>
-     <section className="relative w-full bg-[#fa0249] py-20 px-6 md:px-16 border-t border-black/10 text-center text-black z-20">
+     <section className="relative w-full bg-[#fa0249] py-10 md:py-12 px-6 md:px-16 border-t border-black/10 text-center text-black z-20">
         <div className="max-w-4xl mx-auto space-y-6 scroll-fade-up">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-black">
             Let's Start the Conversation

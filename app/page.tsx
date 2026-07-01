@@ -177,6 +177,7 @@ export default function Home() {
                 alt={slide.title}
                 fill
                 priority={idx === 0}
+                sizes="100vw"
                 className={`object-cover transition-transform duration-[6000ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   currentSlide === idx ? 'scale-105' : 'scale-100'
                 }`}
@@ -214,8 +215,8 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full z-20 px-6 md:px-16 pb-8 pt-12 ">
           <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
             
-            {/* Navigation Items (4 slides spanning full width with equal space) */}
-            <div className="w-full grid grid-cols-4 gap-x-6 md:gap-x-12 lg:gap-x-16 text-center">
+            {/* Navigation Items (2x2 on mobile, 4 columns on desktop) */}
+            <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-x-12 lg:gap-x-16 text-center">
               {slides.map((slide, idx) => (
                 <button
                   key={idx}
@@ -319,6 +320,7 @@ export default function Home() {
                 src="/strategic_foresight.png"
                 alt="One Team, Start to Finish"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -349,6 +351,7 @@ export default function Home() {
                 src="/global_reach_bg.png"
                 alt="Experience Across Markets"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -373,9 +376,10 @@ export default function Home() {
             <div className="group bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col min-h-[440px]">
               <div className="relative h-[200px] w-full overflow-hidden">
                 <Image
-                  src="/Buisness-bg.jpg"
+                  src="/arvBuisness-bg.jpg"
                   alt="Strategy Consulting"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
@@ -404,9 +408,10 @@ export default function Home() {
             <div className="group bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col min-h-[440px]">
               <div className="relative h-[200px] w-full overflow-hidden">
                 <Image
-                  src="/legal-bg.jpg"
+                  src="/arvlegal-bg.jpg"
                   alt="Legal Advisory"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
@@ -435,7 +440,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT CTA SECTION */}
-      <section className="relative w-full bg-[#fa0249] py-12 md:py-14 px-6 md:px-16 border-t border-black/10 text-center text-black z-20">
+      <section className="relative w-full bg-[#fa0249] py-10 md:py-12 px-6 md:px-16 border-t border-black/10 text-center text-black z-20">
         <div className="max-w-4xl mx-auto space-y-6 scroll-fade-up">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-black">
             Let's Start the Conversation

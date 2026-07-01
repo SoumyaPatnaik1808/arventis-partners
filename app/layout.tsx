@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ScrollProvider from "./components/ScrollProvider";
+import DisclaimerModal from "./components/DisclaimerModal";
 
 const graphik = localFont({
   src: '../public/fonts/Graphik-Medium-Web.woff2',
@@ -42,9 +43,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/favicon.png?v=4",
-    shortcut: "/favicon.png?v=4",
-    apple: "/favicon.png?v=4",
+    icon: "/favicon-final.png?v=5",
+    shortcut: "/favicon-final.png?v=5",
+    apple: "/favicon-final.png?v=5",
   },
   openGraph: {
     title: "Arventis Partners | Strategy & Legal Advisory",
@@ -152,9 +153,9 @@ export default function RootLayout({
       className={`h-full antialiased selection:bg-[#fa0249] selection:text-[#000000] ${graphik.variable}`}
     >
       <head>
-        <link rel="icon" href="/favicon.png?v=4" type="image/png" sizes="any" />
-        <link rel="shortcut icon" href="/favicon.png?v=4" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png?v=4" />
+        <link rel="icon" href="/favicon-final.png?v=5" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/favicon-final.png?v=5" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon-final.png?v=5" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -164,6 +165,7 @@ export default function RootLayout({
         <ScrollProvider>
           {children}
         </ScrollProvider>
+        <DisclaimerModal />
       </body>
     </html>
   );

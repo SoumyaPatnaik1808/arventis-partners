@@ -87,14 +87,30 @@ export default function ServicesPage() {
       {/* Shared Navigation Bar */}
       <Navbar />
 
-      {/* HERO BANNER: LET'S GET IN TOUCH */}
-      <section className="relative w-full bg-[#000000] pt-28 pb-12 md:pt-36 md:pb-16 px-6 md:px-16 border-b border-white/10 text-white">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-normal text-white mb-6">
+      {/* HERO VIDEO BANNER */}
+      <section className="relative w-full min-h-[60vh] md:min-h-[75vh] flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-16 border-b border-white/10 text-white overflow-hidden pt-28 bg-black">
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="https://pub-e76f3c2b747241f99a84d7c073d76e11.r2.dev/services_page.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Overlays for text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/30 z-10"></div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-20">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-normal text-white mb-6 drop-shadow-lg">
             <RevealHeading>SERVICES</RevealHeading>
           </h1>
-          <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/70 font-light leading-relaxed max-w-3xl transition-delay-300">
-            Unified strategic management consulting and elite legal advocacy, engineered for <span className="whitespace-nowrap">high-stakes</span> execution.
+          <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
+            Unified strategic management consulting and elite legal advocacy, engineered for <br className="hidden sm:inline" />
+           high-stakes execution.
           </p>
         </div>
       </section>

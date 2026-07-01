@@ -65,7 +65,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full z-50 h-20 sm:h-24 md:h-28 px-4 sm:px-6 md:px-12 lg:px-16 flex items-center justify-between transition-all duration-500 ${
+      <header className={`fixed top-0 left-0 w-full z-50 h-14 sm:h-16 md:h-18 px-2 sm:px-6 md:px-12 lg:px-16 flex items-center justify-between transition-all duration-500 ${
         isHeaderWhite ? 'bg-white/95 backdrop-blur-md border-b border-black/10 shadow-sm text-black' : 'bg-transparent border-b border-white/10 text-white'
       }`}>
         {/* Left column: Logo */}
@@ -76,13 +76,14 @@ export default function Navbar() {
             className="hover-target inline-flex items-center h-full relative transition-transform duration-300 hover:scale-[1.02]"
           >
             <Image
-              src={isHeaderWhite ? "/logo-final.png" : "/Logo-loading.png"}
+              src="/logo-final.png"
               alt="Arventis Partners Logo"
               width={450}
               height={100}
               priority
-              className={`h-full max-h-20 sm:max-h-22 md:max-h-24 w-auto object-contain transition-all duration-500 scale-110 sm:scale-115 md:scale-120 origin-left ${
-                isHeaderWhite ? 'mix-blend-multiply filter contrast-[1.08]' : ''
+              unoptimized
+              className={`h-full max-h-10 sm:max-h-12 md:max-h-14 w-auto object-contain transition-all duration-500 scale-200 sm:scale-140 md:scale-140 origin-left ${
+                isHeaderWhite ? 'mix-blend-multiply filter contrast-[1.08]' : 'filter brightness-0 invert opacity-90'
               }`}
             />
           </Link>

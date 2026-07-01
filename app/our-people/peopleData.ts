@@ -37,7 +37,7 @@ export const peopleData: Person[] = [
     name: 'Anshuman Mohanty',
     discipline: 'Strategy Consulting',
     category: 'Founding Partner',
-    title: 'FOUNDING PARTNER, STRATEGY CONSULTING',
+    title: 'FOUNDING PARTNER, STRATEGY CONSULTING SERVICES',
     experience: '11+ Years',
     geographies: ['India', 'GCC', 'UK', 'US', 'South Korea'],
     shortBio: 'Eleven years at the sharp end of growth decisions, holding P&L ownership across consulting, BFSI, government, and technology-led businesses.',
@@ -65,9 +65,9 @@ export const peopleData: Person[] = [
     instagram: 'https://instagram.com'
   },
   {
-    id: 'kumar-suman',
-    slug: 'kumar-suman',
-    name: 'Kumar Suman',
+    id: 'suman-thakur',
+    slug: 'suman-thakur',
+    name: 'Suman Thakur',
     discipline: 'Legal',
     category: 'Founding Partner',
     title: 'FOUNDING PARTNER, LEGAL  |  ADVOCATE',
@@ -75,9 +75,9 @@ export const peopleData: Person[] = [
     geographies: ['Delhi', 'Himachal Pradesh'],
     shortBio: 'A decade of advocacy, litigation, and public interest law, with a focus on arbitration, land acquisition, infrastructure, and public law.',
     shortDesc: 'Supreme Court advocate specialising in commercial litigation, arbitration, infrastructure, and public law.',
-    fullBio: 'Kumar Suman has built his practice from the ground up across a decade of advocacy, litigation, and public interest law. His focus is arbitration, land acquisition, infrastructure, and public law. He comes to each mandate not as an advisor offering opinions, but as a litigator accountable for outcomes in high-stakes disputes.\nHis work is defined by cases that carry real consequence: landowners displaced by acquisition, communities navigating rehabilitation, infrastructure projects caught between private enterprise and regulatory complexity. He brings to Arventis Legal the discipline of someone whose practice has been tested in contested terrain, across courts, arbitral tribunals, and policy forums.',
+    fullBio: 'Suman Thakur has built his practice from the ground up across a decade of advocacy, litigation, and public interest law. His focus is arbitration, land acquisition, infrastructure, and public law. He comes to each mandate not as an advisor offering opinions, but as a litigator accountable for outcomes in high-stakes disputes.\nHis work is defined by cases that carry real consequence: landowners displaced by acquisition, communities navigating rehabilitation, infrastructure projects caught between private enterprise and regulatory complexity. He brings to Arventis Legal the discipline of someone whose practice has been tested in contested terrain, across courts, arbitral tribunals, and policy forums.',
     bio: [
-      'Kumar Suman has built his practice from the ground up across a decade of advocacy, litigation, and public interest law. His focus is arbitration, land acquisition, infrastructure, and public law. He comes to each mandate not as an advisor offering opinions, but as a litigator accountable for outcomes in high-stakes disputes.',
+      'Suman Thakur has built his practice from the ground up across a decade of advocacy, litigation, and public interest law. His focus is arbitration, land acquisition, infrastructure, and public law. He comes to each mandate not as an advisor offering opinions, but as a litigator accountable for outcomes in high-stakes disputes.',
       'His work is defined by cases that carry real consequence: landowners displaced by acquisition, communities navigating rehabilitation, infrastructure projects caught between private enterprise and regulatory complexity. He brings to Arventis Legal the discipline of someone whose practice has been tested in contested terrain, across courts, arbitral tribunals, and policy forums.'
     ],
     highlights: [
