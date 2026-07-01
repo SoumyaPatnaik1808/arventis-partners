@@ -12,6 +12,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: 'reCAPTCHA verification failed' }, { status: 400 });
     }
 
+    // Verify token with Google API
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    if (!secretKey) {
+      console.error('RECAPTCHA_SECRET_KEY is missing from environment variables');
+      return NextResponse.json({ success: false, error: 'Server configuration error' }, { status: 500 });
+    }
+
+    const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`;
+    const recaptchaRes = await fetch(verifyUrl, { method: 'POST' });
+    const recaptchaJson = await recaptchaRes.json();
+
+    if (!recaptchaJson.success) {
+      console.error('reCAPTCHA validation failed:', recaptchaJson);
+      return NextResponse.json({ success: false, error: 'Invalid reCAPTCHA' }, { status: 400 });
+    }
+
     // 1. Send email to internal team
     const internalHtmlContent = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 4px; background-color: #ffffff;">

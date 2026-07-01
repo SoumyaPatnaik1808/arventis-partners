@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import ScrollProvider from "./components/ScrollProvider";
-import IntroManager from "./components/IntroManager";
+
+const graphik = localFont({
+  src: '../public/fonts/Graphik-Medium-Web.woff2',
+  variable: '--font-graphik',
+  display: 'swap',
+  weight: '500',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://arventispartners.com"),
@@ -142,7 +149,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full antialiased selection:bg-[#fa0249] selection:text-[#000000]"
+      className={`h-full antialiased selection:bg-[#fa0249] selection:text-[#000000] ${graphik.variable}`}
     >
       <head>
         <link rel="icon" href="/favicon.png?v=4" type="image/png" sizes="any" />
@@ -154,7 +161,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full bg-[#000000] text-white flex flex-col font-sans">
-        <IntroManager />
         <ScrollProvider>
           {children}
         </ScrollProvider>

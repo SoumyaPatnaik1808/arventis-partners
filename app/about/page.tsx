@@ -191,19 +191,13 @@ export default function AboutPage() {
       {/* 1. FIRM OVERVIEW HEADER */}
       <section className="relative w-full bg-white py-12 md:py-16 px-6 md:px-16 border-b border-black/10">
         <div className="max-w-7xl mx-auto relative z-10 space-y-8">
-          <div className="flex items-center gap-3">
-            <span className="font-serif italic text-sm text-black/60">
-              Where Strategy meets standing
-            </span>
-          </div>
-
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-black max-w-5xl">
+          
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-black max-w-5xl">
             <span className="block"><RevealHeading>One Firm.</RevealHeading></span>
             <span className="block"><RevealHeading>Two Disciplines.</RevealHeading></span>
             <span className="block"><RevealHeading>No Translation Required.</RevealHeading></span>
           </h1>
 
-          <div className="h-[1px] w-24 bg-[#fa0249]" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             <div className="lg:col-span-7">

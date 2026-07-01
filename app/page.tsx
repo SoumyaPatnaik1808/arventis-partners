@@ -45,7 +45,7 @@ export default function Home() {
       navTitle: "Two Disciplines",
       title: "Two Disciplines.\nOne Standard of Rigour.",
       subtitle: "Strategy and law, under one accountable team,\nso neither one ever works alone.",
-      image: "/strategic_foresight.png",
+      image: "/hero building.png",
       primaryBtnText: "Meet the Firm",
       primaryBtnHref: "/about",
     },
@@ -53,7 +53,7 @@ export default function Home() {
       navTitle: "Strategy Built for Execution.",
       title: "Strategy Execution.",
       subtitle: "We stay in the room until the strategy becomes the result,\nnot just a deck.",
-      image: "/Buisness-bg.jpg",
+      image: "/hero strategy.png",
       primaryBtnText: "Explore Consulting",
       primaryBtnHref: "/services#consulting",
       secondaryBtnText: "Discuss Growth",
@@ -63,7 +63,7 @@ export default function Home() {
       navTitle: "Courtroom Credibility",
       title: "Courtroom Credibility,\nAcross Every Practice Area.",
       subtitle: "Advocacy built for the moments that decide outcomes.",
-      image: "/legal-bg.jpg",
+      image: "/hero legal.png",
       primaryBtnText: "Explore Practice Areas",
       primaryBtnHref: "/services#legal",
       secondaryBtnText: "Initiate Mandate",
@@ -74,7 +74,7 @@ export default function Home() {
       title: "Local Depth.\nInternational Fluency.",
       subtitle: "A bench built across India and the GCC, with a team that knows every market firsthand.",
       description: "Litigation and advisory across Indian courts and regulatory bodies. Consulting engagements delivered in India, Saudi Arabia, the UAE, Kuwait, the UK, the US, and South Korea — with the same preparation and the same standard of delivery, every time.",
-      image: "/global_reach_bg.png",
+      image: "/hero international.png",
       primaryBtnText: "Our Story",
       primaryBtnHref: "/about",
       secondaryBtnText: "Get in Touch",
@@ -435,7 +435,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT CTA SECTION */}
-      <section className="relative w-full bg-white py-12 md:py-14 px-6 md:px-16 border-t border-black/10 text-center text-black z-20">
+      <section className="relative w-full bg-[#fa0249] py-12 md:py-14 px-6 md:px-16 border-t border-black/10 text-center text-black z-20">
         <div className="max-w-4xl mx-auto space-y-6 scroll-fade-up">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-black">
             Let's Start the Conversation
@@ -446,7 +446,7 @@ export default function Home() {
           <div className="pt-4">
             <Link
               href="/contact-us"
-              className="inline-block bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-10 py-4 transition-all duration-300 hover-target shadow-xl rounded-[1px]"
+              className="inline-block bg-white text-black hover:bg-gray-200 font-bold text-xs tracking-[0.2em] uppercase px-10 py-4 transition-all duration-300 hover-target shadow-xl rounded-[1px]"
             >
               CONTACT US
             </Link>

@@ -1,30 +1,39 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Replace with your actual production domain
   const baseUrl = 'https://arventispartners.com';
 
-  const routes = [
-    '',
-    '/about',
-    '/services',
-    '/services/consulting',
-    '/services/legal',
-    '/our-people',
-    '/contact',
-    '/disclaimer',
-    '/faq',
+  return [
+    {
+      url: `${baseUrl}`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/our-people`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contact-us`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ];
-
-  const teamSlugs = ['suman-thakur', 'yash-thakur', 'sweta-verma', 'adarsh-kashyap', 'anshuman-mohanty'];
-
-  const teamRoutes = teamSlugs.map((slug) => `/our-people/${slug}`);
-
-  const allPaths = [...routes, ...teamRoutes];
-
-  return allPaths.map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: path === '' ? 'daily' : 'weekly',
-    priority: path === '' ? 1.0 : path.startsWith('/services') || path === '/our-people' ? 0.8 : 0.6,
-  }));
 }

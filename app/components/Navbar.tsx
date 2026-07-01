@@ -101,11 +101,11 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`inline-flex items-center justify-center px-6 py-3 text-xs tracking-[0.25em] font-bold uppercase transition-all duration-300 border rounded-[1px] hover-target ${
+                  className={`inline-flex items-center justify-center px-6 py-3 text-xs tracking-[0.25em] font-bold uppercase transition-all duration-300 border rounded-[2px] hover-target ${
                     isContactActive
                       ? 'bg-[#fa0249] text-white border-[#fa0249]'
                       : isHeaderWhite
-                        ? 'border-black/80 text-black hover:bg-black hover:text-white hover:border-black'
+                        ? 'border-black/80 text-black hover:bg-[#fa0249] hover:text-white hover:border-black'
                         : 'border-white/80 text-white hover:bg-white hover:text-black hover:border-white'
                   }`}
                 >
