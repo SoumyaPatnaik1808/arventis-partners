@@ -189,7 +189,7 @@ export default function ServicesPage() {
                 <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black">
                   Industries
                 </h2>
-                <div className="h-[1px] w-16 bg-[#fa0249] mt-4" />
+                
               </div>
 
               {/* 3 columns of industry text items with thin bottom border */}
