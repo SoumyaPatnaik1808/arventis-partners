@@ -301,7 +301,7 @@ export default function ContactUsPage() {
       const result = await res.json();
       if (result.success) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', organisation: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', countryCode: '+91', organisation: '', message: '' });
         setServiceInterest('Consulting');
       } else {
         setErrorMessage(result.error || 'Failed to submit enquiry. Please try again.');
