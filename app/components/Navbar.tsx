@@ -44,7 +44,6 @@ export default function Navbar() {
 
   // Navigation items mapping
   const navItems = [
-    { label: 'overview', href: '/#overview' },
     { label: 'about', href: '/about' },
     { label: 'services', href: '/services' },
     { label: 'our people', href: '/our-people' },
@@ -92,9 +91,7 @@ export default function Navbar() {
         {/* Center column: Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 z-20">
           {navItems.map((item) => {
-            const isActive = item.href === '/#overview'
-              ? pathname === '/'
-              : pathname.startsWith(item.href);
+            const isActive = pathname.startsWith(item.href);
             
             if (item.label === 'contact us') {
               const isContactActive = pathname === '/contact-us';
@@ -163,9 +160,7 @@ export default function Navbar() {
         {/* Navigation links */}
         <nav className="relative z-10 flex flex-col items-center justify-center space-y-6 md:space-y-10 my-auto text-center">
           {navItems.map((item) => {
-            const isActive = item.href === '/#overview'
-              ? pathname === '/'
-              : pathname.startsWith(item.href);
+            const isActive = pathname.startsWith(item.href);
             return (
               <Link
                 key={item.label}

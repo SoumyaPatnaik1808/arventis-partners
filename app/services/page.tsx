@@ -101,8 +101,8 @@ export default function ServicesPage() {
             <RevealHeading>SERVICES</RevealHeading>
           </h1>
           <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
-            Unified strategic management consulting and elite legal advocacy,<br className="hidden sm:inline" /> engineered for 
-           high-stakes execution.
+            Unified strategic management consulting and elite legal advocacy, <br className="hidden sm:inline" />
+            engineered for high-stakes execution.
           </p>
         </div>
       </section>
@@ -112,7 +112,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           
           {/* Card 1: Arventis Consulting */}
-          <div className="group bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col min-h-[480px]">
+          <div className="scroll-fade-up group bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col min-h-[480px]">
             <div className="relative h-[240px] w-full overflow-hidden">
               <Image
                 src="/arvBuisness-bg.jpg"
@@ -123,14 +123,15 @@ export default function ServicesPage() {
             </div>
             <div className="p-8 sm:p-10 flex flex-col justify-between flex-1 bg-white">
               <div className="space-y-4">
-                <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black">
+                <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black text-center">
                   ARVENTIS CONSULTING
                 </h2>
-                <p className="font-sans text-sm text-black/70 font-light leading-relaxed">
-                  Senior strategy advisory engineered for execution. From growth planning, sales transformation, and operating model design to AI integration and cross-border market expansion.
+                <p className="font-sans text-sm text-black/70 font-light leading-relaxed text-center">
+                  Senior strategy advisory engineered for execution.<br />
+                  From growth planning, sales transformation, and operating model design to AI integration and cross-border market expansion.
                 </p>
               </div>
-              <div className="pt-6 flex justify-center">
+              <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/consulting"
                   className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
@@ -143,7 +144,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Card 2: Arventis Legal */}
-          <div className="group bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col min-h-[480px]">
+          <div className="scroll-fade-up transition-delay-100 group bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-2xl transition-all duration-500 flex flex-col min-h-[480px]">
             <div className="relative h-[240px] w-full overflow-hidden">
               <Image
                 src = "/arvlegal-bg.jpg"
@@ -154,14 +155,15 @@ export default function ServicesPage() {
             </div>
             <div className="p-8 sm:p-10 flex flex-col justify-between flex-1 bg-white">
               <div className="space-y-4">
-                <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black">
+                <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black text-center">
                   ARVENTIS LEGAL
                 </h2>
-                <p className="font-sans text-sm text-black/75 font-light leading-relaxed">
-                  Courtroom credibility and senior advocacy across trial courts, high courts, arbitral tribunals, and the Supreme Court of India. Covering litigation, corporate compliance, and constitutional law.
+                <p className="font-sans text-sm text-black/75 font-light leading-relaxed text-center">
+                  Courtroom credibility and senior advocacy across trial courts, high courts, arbitral tribunals, and the Supreme Court of India.<br />
+                  Covering litigation, corporate compliance, and constitutional law.
                 </p>
               </div>
-              <div className="pt-6 flex justify-center">
+              <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/legal"
                   className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
@@ -177,7 +179,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. INDUSTRIES SECTION (TEXT LEFT, IMAGE RIGHT) */}
-      <section className="relative w-full bg-white py-16 md:py-24 px-6 md:px-16 text-black">
+      <section className="relative w-full bg-white pt-8 md:pt-12 pb-16 md:pb-24 px-6 md:px-16 text-black">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             {/* Left Column: Text */}
@@ -215,61 +217,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 3. OPERATIONAL FLOW SECTION */}
-      <section className="relative w-full bg-white py-24 md:py-32 px-6 md:px-16 text-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-left mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl font-light tracking-tight leading-tight text-black">
-              <span className="block whitespace-nowrap"><RevealHeading>THREE STEPS.</RevealHeading></span>
-              <span className="block whitespace-nowrap"><RevealHeading>ONE ACCOUNTABLE TEAM.</RevealHeading></span>
-            </h2>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-            {/* Step 1 Card */}
-            <div className="group relative overflow-hidden scroll-fade-up bg-white border border-black/10 p-8 md:p-10 shadow-md hover:shadow-xl hover:translate-y-[-4px] transition-all duration-500 flex flex-col items-start">
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-20 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
-              <div className="relative z-10 w-8 h-8 bg-[#fa0249] text-white font-serif flex items-center justify-center text-sm font-semibold mb-6">
-                01
-              </div>
-              <h3 className="relative z-10 font-serif text-xl font-semibold mb-3 tracking-wide text-black">
-                Assessment
-              </h3>
-              <p className="relative z-10 font-sans text-xs md:text-sm text-black/70 leading-relaxed font-light">
-                Surgical dissection of vulnerabilities, counter-party positions, and jurisdictional liabilities on the target field.
-              </p>
-            </div>
-
-            {/* Step 2 Card */}
-            <div className="group relative overflow-hidden scroll-fade-up bg-white border border-black/10 p-8 md:p-10 shadow-md hover:shadow-xl hover:translate-y-[-4px] transition-all duration-500 flex flex-col items-start transition-delay-100">
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-20 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
-              <div className="relative z-10 w-8 h-8 bg-[#fa0249] text-white font-serif flex items-center justify-center text-sm font-semibold mb-6">
-                02
-              </div>
-              <h3 className="relative z-10 font-serif text-xl font-semibold mb-3 tracking-wide text-black">
-                Strategy
-              </h3>
-              <p className="relative z-10 font-sans text-xs md:text-sm text-black/70 leading-relaxed font-light">
-                Architecting tactical blueprints designed to neutralize threats, resolve claims, and secure high-value legal advantages.
-              </p>
-            </div>
-
-            {/* Step 3 Card */}
-            <div className="group relative overflow-hidden scroll-fade-up bg-white border border-black/10 p-8 md:p-10 shadow-md hover:shadow-xl hover:translate-y-[-4px] transition-all duration-500 flex flex-col items-start transition-delay-200">
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-20 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
-              <div className="relative z-10 w-8 h-8 bg-[#fa0249] text-white font-serif flex items-center justify-center text-sm font-semibold mb-6">
-                03
-              </div>
-              <h3 className="relative z-10 font-serif text-xl font-semibold mb-3 tracking-wide text-black">
-                Execution
-              </h3>
-              <p className="relative z-10 font-sans text-xs md:text-sm text-black/70 leading-relaxed font-light">
-                Unwavering advocacy and precise coordination of resources to deliver the defined mandate under secure frameworks.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CONTACT CTA SECTION */}
       <ContactUs />

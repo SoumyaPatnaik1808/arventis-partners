@@ -59,7 +59,7 @@ export const peopleData: Person[] = [
     ],
     imagePath: '/Anshuman.jpg',
     image: '/Anshuman.jpg',
-    badge: 'Consulting Head',
+    badge: '11+ Years Experience',
     credentials: 'MBA, IIM Lucknow  |  11+ Years  |  India – GCC – UK – US – South Korea',
     linkedin: 'https://linkedin.com',
     instagram: 'https://instagram.com'
@@ -87,7 +87,7 @@ export const peopleData: Person[] = [
     ],
     imagePath: '/Suman.jpg',
     image: '/Suman.jpg',
-    badge: 'Legal Head',
+    badge: '10+ Years Experience',
     credentials: 'Faculty of Law, Delhi University  |  10+ Years  |  Delhi – Himachal Pradesh',
     linkedin: 'https://linkedin.com',
     instagram: 'https://instagram.com'
@@ -106,10 +106,8 @@ export const peopleData: Person[] = [
     fullBio: 'Sweta has built her practice across fifteen years representing institutions and individuals where the stakes are real - government bodies, public sector undertakings, financial institutions, and corporate organisations navigating complex disputes, criminal prosecutions, and infrastructure-related litigation.\nHer work has been shaped by the mandates others find difficult: NHAI, NHIDCL, NTPC, Adani Cement, IL&FS, Punjab National Bank, SBI Life Insurance. These are not clients who retain counsel for appearances. They retain counsel when the matter carries consequence - and she has carried those matters, across arbitration, commercial disputes, banking recovery proceedings, construction and infrastructure law, and regulatory compliance.\nShe appears regularly before the High Court of Himachal Pradesh and district courts across the state. The practice she brings to each matter is defined by meticulous preparation, litigation strategy built around the specific facts on record, and the kind of advocacy that earns institutional confidence over time - not once, but repeatedly, across matters and across years.',
     bio: [
       'Sweta has built her practice across fifteen years of representing institutions and individuals where the stakes are real - government bodies, public sector undertakings, financial institutions, and corporate organisations navigating complex disputes, criminal prosecutions, and infrastructure-related litigation.',
-      'Her work has been shaped by the mandates others find difficult: NHAI, NHIDCL, NTPC, Adani Cement, IL&FS, Punjab National Bank, SBI Life Insurance. These are not clients who retain counsel for appearances. They retain counsel when the matter carries consequence - and she has carried those matters, across arbitration, commercial disputes, banking recovery proceedings, construction and infrastructure law, and regulatory compliance.',
       'She appears regularly before the High Court of Himachal Pradesh and district courts across the state. The practice she brings to each matter is defined by meticulous preparation, litigation strategy built around the specific facts on record, and the kind of advocacy that earns institutional confidence over time - not once, but repeatedly, across matters and across years.'
     ],
-    clientList: ['NHAI', 'NHIDCL', 'NTPC', 'Adani Cement', 'IL&FS', 'Punjab National Bank', 'SBI Life Insurance'],
     highlights: [
       { id: 'sw1', text: 'High Court of Himachal Pradesh Standing & District Courts' },
       { id: 'sw2', text: 'Institutional & Ad-Hoc Arbitral Proceedings in Infrastructure & Construction' },

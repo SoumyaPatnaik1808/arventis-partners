@@ -91,13 +91,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* QUOTE HEADLINE */}
+      <section className="relative w-full bg-white pt-16 md:pt-24 pb-2 md:pb-4 px-6 md:px-16 text-center">
+        <div className="max-w-4xl mx-auto scroll-fade-up">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light leading-snug text-black sm:whitespace-nowrap">
+           "No matter the scale, excellence remains the standard"
+          </h2>
+        </div>
+      </section>
+
       {/* 1. FIRM OVERVIEW HEADER */}
-      <section className="relative w-full bg-white py-16 md:py-24 px-6 md:px-16">
+      <section className="relative w-full bg-white pt-4 md:pt-6 pb-16 md:pb-24 px-6 md:px-16">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             
             {/* Left Column: Image */}
-            <div className="lg:col-span-5 relative h-[250px] sm:h-[320px] lg:h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up order-2 lg:order-1">
+            <div className="lg:col-span-5 relative h-[250px] sm:h-[320px] lg:h-auto w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up order-2 lg:order-1">
               <Image
                 src="/strategic_foresight.png"
                 alt="Strategic Foresight"
@@ -108,7 +117,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Column: Title and Subtitle */}
-            <div className="lg:col-span-7 lg:h-[380px] flex flex-col justify-start pt-0 pb-2 order-1 lg:order-2">
+            <div className="lg:col-span-7 flex flex-col justify-start pt-0 pb-2 order-1 lg:order-2">
               <div className="space-y-4">
                 <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight text-black">
                   <span className="block whitespace-nowrap"><RevealHeading>One Firm.</RevealHeading></span>
@@ -208,7 +217,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. GLOBAL REACH (TEXT LEFT, IMAGE RIGHT) */}
-      <section className="relative w-full bg-white py-16 md:py-24 px-6 md:px-16 text-black">
+      <section className="relative w-full bg-white py-8 md:py-12 px-6 md:px-16 text-black">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             {/* Left Column: Text */}
@@ -217,32 +226,26 @@ export default function AboutPage() {
                 <span className="block whitespace-nowrap">Local depth.</span>
                 <span className="block whitespace-nowrap">International fluency.</span>
               </h2>
-               <p>
-                  Rooted in the soil of local realities, where every market is unique. We are strengthened by lessons learned across borders and industries.
-                </p>
-                <p>
-               We recognise the nuances that shape every market.
-              We draw on experience gathered across continents.
-             Together, they inform every recommendation we make.
-              Helping you act with confidence in any environment.
-                </p>
-                <p>
-                 Every engagement begins with understanding, not assumptions.
-Every recommendation is shaped with purpose.
-Every decision is viewed in its wider context.
-Because lasting outcomes are rarely built in isolation.
-                </p>
-                <p>
-                 
-                </p>
-                <p>
-                 
-                </p>
               
-            </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="scroll-fade-up bg-white p-4 border-t-2 border-t-[#fa0249] border-x border-b border-black/10 rounded-[1px] space-y-2 shadow-sm">
+                  <h3 className="font-serif text-lg font-medium text-black">
+                    Legal Practice Scope
+                  </h3>
+                  <p className="font-sans text-xs text-black/75 leading-relaxed font-light">
+                    Our advocates practice across courts and regulatory bodies in Delhi, Himachal Pradesh, and at the national level, representing businesses, landowners, institutions, and individuals in litigation and public interest matters. Our practice covers litigation, arbitration, corporate advisory, employment, intellectual property, real estate, and constitutional law.
+                  </p>
+                </div>
 
-            {/* Right Column: Image */}
-            <div className="lg:col-span-5 relative h-[250px] sm:h-[320px] lg:h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up">
+                <div className="scroll-fade-up bg-white p-4 border-t-2 border-t-[#fa0249] border-x border-b border-black/10 rounded-[1px] space-y-2 shadow-sm transition-delay-200">
+                  <h3 className="font-serif text-lg font-medium text-black">
+                    Consulting Engagement Footprint
+                  </h3>
+                  <p className="font-sans text-xs text-black/75 leading-relaxed font-light">
+                    Our consulting practice has delivered engagements in India, Saudi Arabia, the UAE, Kuwait, the UK, the US, and South Korea, spanning government, BFSI, EdTech, manufacturing, and consumer businesses. We work with companies at every stage, from early founders building their first commercial model to established mid-market businesses redesigning operations for their next phase of growth.
+                  </p>
+                </div>
+              </div>
               <Image
                 src="/global_reach_bg.png"
                 alt="Global Footprint"
@@ -255,7 +258,59 @@ Because lasting outcomes are rarely built in isolation.
         </div>
       </section>
 
-     
+      {/* 4. WHO WE WORK WITH (IMAGE LEFT, TEXT RIGHT) */}
+      <section className="relative w-full bg-white pt-8 md:pt-12 pb-16 md:pb-24 px-6 md:px-16 text-black">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
+            {/* Left Column: Image */}
+            <div className="lg:col-span-5 relative h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up order-2 lg:order-1">
+              <Image
+                src="/prof_services_bg.png"
+                alt="Professional Services"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+            
+            {/* Right Column: Text */}
+            <div className="lg:col-span-7 lg:min-h-[380px] flex flex-col justify-between py-2 order-1 lg:order-2 space-y-6">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black scroll-fade-up">
+                Who We Work With
+              </h2>
+              
+              <div className="space-y-3 scroll-fade-up">
+                {[
+                  'Founders and CXOs navigating regulatory complexity in India and internationally',
+                  'Startups and growth-stage companies building commercial and legal infrastructure from the ground up',
+                  'Mid-market companies entering new geographies or professionalizing operations',
+                  'Government-linked entities that need both legal and strategic advisory',
+                  'Family businesses planning succession or entering institutional capital markets',
+                  'Landowners, communities, and individuals in litigation and public interest matters',
+                  'International companies entering India or the GCC who need local expertise and cross-border experience'
+                ].map((profile, idx) => (
+                  <div key={idx} className="flex items-start gap-3 p-3 bg-white border border-black/10 rounded-[1px] hover:border-[#fa0249]/40 transition-all duration-300">
+                    <span className="w-4 h-4 rounded-full border border-[#fa0249] flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] text-[#fa0249] font-bold font-sans">&#10003;</span>
+                    <span className="font-sans text-xs text-black/85 font-normal">
+                      {profile}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-white border border-black/10 text-black p-4 rounded-[1px] space-y-2 shadow-md scroll-fade-up transition-delay-200">
+                <h3 className="font-serif text-lg font-light">
+                  <span className="block">Across India, the GCC, and Beyond.</span>
+                </h3>
+                <div className="h-[1px] w-12 bg-[#fa0249]" />
+                <p className="font-sans text-xs text-black/80 leading-relaxed font-light">
+                  BFSI, government, EdTech, manufacturing, infrastructure, consumer, and professional services.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
      
 
