@@ -112,7 +112,7 @@ export default function ContactUsPage() {
           email: formData.email,
           organisation: formData.organisation || 'Not Specified',
           phone: `${formData.countryCode} ${formData.phone}`,
-          message: `Service of Interest: ${serviceInterest}\n\nEnquiry details:\n${formData.message || 'No custom message provided.'}`,
+          message: `Area of Interest: ${serviceInterest}\n\nEnquiry details:\n${formData.message || 'No custom message provided.'}`,
           captchaToken
         }),
       });
@@ -269,7 +269,7 @@ export default function ContactUsPage() {
                 {/* Service Choice capsules */}
                 <div>
                   <label className="block font-sans text-xs uppercase tracking-widest text-[#000000] font-bold mb-3">
-                    Service of Interest <span className="text-red-500">*</span>
+                    Area of Interest <span className="text-red-500">*</span>
                   </label>
                   <div className="flex flex-wrap gap-3">
                     {(['Consulting', 'Legal', 'Both'] as const).map((opt) => (
