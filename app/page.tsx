@@ -52,7 +52,7 @@ export default function Home() {
     },
     {
       navTitle: "Strategy Built for Execution.",
-      title: "Strategy Execution.",
+      title: "Strategy Execution",
       subtitle: "We stay in the room until the strategy becomes the result,\nnot just a deck.",
       image: "/hero strategy.png",
       primaryBtnText: "Explore Consulting",
