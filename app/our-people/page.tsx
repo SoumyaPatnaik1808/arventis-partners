@@ -104,7 +104,7 @@ export default function OurPeoplePage() {
     if (parts.length === 2) {
       return (
         <>
-          {parts[0]} | <br />
+          {parts[0]} <br />
           {parts[1]}
         </>
       );
@@ -163,7 +163,7 @@ export default function OurPeoplePage() {
             <RevealHeading>OUR PEOPLE</RevealHeading>
           </h1>
           <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
-            A bench of senior strategists and Supreme Court advocates <br className="hidden sm:block" /> drawn from the highest tiers of their respective disciplines.
+            A bench of senior strategists and Supreme Court advocates drawn from the highest tiers of their respective disciplines.
           </p>
         </div>
       </section>

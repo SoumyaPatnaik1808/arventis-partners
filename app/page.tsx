@@ -315,7 +315,7 @@ export default function Home() {
                   You explain the problem once. 
                 </p>
               </div>
-              <div className="flex justify-center w-full">
+              <div className="flex justify-start w-full">
                 <Link
                   href="/our-people"
                   className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
@@ -366,7 +366,7 @@ export default function Home() {
                   Our experience helps you avoid familiar pitfalls before they cost you money and time.
                 </p>
               </div>
-              <div className="flex justify-center w-full">
+              <div className="flex justify-start w-full">
                 <Link
                   href="/services"
                   className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"

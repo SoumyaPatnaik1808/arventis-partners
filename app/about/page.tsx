@@ -120,9 +120,9 @@ export default function AboutPage() {
             <div className="lg:col-span-7 flex flex-col justify-start pt-0 pb-2 order-1 lg:order-2">
               <div className="space-y-4">
                 <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up">
-                  <span className="block whitespace-nowrap"><RevealHeading>One Firm.</RevealHeading></span>
-                  <span className="block whitespace-nowrap"><RevealHeading>Two Disciplines.</RevealHeading></span>
-                  <span className="block whitespace-nowrap"><RevealHeading>No Translation Required.</RevealHeading></span>
+                  <span className="block md:whitespace-nowrap"><RevealHeading>One Firm.</RevealHeading></span>
+                  <span className="block md:whitespace-nowrap"><RevealHeading>Two Disciplines.</RevealHeading></span>
+                  <span className="block md:whitespace-nowrap"><RevealHeading>No Translation Required.</RevealHeading></span>
                 </h2>
                 <div className="h-[1px] w-24 bg-[#fa0249] mt-4" />
               </div>
@@ -145,23 +145,34 @@ export default function AboutPage() {
           {/* THE FIRM (TEXT LEFT, IMAGE RIGHT) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             {/* Left Column: Text */}
-            <div className="lg:col-span-7 lg:h-[380px] flex flex-col justify-start pt-0 pb-2">
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up lg:whitespace-nowrap">
-                Built So Clients Don't Have to Choose
-              </h2>
-              <div className="space-y-3 mt-6 mb-4 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
-                <p>
-                  Founded by Suman Thakur, an advocate with a decade in litigation, and Anshuman Mohanty, a strategy leader with 11 years across global markets.
-                </p>
-                <p>
-                  Most businesses run two advisors: one for strategy, one for law. Then spend weeks reconciling what the two don't agree on.
-                </p>
-                <p>
-                  We built Arventis to skip that step. One team carries the idea from first strategy call to final legal execution. Nothing gets lost in the handoff, because there is no handoff.
-                </p>
-                <p>
-                  One point of accountability. One standard, applied every time.
-                </p>
+            <div className="lg:col-span-7 lg:min-h-[380px] flex flex-col justify-between pt-0 pb-2">
+              <div>
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up lg:whitespace-nowrap">
+                  Built So Clients Don't Have to Choose
+                </h2>
+                <div className="space-y-3 mt-6 mb-4 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
+                  <p>
+                    Founded by Suman Thakur, an advocate with a decade in litigation, and Anshuman Mohanty, a strategy leader with 11 years across global markets.
+                  </p>
+                  <p>
+                    Most businesses run two advisors: one for strategy, one for law. Then spend weeks reconciling what the two don't agree on.
+                  </p>
+                  <p>
+                    We built Arventis to skip that step. One team carries the idea from first strategy call to final legal execution. Nothing gets lost in the handoff, because there is no handoff.
+                  </p>
+                  <p>
+                    One point of accountability. One standard, applied every time.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-center w-full mt-6 scroll-fade-up transition-delay-300">
+                <Link
+                  href="/our-people"
+                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                >
+                  <span>MEET OUR TEAM</span>
+                  <span>&rarr;</span>
+                </Link>
               </div>
             </div>
 
@@ -189,8 +200,8 @@ export default function AboutPage() {
             {/* Left Column: Text */}
             <div className="lg:col-span-8 flex flex-col justify-between pt-0 pb-2 space-y-6">
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-black scroll-fade-up">
-                <span className="block whitespace-nowrap">Local depth.</span>
-                <span className="block whitespace-nowrap">International fluency.</span>
+                <span className="block md:whitespace-nowrap">Local depth.</span>
+                <span className="block md:whitespace-nowrap">International fluency.</span>
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -213,6 +224,15 @@ export default function AboutPage() {
                     <p>From first-time founders to established mid-market players redesigning for growth.</p>
                   </div>
                 </div>
+              </div>
+              <div className="flex justify-center w-full mt-6 scroll-fade-up transition-delay-300">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                >
+                  <span>SEE OUR EXPERTISE</span>
+                  <span>&rarr;</span>
+                </Link>
               </div>
             </div>
 
@@ -237,7 +257,7 @@ export default function AboutPage() {
             {/* Left Column: Image */}
             <div className="lg:col-span-5 relative h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up order-2 lg:order-1 mt-2">
               <Image
-                src="/prof_services_bg.png"
+                src="/work.jpeg"
                 alt="Professional Services"
                 fill
                 className="object-cover"
