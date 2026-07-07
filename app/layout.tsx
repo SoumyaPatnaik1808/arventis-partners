@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ScrollProvider from "./components/ScrollProvider";
 import DisclaimerModal from "./components/DisclaimerModal";
+import Preloader from "./components/Preloader";
 
 const graphik = localFont({
   src: '../public/fonts/Graphik-Medium-Web.woff2',
@@ -150,7 +151,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased selection:bg-[#fa0249] selection:text-[#000000] ${graphik.variable}`}
+      className={`h-full antialiased selection:bg-[#fcbe03] selection:text-[#000000] ${graphik.variable}`}
     >
       <head>
         <link rel="icon" href="/favicon-final.png?v=5" type="image/png" sizes="any" />
@@ -162,6 +163,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full bg-[#000000] text-white flex flex-col font-sans">
+        <Preloader />
         <ScrollProvider>
           {children}
         </ScrollProvider>

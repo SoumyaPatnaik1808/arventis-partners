@@ -172,33 +172,39 @@ export default function ConsultingPage() {
       <Navbar />
 
       {/* Hero Section with Back Button */}
-      <section className="relative w-full pt-28 pb-14 md:pt-36 md:pb-20 px-6 md:px-16 bg-white">
-        {/* Background Image Layer */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none z-0" 
-          style={{ backgroundImage: "url('/arvBuisness-bg.jpg')" }}
-        />
+      <section className="relative w-full min-h-[60vh] md:min-h-[75vh] flex flex-col justify-between pb-16 md:pb-24 px-6 md:px-16 border-b border-white/10 text-white overflow-hidden pt-28 bg-black">
+        {/* Background Video Layer */}
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="https://pub-e76f3c2b747241f99a84d7c073d76e11.r2.dev/consulting_subpage.mp4" type="video/mp4" />
+        </video>
 
-        <div className="max-w-7xl mx-auto relative z-10 space-y-8">
-          {/* Top Left Navigation Button */}
-          <div>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 bg-black/5 hover:bg-[#fa0249] hover:text-white text-black text-xs tracking-[0.2em] font-bold uppercase border border-black/10 px-5 py-3 transition-all duration-300 hover-target"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>BACK TO OUR SERVICES</span>
-            </Link>
-          </div>
+        {/* Overlays for text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/30 z-10"></div>
 
-          <div>
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-black mb-6 max-w-4xl">
-              <RevealHeading>ARVENTIS CONSULTING</RevealHeading>
-            </h1>
-            <p className="scroll-fade-up font-sans text-base sm:text-lg md:text-xl text-black/70 font-light leading-relaxed max-w-3xl transition-delay-300">
-              Senior strategy advisory engineered for execution. Engineering sustainable growth, operating models, and market expansion across global jurisdictions.
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto w-full relative z-20 mt-4 md:mt-8">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 bg-white/5 hover:bg-[#fcbe03] text-white text-xs tracking-[0.2em] font-bold uppercase border border-white/20 hover:border-[#fcbe03] px-5 py-3 transition-all duration-300 hover-target backdrop-blur-sm"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>BACK TO OUR SERVICES</span>
+          </Link>
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-20 mt-auto pt-16">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-white mb-6 max-w-4xl drop-shadow-lg">
+            <RevealHeading>ARVENTIS CONSULTING</RevealHeading>
+          </h1>
+          <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
+            Senior strategy advisory engineered for execution. Engineering sustainable growth, operating models, and market expansion across global jurisdictions.
+          </p>
         </div>
       </section>
 
@@ -231,7 +237,7 @@ export default function ConsultingPage() {
       </section>
 
       {/* CONTACT CTA SECTION */}
-      <section className="relative w-full bg-[#fa0249] py-10 md:py-12 px-6 md:px-16 text-center text-black z-20">
+      <section className="relative w-full bg-[#fcbe03] py-10 md:py-12 px-6 md:px-16 text-center text-black z-20">
         <div className="max-w-4xl mx-auto space-y-6 scroll-fade-up">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-black">
             Let's Start the Conversation

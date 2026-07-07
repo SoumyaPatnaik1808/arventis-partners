@@ -41,6 +41,7 @@ export default function ServicesPage() {
     'Technology',
     'Media & Telecommunications',
     'Healthcare',
+    '',
     'Financial Services'
   ];
 
@@ -134,7 +135,7 @@ export default function ServicesPage() {
               <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/consulting"
-                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>EXPLORE CONSULTING</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -166,7 +167,7 @@ export default function ServicesPage() {
               <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/legal"
-                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>EXPLORE LEGAL</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -188,15 +189,15 @@ export default function ServicesPage() {
                 <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black">
                   Industries
                 </h2>
-                <div className="h-[1px] w-16 bg-[#fa0249] mt-4" />
+                
               </div>
 
               {/* 3 columns of industry text items with thin bottom border */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 scroll-fade-up transition-delay-200">
                 {industries.map((ind, idx) => (
-                  <div key={idx} className="border-b border-black/10 pb-3 pt-1 hover:border-[#fa0249]/30 transition-all duration-300">
-                    <span className="font-sans text-xs sm:text-sm font-semibold tracking-wider text-[#fa0249] hover:text-black transition-colors duration-300 block">
-                      {ind}
+                  <div key={idx} className={ind ? "border-b border-black/10 pb-3 pt-1 hover:border-[#fcbe03]/30 transition-all duration-300" : "pb-3 pt-1"}>
+                    <span className={`font-sans text-xs sm:text-sm font-semibold tracking-wider block ${ind ? 'text-[#fcbe03] hover:text-black transition-colors duration-300' : 'opacity-0 select-none'}`}>
+                      {ind || 'Spacer'}
                     </span>
                   </div>
                 ))}
@@ -206,7 +207,7 @@ export default function ServicesPage() {
             {/* Right Column: Image */}
             <div className="lg:col-span-4 relative h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up">
               <Image
-                src="/manufacturing_bg.png"
+                src="/industries.jpeg"
                 alt="Industries sector mapping"
                 fill
                 className="object-cover"

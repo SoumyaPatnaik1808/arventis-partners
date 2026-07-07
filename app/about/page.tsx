@@ -92,16 +92,16 @@ export default function AboutPage() {
       </section>
 
       {/* QUOTE HEADLINE */}
-      <section className="relative w-full bg-white pt-16 md:pt-24 pb-2 md:pb-4 px-6 md:px-16 text-center">
-        <div className="max-w-4xl mx-auto scroll-fade-up">
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light leading-snug text-black sm:whitespace-nowrap">
-           "No matter the scale, excellence remains the standard"
+      <section className="relative w-full bg-white pt-16 md:pt-24 pb-8 md:pb-12 px-6 md:px-16 text-center">
+        <div className="max-w-6xl mx-auto scroll-fade-up">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light leading-snug text-black">
+           &quot;Whether you&apos;re a domestic business, a family managing an estate, or an international company entering India or the GCC, every engagement gets the same level of preparation and delivery.&quot;
           </h2>
         </div>
       </section>
 
       {/* 1. FIRM OVERVIEW HEADER */}
-      <section className="relative w-full bg-white pt-4 md:pt-6 pb-16 md:pb-24 px-6 md:px-16">
+      <section className="relative w-full bg-white pt-8 md:pt-12 pb-16 md:pb-24 px-6 md:px-16">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             
@@ -119,17 +119,19 @@ export default function AboutPage() {
             {/* Right Column: Title and Subtitle */}
             <div className="lg:col-span-7 flex flex-col justify-start pt-0 pb-2 order-1 lg:order-2">
               <div className="space-y-4">
-                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight text-black">
-                  <span className="block whitespace-nowrap"><RevealHeading>One Firm.</RevealHeading></span>
-                  <span className="block whitespace-nowrap"><RevealHeading>Two Disciplines.</RevealHeading></span>
-                  <span className="block whitespace-nowrap"><RevealHeading>No Translation Required.</RevealHeading></span>
-                </h1>
-                <div className="h-[1px] w-24 bg-[#fa0249]" />
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up">
+                  <span className="block md:whitespace-nowrap"><RevealHeading>One Firm.</RevealHeading></span>
+                  <span className="block md:whitespace-nowrap"><RevealHeading>Two Disciplines.</RevealHeading></span>
+                  <span className="block md:whitespace-nowrap"><RevealHeading>No Translation Required.</RevealHeading></span>
+                </h2>
+                <div className="h-[1px] w-24 bg-[#fcbe03] mt-4" />
               </div>
 
-              <p className="scroll-fade-up font-sans text-base sm:text-lg md:text-xl text-black/70 font-light leading-relaxed transition-delay-300 mt-8">
-                Legal authority and strategy consulting, working under a single engagement model.
-              </p>
+              <div className="space-y-3 mt-8 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
+                <p>Legal authority and strategy consulting, working under a single engagement model.</p>
+                <p>Every decision here is weighed twice before it reaches you: once for what it builds, once for what it risks.</p>
+                <p>You get one answer, already tested from both sides.</p>
+              </div>
             </div>
 
           </div>
@@ -143,23 +145,34 @@ export default function AboutPage() {
           {/* THE FIRM (TEXT LEFT, IMAGE RIGHT) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             {/* Left Column: Text */}
-            <div className="lg:col-span-7 lg:h-[380px] flex flex-col justify-start pt-0 pb-2">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up">
-                Built So Clients Don't Have to Choose
-              </h2>
-              <div className="space-y-3 mt-6 mb-4 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
-                <p>
-                  <b>Arventis Partners</b> brings together <b>Suman Thakur</b>, an advocate with a decade of litigation experience, and <b>Anshuman Mohanty</b>, a strategy leader with 11 years of global business experience.
-                </p>
-                <p>
-                  We built the firm around one idea: legal precision and commercial strategy shouldn't be handled by two separate teams.
-                </p>
-                <p className="pt-2">
-                  Most businesses end up managing two relationships, one with their lawyers, one with their strategists, and spend time and money reconciling advice from each side.
-                </p>
-                <p>
-                  At Arventis, that's one relationship, working to one standard.
-                </p>
+            <div className="lg:col-span-7 lg:min-h-[380px] flex flex-col justify-between pt-0 pb-2">
+              <div>
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up lg:whitespace-nowrap">
+                  Built So Clients Don't Have to Choose
+                </h2>
+                <div className="space-y-3 mt-6 mb-4 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
+                  <p>
+                    Founded by Suman Thakur, an advocate with a decade in litigation, and Anshuman Mohanty, a strategy leader with 11 years across global markets.
+                  </p>
+                  <p>
+                    Most businesses run two advisors: one for strategy, one for law. Then spend weeks reconciling what the two don't agree on.
+                  </p>
+                  <p>
+                    We built Arventis to skip that step. One team carries the idea from first strategy call to final legal execution. Nothing gets lost in the handoff, because there is no handoff.
+                  </p>
+                  <p>
+                    One point of accountability. One standard, applied every time.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-center w-full mt-6 scroll-fade-up transition-delay-300">
+                <Link
+                  href="/our-people"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                >
+                  <span>MEET OUR TEAM</span>
+                  <span>&rarr;</span>
+                </Link>
               </div>
             </div>
 
@@ -175,97 +188,22 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* WHY ONE FIRM (IMAGE LEFT, TEXT RIGHT) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch pt-24">
-            {/* Left Column: Image */}
-            <div className="lg:col-span-5 relative h-[250px] sm:h-[320px] lg:h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up order-2 lg:order-1">
-              <Image
-                src="/arvlegal-bg.jpg"
-                alt="Legal Practice"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
-            
-            {/* Right Column: Text */}
-            <div className="lg:col-span-7 lg:h-[380px] flex flex-col justify-start pt-0 pb-2 order-1 lg:order-2">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up">
-                What Happens When Advice Works in Isolation
-              </h2>
-              <div className="space-y-3 mt-6 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
-                <p>
-                  Every legal mandate at Arventis accounts for the client's broader commercial position.
-                </p>
-                <p>
-                  Every strategy engagement is shaped with legal risk already factored in.
-                </p>
-                <p>
-                  This isn't a referral between two firms, it's one team, working from one engagement model, with one point of accountability.
-                </p>
-                <p>
-                  When every decision is viewed through the same lens, execution becomes simpler.
-                </p>
-                <p>
-                  Less coordination for you. Greater clarity at every step.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* SECTION REMOVED AS PER REQUEST */}
 
         </div>
       </section>
 
-      {/* 3. GLOBAL REACH (TEXT LEFT, IMAGE RIGHT) */}
-      <section className="relative w-full bg-white py-8 md:py-12 px-6 md:px-16 text-black">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
-            {/* Left Column: Text */}
-            <div className="lg:col-span-7 lg:min-h-[380px] flex flex-col justify-start pt-0 pb-2 space-y-6">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black scroll-fade-up">
-                <span className="block whitespace-nowrap">Local depth.</span>
-                <span className="block whitespace-nowrap">International fluency.</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="scroll-fade-up bg-white p-4 border-t-2 border-t-[#fa0249] border-x border-b border-black/10 rounded-[1px] space-y-2 shadow-sm">
-                  <h3 className="font-serif text-lg font-medium text-black">
-                    Legal Practice Scope
-                  </h3>
-                  <p className="font-sans text-xs text-black/75 leading-relaxed font-light">
-                    Our advocates practice across courts and regulatory bodies in Delhi, Himachal Pradesh, and at the national level, representing businesses, landowners, institutions, and individuals in litigation and public interest matters. Our practice covers litigation, arbitration, corporate advisory, employment, intellectual property, real estate, and constitutional law.
-                  </p>
-                </div>
-
-                <div className="scroll-fade-up bg-white p-4 border-t-2 border-t-[#fa0249] border-x border-b border-black/10 rounded-[1px] space-y-2 shadow-sm transition-delay-200">
-                  <h3 className="font-serif text-lg font-medium text-black">
-                    Consulting Engagement Footprint
-                  </h3>
-                  <p className="font-sans text-xs text-black/75 leading-relaxed font-light">
-                    Our consulting practice has delivered engagements in India, Saudi Arabia, the UAE, Kuwait, the UK, the US, and South Korea, spanning government, BFSI, EdTech, manufacturing, and consumer businesses. We work with companies at every stage, from early founders building their first commercial model to established mid-market businesses redesigning operations for their next phase of growth.
-                  </p>
-                </div>
-              </div>
-              <Image
-                src="/global_reach_bg.png"
-                alt="Global Footprint"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+  
+    
 
       {/* 4. WHO WE WORK WITH (IMAGE LEFT, TEXT RIGHT) */}
       <section className="relative w-full bg-white pt-8 md:pt-12 pb-16 md:pb-24 px-6 md:px-16 text-black">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             {/* Left Column: Image */}
-            <div className="lg:col-span-5 relative h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up order-2 lg:order-1">
+            <div className="lg:col-span-5 relative h-[380px] w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up order-2 lg:order-1 mt-2">
               <Image
-                src="/prof_services_bg.png"
+                src="/work.jpeg"
                 alt="Professional Services"
                 fill
                 className="object-cover"
@@ -274,38 +212,30 @@ export default function AboutPage() {
             </div>
             
             {/* Right Column: Text */}
-            <div className="lg:col-span-7 lg:min-h-[380px] flex flex-col justify-between py-2 order-1 lg:order-2 space-y-6">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black scroll-fade-up">
+            <div className="lg:col-span-7 flex flex-col justify-start order-1 lg:order-2 space-y-6">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black scroll-fade-up leading-[1.15]">
                 Who We Work With
               </h2>
               
-              <div className="space-y-3 scroll-fade-up">
-                {[
-                  'Founders and CXOs navigating regulatory complexity in India and internationally',
-                  'Startups and growth-stage companies building commercial and legal infrastructure from the ground up',
-                  'Mid-market companies entering new geographies or professionalizing operations',
-                  'Government-linked entities that need both legal and strategic advisory',
-                  'Family businesses planning succession or entering institutional capital markets',
-                  'Landowners, communities, and individuals in litigation and public interest matters',
-                  'International companies entering India or the GCC who need local expertise and cross-border experience'
-                ].map((profile, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3 bg-white border border-black/10 rounded-[1px] hover:border-[#fa0249]/40 transition-all duration-300">
-                    <span className="w-4 h-4 rounded-full border border-[#fa0249] flex items-center justify-center flex-shrink-0 mt-0.5 text-[10px] text-[#fa0249] font-bold font-sans">&#10003;</span>
-                    <span className="font-sans text-xs text-black/85 font-normal">
-                      {profile}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-white border border-black/10 text-black p-4 rounded-[1px] space-y-2 shadow-md scroll-fade-up transition-delay-200">
-                <h3 className="font-serif text-lg font-light">
-                  <span className="block">Across India, the GCC, and Beyond.</span>
-                </h3>
-                <div className="h-[1px] w-12 bg-[#fa0249]" />
-                <p className="font-sans text-xs text-black/80 leading-relaxed font-light">
-                  BFSI, government, EdTech, manufacturing, infrastructure, consumer, and professional services.
+              <div className="space-y-4 scroll-fade-up transition-delay-200">
+                <p className="font-sans text-sm sm:text-base text-black/85 font-light">
+                  If you're building, defending, or expanding something that matters, <br /> you're probably on this list.
                 </p>
+                <ul className="list-disc pl-5 space-y-2 marker:text-[#fcbe03]">
+                  {[
+                    'Founders and CXOs navigating regulatory complexity, in India and abroad',
+                    'Startups building commercial and legal infrastructure from day one',
+                    'Mid-market companies entering new geographies or professionalizing fast',
+                    'Government-linked entities that need law and strategy in the same room',
+                    'Family businesses planning succession or entering institutional capital',
+                    'Landowners and individuals fighting for what\'s theirs',
+                    'International companies entering India or the GCC, without local blind spots'
+                  ].map((profile, idx) => (
+                    <li key={idx} className="font-sans text-sm sm:text-base text-black/85 font-light pl-1">
+                      {profile}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

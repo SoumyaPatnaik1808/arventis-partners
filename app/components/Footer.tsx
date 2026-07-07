@@ -11,16 +11,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
         
         {/* 1. TOP BRAND HEADER & PARALLEL DISCLAIMER / SECONDARY LINKS */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
           {/* Left: Brand Header */}
           <div className="flex items-center justify-start py-2">
             <Image
-              src="/logo-final.png"
+              src="/logo.png"
               alt="Arventis footer logo"
               width={450}
-              height={100}
+              height={120}
               unoptimized
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain mix-blend-multiply filter contrast-[1.08]"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain origin-left mix-blend-multiply filter contrast-[1.08]"
             />
           </div>
 
@@ -33,21 +33,12 @@ const Footer = () => {
               <Link href="/faq" className="hover:underline hover:text-black">
                 FAQ
               </Link>
-              <Link href="/contact#privacy" className="hover:underline hover:text-black">
+              <Link href="/privacy-policy" className="hover:underline hover:text-black hover:text-[#fcbe03] transition-colors">
                 Privacy policy
               </Link>
-              <span className="inline-flex items-center gap-1 text-black font-semibold cursor-pointer hover:underline">
-                <span className="w-3.5 h-3.5 rounded-full border border-black flex items-center justify-center text-[8px] font-bold">✓</span>
-                <span>Your privacy choices</span>
-              </span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 md:justify-end text-black/70">
-              <span className="cursor-pointer hover:underline">Cookie preferences</span>
-              <Link href="/contact#terms" className="hover:underline">
+              <Link href="/terms-of-use" className="hover:underline hover:text-black hover:text-[#fcbe03] transition-colors">
                 Terms of use
               </Link>
-              
             </div>
 
             <p className="text-[11px] text-black/50 pt-1">

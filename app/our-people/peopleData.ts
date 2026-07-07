@@ -7,6 +7,7 @@ export interface Person {
   id: string;
   slug: string;
   name: string;
+  cardName?: string;
   discipline: 'Strategy Consulting' | 'Legal' | 'Advocates';
   category: 'Founding Partner' | 'Consultancy' | 'Legal';
   title: string;
@@ -57,8 +58,8 @@ export const peopleData: Person[] = [
       { id: 'a2', text: 'Architect of sales operating models & GTM strategies in 5 countries' },
       { id: 'a3', text: 'Digital transformation lead recognised at World Economic Forum' }
     ],
-    imagePath: '/Anshuman.jpg',
-    image: '/Anshuman.jpg',
+    imagePath: '/Anshuman_new.png',
+    image: '/Anshuman_new.png',
     badge: '11+ Years Experience',
     credentials: 'MBA, IIM Lucknow  |  11+ Years  |  India – GCC – UK – US – South Korea',
     linkedin: 'https://linkedin.com',
@@ -85,8 +86,8 @@ export const peopleData: Person[] = [
       { id: 's2', text: 'Handled arbitration and infrastructure litigation involving private enterprises, government agencies, and affected communities' },
       { id: 's3', text: 'Public interest litigation and policy advocacy on displacement and equitable development, achieving real-world impact for vulnerable populations' }
     ],
-    imagePath: '/Suman.jpg',
-    image: '/Suman.jpg',
+    imagePath: '/Suman_new.png',
+    image: '/Suman_new.png',
     badge: '10+ Years Experience',
     credentials: 'Faculty of Law, Delhi University  |  10+ Years  |  Delhi – Himachal Pradesh',
     linkedin: 'https://linkedin.com',
@@ -113,8 +114,8 @@ export const peopleData: Person[] = [
       { id: 'sw2', text: 'Institutional & Ad-Hoc Arbitral Proceedings in Infrastructure & Construction' },
       { id: 'sw3', text: 'Banking Recovery Proceedings & Regulatory Compliance' }
     ],
-    imagePath: '/sweta.jpg',
-    image: '/sweta.jpg',
+    imagePath: '/Sweta_new.png',
+    image: '/Sweta_new.png',
     badge: '15+ Years Experience',
     credentials: 'Bar Council – 15+ Years – High Court of Himachal Pradesh – District Courts – Arbitral Tribunals',
     linkedin: 'https://linkedin.com',
@@ -124,6 +125,7 @@ export const peopleData: Person[] = [
     id: 'adarsh',
     slug: 'adarsh-prabhat-asthana',
     name: 'Adarsh Prabhat Asthana',
+    cardName: 'Adarsh Asthana',
     discipline: 'Advocates',
     category: 'Legal',
     title: 'ADVOCATE – HIGH COURT & BANKING APPELLATE',
@@ -142,8 +144,8 @@ export const peopleData: Person[] = [
       { id: 'ad2', text: 'Debts Recovery Tribunal (DRT) & Revenue Courts Practice' },
       { id: 'ad3', text: 'Banking & Financial Disputes, Debt Recovery & Bail Advocacy' }
     ],
-    imagePath: '/adarsh.jpg',
-    image: '/adarsh.jpg',
+    imagePath: '/Adarsh_new.png',
+    image: '/Adarsh_new.png',
     badge: '14+ Years Experience',
     credentials: 'Bar Council of Uttar Pradesh – 14+ Years – Allahabad High Court – Lucknow Bench – DRT',
     linkedin: 'https://linkedin.com',
@@ -155,25 +157,31 @@ export const peopleData: Person[] = [
     name: 'Yash Thakur',
     discipline: 'Advocates',
     category: 'Legal',
-    title: 'ADVOCATE – CORPORATE & COMMERCIAL LITIGATION',
-    experience: 'Bar Council',
-    geographies: ['High Court & Commercial Courts'],
-    shortBio: 'Represents corporate clients and institutional investors in commercial recovery, contract enforcement, and shareholder disputes.',
-    shortDesc: 'Specialising in corporate contract disputes, recovery proceedings, and shareholder litigation.',
-    fullBio: 'Yash Thakur represents corporate clients and institutional investors in commercial recovery, contract enforcement actions, and shareholder disputes, working closely with the senior bench to prepare rigorous evidentiary strategy for complex commercial trials before trial and appellate courts.\nHis focus is on the procedural and evidentiary groundwork that determines outcomes in trial and appellate courts, work that often decides a case before arguments are even heard.',
+    title: 'ADVOCATE – LITIGATION & DISPUTE RESOLUTION',
+    experience: '20+ Years',
+    geographies: ['Supreme Court', 'Delhi High Court', 'Tribunals'],
+    shortBio: 'Over 20 years of experience in litigation, dispute resolution, and legal advisory across judicial and quasi-judicial forums in India.',
+    shortDesc: 'Advocate with 20+ years of experience in civil, criminal, and commercial litigation.',
+    fullBio: 'Yash Thakur is an Advocate with over 20 years of experience in litigation, dispute resolution, and legal advisory, representing individuals, corporates, financial institutions, and government bodies before judicial and quasi-judicial forums across India.\nHis practice combines meticulous legal research, strategic advocacy, and commercially grounded counsel, earning him the trust of both corporate and individual clients across a wide range of contentious and advisory matters.',
     bio: [
-      'Yash Thakur represents corporate clients and institutional investors in commercial recovery, contract enforcement actions, and shareholder disputes.',
-      'Works closely with the senior bench to prepare rigorous evidentiary strategy for complex commercial trials before trial and appellate courts.'
+      'Yash Thakur is an Advocate with over 20 years of experience in litigation, dispute resolution, and legal advisory, representing individuals, corporates, financial institutions, and government bodies before judicial and quasi-judicial forums across India.',
+      'His practice combines meticulous legal research, strategic advocacy, and commercially grounded counsel, earning him the trust of both corporate and individual clients across a wide range of contentious and advisory matters.'
+    ],
+    customSectionTitle: 'PRACTICE AREAS & FORUMS',
+    customSectionContent: [
+      'Practice Areas: Criminal Litigation · Civil Litigation · Land Acquisition & Compensation Matters · Property & Real Estate Disputes · Motor Accident Claims (MACT) · Consumer Protection & Litigation · Arbitration & Alternative Dispute Resolution',
+      'Courts & Forums: Supreme Court of India · Delhi High Court · District Courts · National Company Law Tribunal (NCLT) · National Consumer Disputes Redressal Commission (NCDRC) · Arbitral Tribunals',
+      'Additional Roles: Panel Advocate to several corporates and institutions, advising on litigation strategy, contractual disputes, regulatory compliance, recovery proceedings, and risk management.'
     ],
     highlights: [
-      { id: 'y1', text: 'Commercial Recovery' },
-      { id: 'y2', text: 'Contract Enforcement' },
-      { id: 'y3', text: 'Corporate Disputes' }
+      { id: 'y1', text: 'Criminal & Civil Litigation' },
+      { id: 'y2', text: 'Property, Land & Real Estate Disputes' },
+      { id: 'y3', text: 'Arbitration & Corporate Advisory' }
     ],
-    imagePath: '/yash.png',
-    image: '/yash.png',
-    badge: 'Associate Counsel',
-    credentials: 'Bar Council – High Court & Commercial Courts',
+    imagePath: '/Yash_new.png',
+    image: '/Yash_new.png',
+    badge: '20+ Years Experience',
+    credentials: 'Bar Council – 20+ Years Experience – Supreme Court – Delhi High Court',
     linkedin: 'https://linkedin.com',
     instagram: 'https://instagram.com'
   }

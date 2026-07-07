@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { countryCodes } from './countryCodes';
+import { MapPin } from 'lucide-react';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
@@ -25,203 +26,21 @@ function RevealHeading({ children, className = "" }: { children: string; classNa
   );
 }
 
-const cities = [
-  {
-    name: "Hyderabad",
-    address: "House No 8-3-A/413, Krishna Nagar, Yusufguda",
-    region: "Hyderabad, Telangana - 500045",
-    country: "India",
-    phone: "+91 (40) 4855 2499",
-    coords: [17.4332, 78.4312] as [number, number],
-    gmaps: "https://maps.google.com/?q=House+No+8-3-A/413,+Krishna+Nagar,+Yusufguda,+Hyderabad"
-  },
-  {
-    name: "Lucknow",
-    address: "110, First Floor Durgma Tower, Lalbagh",
-    region: "Lucknow, Uttar Pradesh - 226001",
-    country: "India",
-    phone: "+91 (522) 400 1289",
-    coords: [26.8450, 80.9416] as [number, number],
-    gmaps: "https://maps.google.com/?q=110,+First+Floor+Durgma+Tower,+Lalbagh,+Lucknow"
-  },
-  {
-    name: "Cuttack",
-    address: "Plot No C/71, Sector 8, CDA",
-    region: "Cuttack, Odisha - 753014",
-    country: "India",
-    phone: "+91 (671) 233 4567",
-    coords: [20.4646, 85.8458] as [number, number],
-    gmaps: "https://maps.google.com/?q=Plot+No+C/71,+Sector+8,+CDA,+Cuttack"
-  },
-  {
-    name: "Shimla",
-    address: "Anoop Sood Building, Paras Dass Garden, Near CPRI",
-    region: "Shimla, Himachal Pradesh - 171001",
-    country: "India",
-    phone: "+91 (177) 265 7789",
-    coords: [31.1030, 77.1852] as [number, number],
-    gmaps: "https://maps.google.com/?q=Anoop+Sood+Building,+Paras+Dass+Garden,+Near+CPRI,+Shimla"
-  },
-  {
-    name: "Delhi",
-    address: "HT House, Kasturba Gandhi Marg, Connaught Place",
-    region: "New Delhi, Delhi - 110001",
-    country: "India",
-    phone: "+91 (11) 4355 9000",
-    coords: [28.6278, 77.2238] as [number, number],
-    gmaps: "https://maps.google.com/?q=HT+House,+Kasturba+Gandhi+Marg,+Connaught+Place,+New+Delhi"
-  },
-  {
-    name: "Mumbai",
-    address: "Maker Chambers VI, Nariman Point",
-    region: "Mumbai, Maharashtra - 400021",
-    country: "India",
-    phone: "+91 (22) 6644 8000",
-    coords: [18.9272, 72.8229] as [number, number],
-    gmaps: "https://maps.google.com/?q=Maker+Chambers+VI,+Nariman+Point,+Mumbai"
-  },
-  {
-    name: "Pune",
-    address: "ICC Trade Tower, Senapati Bapat Road",
-    region: "Pune, Maharashtra - 411016",
-    country: "India",
-    phone: "+91 (20) 6744 3000",
-    coords: [18.5362, 73.8340] as [number, number],
-    gmaps: "https://maps.google.com/?q=ICC+Trade+Tower,+Senapati+Bapat+Road,+Pune"
-  },
-  {
-    name: "Chandigarh",
-    address: "Elante Offices, Industrial & Business Park Phase - I",
-    region: "Chandigarh - 160002",
-    country: "India",
-    phone: "+91 (172) 455 6000",
-    coords: [30.7061, 76.8013] as [number, number],
-    gmaps: "https://maps.google.com/?q=Elante+Offices,+Industrial+Area+Phase+I,+Chandigarh"
-  },
-  {
-    name: "Kolkata",
-    address: "Bengal Intelligent Park, Sector V, Salt Lake",
-    region: "Kolkata, West Bengal - 700091",
-    country: "India",
-    phone: "+91 (33) 2357 8000",
-    coords: [22.5735, 88.4331] as [number, number],
-    gmaps: "https://maps.google.com/?q=Bengal+Intelligent+Park,+Sector+V,+Salt+Lake,+Kolkata"
-  }
+const officeLocations = [
+  { city: "Delhi", state: "Delhi", pin: "110001", country: "India", mapUrl: "https://maps.google.com/?q=HT+House,+Kasturba+Gandhi+Marg,+Connaught+Place,+New+Delhi" },
+  { city: "Shimla", state: "Himachal Pradesh", pin: "171001", country: "India", mapUrl: "https://maps.google.com/?q=Anoop+Sood+Building,+Paras+Dass+Garden,+Near+CPRI,+Shimla" },
+  { city: "Lucknow", state: "Uttar Pradesh", pin: "226001", country: "India", mapUrl: "https://maps.google.com/?q=110,+First+Floor+Durgma+Tower,+Lalbagh,+Lucknow" },
+  { city: "Chandigarh", state: "Chandigarh", pin: "160002", country: "India", mapUrl: "https://maps.google.com/?q=Elante+Offices,+Industrial+Area+Phase+I,+Chandigarh" },
+  { city: "Hyderabad", state: "Telangana", pin: "500045", country: "India", mapUrl: "https://maps.google.com/?q=House+No+8-3-A/413,+Krishna+Nagar,+Yusufguda,+Hyderabad" },
+  { city: "Cuttack", state: "Odisha", pin: "753014", country: "India", mapUrl: "https://maps.google.com/?q=Plot+No+C/71,+Sector+8,+CDA,+Cuttack" },
+  { city: "Kolkata", state: "West Bengal", pin: "700091", country: "India", mapUrl: "https://maps.google.com/?q=Bengal+Intelligent+Park,+Sector+V,+Salt+Lake,+Kolkata" },
+  { city: "Mumbai", state: "Maharashtra", pin: "400021", country: "India", mapUrl: "https://maps.google.com/?q=Maker+Chambers+VI,+Nariman+Point,+Mumbai" },
+  { city: "Pune", state: "Maharashtra", pin: "411016", country: "India", mapUrl: "https://maps.google.com/?q=ICC+Trade+Tower,+Senapati+Bapat+Road,+Pune" }
 ];
 
 export default function ContactUsPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [leafletLoaded, setLeafletLoaded] = useState(false);
-  const [activeCityIdx, setActiveCityIdx] = useState(0);
-  const mapRef = useRef<any>(null);
-  const resizeObserverRef = useRef<ResizeObserver | null>(null);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    // Load Leaflet CSS dynamically alongside Leaflet JS
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
-    link.crossOrigin = '';
-    document.head.appendChild(link);
-
-    // Load Leaflet JS
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
-    script.crossOrigin = '';
-    script.onload = () => {
-      setLeafletLoaded(true);
-    };
-    document.head.appendChild(script);
-
-    return () => {
-      if (document.head.contains(link)) {
-        document.head.removeChild(link);
-      }
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      if (resizeObserverRef.current) {
-        resizeObserverRef.current.disconnect();
-        resizeObserverRef.current = null;
-      }
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!leafletLoaded) return;
-    if (typeof window === 'undefined') return;
-    
-    const L = (window as any).L;
-    if (!L) return;
-
-    let map = mapRef.current;
-    if (!map) {
-      // First-time map creation, center on active city
-      map = L.map('map', {
-        center: cities[activeCityIdx].coords,
-        zoom: 12,
-        scrollWheelZoom: false,
-      });
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19
-      }).addTo(map);
-
-      const customIcon = L.divIcon({
-        className: 'custom-gps-marker',
-        html: '<div class="marker-pin"></div>',
-        iconSize: [30, 30],
-        iconAnchor: [15, 15]
-      });
-
-      cities.forEach((city, idx) => {
-        const marker = L.marker(city.coords, { icon: customIcon }).addTo(map);
-        marker.bindTooltip(city.name, {
-          permanent: false,
-          direction: 'top',
-          className: 'custom-map-tooltip'
-        });
-        
-        marker.on('click', () => {
-          setActiveCityIdx(idx);
-        });
-      });
-
-      // ResizeObserver to automatically call invalidateSize() when layout resolves
-      const ro = new ResizeObserver(() => {
-        if (mapRef.current) {
-          mapRef.current.invalidateSize();
-        }
-      });
-      const mapEl = document.getElementById('map');
-      if (mapEl) {
-        ro.observe(mapEl);
-      }
-      resizeObserverRef.current = ro;
-
-      mapRef.current = map;
-    } else {
-      // Fly to selected city
-      map.flyTo(cities[activeCityIdx].coords, 14, {
-        animate: true,
-        duration: 1.5
-      });
-    }
-  }, [leafletLoaded, activeCityIdx]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -293,7 +112,7 @@ export default function ContactUsPage() {
           email: formData.email,
           organisation: formData.organisation || 'Not Specified',
           phone: `${formData.countryCode} ${formData.phone}`,
-          message: `Service of Interest: ${serviceInterest}\n\nEnquiry details:\n${formData.message || 'No custom message provided.'}`,
+          message: `Area of Interest: ${serviceInterest}\n\nEnquiry details:\n${formData.message || 'No custom message provided.'}`,
           captchaToken
         }),
       });
@@ -323,7 +142,6 @@ export default function ContactUsPage() {
       <Navbar />
 
       <main className="flex-grow flex flex-col items-center justify-start pt-20 pb-16 px-6 relative">
-        
         {/* Animated transparent heading banner */}
         <div className="text-center pt-10 pb-6 w-full max-w-4xl mx-auto z-10">
           <h1 className="font-serif text-[clamp(12px,4vw,4rem)] font-bold text-[#000000] tracking-normal leading-tight px-2 flex justify-center text-center whitespace-nowrap overflow-visible">
@@ -337,8 +155,8 @@ export default function ContactUsPage() {
             <div className="text-center py-16 space-y-4 animate-fade-in flex flex-col items-center">
               <div className="relative mb-6">
                 {/* Background jagged circle imitation */}
-                <div className="absolute inset-0 bg-[#fa0249] rounded-full scale-110 opacity-20 blur-sm rotate-45"></div>
-                <div className="relative w-24 h-24 bg-[#fa0249] rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                <div className="absolute inset-0 bg-[#fcbe03] rounded-full scale-110 opacity-20 blur-sm rotate-45"></div>
+                <div className="relative w-24 h-24 bg-[#fcbe03] rounded-full flex items-center justify-center shadow-lg border-4 border-white">
                   <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>
                 </div>
               </div>
@@ -348,7 +166,7 @@ export default function ContactUsPage() {
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="mt-8 inline-flex justify-center bg-neutral-800 hover:bg-[#fa0249] text-white font-medium text-sm px-8 py-3 transition-all duration-300 rounded-full"
+                className="mt-8 inline-flex justify-center bg-neutral-800 hover:bg-[#fcbe03] text-white font-medium text-sm px-8 py-3 transition-all duration-300 rounded-full"
               >
                 Submit Another Inquiry
               </button>
@@ -360,7 +178,7 @@ export default function ContactUsPage() {
                   We work with ambitious leaders who want to define the future, not hide from it. Together, we achieve extraordinary outcomes.
                 </p>
                 <p className="font-sans text-xs sm:text-sm text-black/80 text-center font-light italic">
-                  Required fields are marked with an asterisk (<span className="text-[#fa0249]">*</span>).
+                  Required fields are marked with an asterisk (<span className="text-[#fcbe03]">*</span>).
                 </p>
               </div>
 
@@ -383,7 +201,7 @@ export default function ContactUsPage() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-[1px]"
                     placeholder="Your name"
                   />
                 </div>
@@ -399,7 +217,7 @@ export default function ContactUsPage() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-[1px]"
                     placeholder="Your email address"
                   />
                 </div>
@@ -413,7 +231,7 @@ export default function ContactUsPage() {
                     <select
                       value={formData.countryCode}
                       onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
-                      className="bg-gray-50 border border-r-0 border-black/20 px-3 py-3 text-sm text-[#000000] focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-l-[1px] w-[120px] cursor-pointer"
+                      className="bg-gray-50 border border-r-0 border-black/20 px-3 py-3 text-sm text-[#000000] focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-l-[1px] w-[120px] cursor-pointer"
                     >
                       {countryCodes.map((c, i) => (
                         <option key={i} value={c.code}>
@@ -427,7 +245,7 @@ export default function ContactUsPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="flex-1 w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-r-[1px]"
+                      className="flex-1 w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-r-[1px]"
                       placeholder="Your phone number"
                     />
                   </div>
@@ -443,7 +261,7 @@ export default function ContactUsPage() {
                     type="text"
                     value={formData.organisation}
                     onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-[1px]"
                     placeholder="Your organization name"
                   />
                 </div>
@@ -451,7 +269,7 @@ export default function ContactUsPage() {
                 {/* Service Choice capsules */}
                 <div>
                   <label className="block font-sans text-xs uppercase tracking-widest text-[#000000] font-bold mb-3">
-                    Service of Interest <span className="text-red-500">*</span>
+                    Area of Interest <span className="text-red-500">*</span>
                   </label>
                   <div className="flex flex-wrap gap-3">
                     {(['Consulting', 'Legal', 'Both'] as const).map((opt) => (
@@ -461,8 +279,8 @@ export default function ContactUsPage() {
                         onClick={() => setServiceInterest(opt)}
                         className={`px-6 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border ${
                           serviceInterest === opt
-                            ? 'bg-[#fa0249] border-[#fa0249] text-white shadow-sm'
-                            : 'bg-white border-black/20 text-[#000000] hover:border-[#fa0249] hover:text-[#fa0249]'
+                            ? 'bg-[#fcbe03] border-[#fcbe03] text-white shadow-sm'
+                            : 'bg-white border-black/20 text-[#000000] hover:border-[#fcbe03] hover:text-[#fcbe03]'
                         }`}
                       >
                         {opt}
@@ -474,7 +292,7 @@ export default function ContactUsPage() {
                 {/* Custom Message field */}
                 <div>
                   <label htmlFor="message" className="block font-sans text-xs uppercase tracking-widest text-[#000000] font-bold mb-2">
-                    Custom Message <span className="text-red-500">*</span>
+                     Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -482,7 +300,7 @@ export default function ContactUsPage() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans resize-none rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans resize-none rounded-[1px]"
                     placeholder="Please describe your parameters of enquiry"
                   />
                 </div>
@@ -495,15 +313,15 @@ export default function ContactUsPage() {
                     required
                     checked={agreedToTerms}
                     onChange={(e) => setAgreedToTerms(e.target.checked)}
-                    className="mt-1 w-4 h-4 text-[#fa0249] border-black/20 rounded focus:ring-[#fa0249] cursor-pointer"
+                    className="mt-1 w-4 h-4 text-[#fcbe03] border-black/20 rounded focus:ring-[#fcbe03] cursor-pointer"
                   />
                   <label htmlFor="terms" className="font-sans text-sm text-black/75 leading-relaxed">
                     I agree to the{' '}
-                    <a href="/terms" className="text-black underline hover:text-[#fa0249] transition-colors duration-300">
-                      term and condition
+                    <a href="/terms-of-use" className="text-black underline hover:text-[#fcbe03] transition-colors duration-300">
+                      terms of use
                     </a>
                     {' '}and{' '}
-                    <a href="/privacy" className="text-black underline hover:text-[#fa0249] transition-colors duration-300">
+                    <a href="/privacy-policy" className="text-black underline hover:text-[#fcbe03] transition-colors duration-300">
                       privacy policy
                     </a>.
                   </label>
@@ -524,7 +342,7 @@ export default function ContactUsPage() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full sm:w-auto px-16 bg-[#fa0249] hover:bg-[#000000] disabled:bg-[#fa0249]/50 text-white text-xs font-bold tracking-[0.2em] uppercase py-4 transition-all duration-300 rounded-[1px] shadow-md flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-16 bg-[#fcbe03] hover:bg-[#000000] disabled:bg-[#fcbe03]/50 text-white text-xs font-bold tracking-[0.2em] uppercase py-4 transition-all duration-300 rounded-[1px] shadow-md flex items-center justify-center gap-2"
                   >
                     {isLoading ? (
                       <>
@@ -542,108 +360,31 @@ export default function ContactUsPage() {
           )}
         </div>
 
-        {/* Map Section */}
-        <div className="w-full max-w-5xl mt-16 mb-8 space-y-6 z-10 flex flex-col">
-          
-          {/* Tabs Container - Right Aligned to match screenshot */}
-          <div className="w-full border-b border-neutral-200 flex flex-wrap justify-end bg-white">
-            {cities.map((city, idx) => (
-              <button
-                key={city.name}
-                type="button"
-                onClick={() => setActiveCityIdx(idx)}
-                className={`px-5 py-3 text-xs md:text-sm font-sans font-medium uppercase tracking-wider transition-all duration-300 border-t-2 border-x border-b cursor-pointer -mb-[1px] ${
-                  activeCityIdx === idx
-                    ? 'bg-neutral-100 text-[#fa0249] font-bold border-t-[#fa0249] border-x-neutral-200 border-b-transparent'
-                    : 'bg-white text-black/60 hover:text-black border-t-transparent border-x-transparent border-b-transparent'
-                }`}
-              >
-                {city.name}
-              </button>
-            ))}
+        {/* Offices Section */}
+        <div className="w-full max-w-5xl mt-16 mb-8 z-10 flex flex-col items-center px-4">
+          <div className="flex flex-col items-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-sans text-black text-center font-bold tracking-wide uppercase">
+              Offices
+            </h2>
+            <svg className="w-48 h-2 mt-2 text-[#fcbe03]" viewBox="0 0 100 4" fill="currentColor" preserveAspectRatio="none">
+              <path d="M 0 2 Q 50 0 100 2 Q 50 4 0 2 Z" />
+            </svg>
           </div>
 
-          {/* Map Card Split Panel (approx 35% left / 65% right) */}
-          <div className="w-full flex flex-col lg:flex-row bg-white border border-neutral-200 rounded-[1px] overflow-hidden shadow-2xl min-h-[420px] lg:h-[450px]">
-            {/* Left Panel: City Details (White background, black text) */}
-            <div className="w-full lg:w-[35%] bg-white text-black p-8 md:p-10 flex flex-col justify-between border-r border-neutral-200">
-              <div className="space-y-6">
-                <h3 className="font-serif text-2xl md:text-3xl font-normal tracking-wide text-black">
-                  {cities[activeCityIdx].name}
-                </h3>
-                <div className="space-y-3 font-sans text-sm font-light text-black/85 leading-relaxed">
-                  <p>{cities[activeCityIdx].address}</p>
-                  <p>{cities[activeCityIdx].region}</p>
-                  <p>{cities[activeCityIdx].country}</p>
-                </div>
-                <div className="pt-4 border-t border-neutral-200 space-y-1">
-                  <span className="text-[10px] uppercase tracking-widest text-black/40 block font-bold">Voice</span>
-                  <span className="font-sans text-sm font-medium text-black">{cities[activeCityIdx].phone}</span>
-                </div>
-              </div>
-              
-              <div className="pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 md:gap-x-24 gap-y-6 w-fit mx-auto font-sans text-sm md:text-base text-black/85 font-normal tracking-wide">
+            {officeLocations.map((office, idx) => (
+              <div key={idx} className="flex items-start gap-2.5 transition-colors duration-300 text-black/85 hover:text-[#fcbe03]">
+                <MapPin className="w-5 h-5 text-[#fcbe03] shrink-0 mt-0.5" />
                 <a
-                  href={cities[activeCityIdx].gmaps}
+                  href={office.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#fa0249] hover:text-black transition-colors duration-300"
-                >
-                  <span>Open in Google Maps</span>
-                  <span>&rarr;</span>
+                  className="leading-relaxed text-inherit hover:underline transition-colors duration-300"
+                > {office.city} 
                 </a>
               </div>
-            </div>
-
-            {/* Right Panel: Interactive Map */}
-            <div className="w-full lg:w-[65%] h-[350px] lg:h-[450px] relative bg-neutral-100">
-              <div id="map" className="w-full h-full z-0" />
-            </div>
+            ))}
           </div>
-
-          <style dangerouslySetInnerHTML={{ __html: `
-            .custom-gps-marker {
-              display: flex !important;
-              align-items: center !important;
-              justify-content: center !important;
-            }
-            .marker-pin {
-              width: 12px;
-              height: 12px;
-              border-radius: 50%;
-              background: #fa0249;
-              border: 2px solid white;
-              box-shadow: 0 0 0 4px rgba(250, 2, 73, 0.4), 0 0 10px rgba(250, 2, 73, 0.8);
-              animation: pulse 2s infinite;
-            }
-            @keyframes pulse {
-              0% {
-                box-shadow: 0 0 0 0px rgba(250, 2, 73, 0.7), 0 0 10px rgba(250, 2, 73, 0.8);
-              }
-              70% {
-                box-shadow: 0 0 0 10px rgba(250, 2, 73, 0), 0 0 10px rgba(250, 2, 73, 0.8);
-              }
-              100% {
-                box-shadow: 0 0 0 0px rgba(250, 2, 73, 0), 0 0 10px rgba(250, 2, 73, 0.8);
-              }
-            }
-            .custom-map-tooltip {
-              background: black !important;
-              color: white !important;
-              border: none !important;
-              font-family: inherit !important;
-              font-size: 11px !important;
-              font-weight: 600 !important;
-              letter-spacing: 0.1em !important;
-              text-transform: uppercase !important;
-              padding: 4px 8px !important;
-              box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
-              border-radius: 2px !important;
-            }
-            .leaflet-tooltip-top:before {
-              border-top-color: black !important;
-            }
-          ` }} />
         </div>
 
       </main>

@@ -35,11 +35,14 @@ export default function OurPeoplePage() {
   useEffect(() => {
     if (selectedPerson) {
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [selectedPerson]);
 
@@ -74,8 +77,8 @@ export default function OurPeoplePage() {
   }, []);
 
   const foundingPartners = [
-    peopleData.find(p => p.id === 'suman-thakur'),
-    peopleData.find(p => p.id === 'anshuman')
+    peopleData.find(p => p.id === 'anshuman'),
+    peopleData.find(p => p.id === 'suman-thakur')
   ].filter(Boolean) as Person[];
 
   const otherMembers = [
@@ -84,79 +87,55 @@ export default function OurPeoplePage() {
     peopleData.find(p => p.id === 'adarsh')
   ].filter(Boolean) as Person[];
 
-  function getLocation(personId: string) {
-    if (personId === 'anshuman') return 'Hyderabad';
-    if (personId === 'suman-thakur') return 'Delhi / Shimla';
-    if (personId === 'yash-thakur') return 'Hyderabad';
-    if (personId === 'sweta') return 'Shimla';
-    if (personId === 'adarsh') return 'Lucknow';
-    return 'India';
+  function getDomainPosition(person: Person) {
+    let positionText = '';
+    if (person.id === 'anshuman') {
+      positionText = 'Strategy Consulting | Founding Partner';
+    } else if (person.id === 'suman-thakur') {
+      positionText = 'Legal | Founding Partner';
+    } else if (person.id === 'yash-thakur') {
+      positionText = 'Legal | Associate Counsel';
+    } else if (person.id === 'sweta' || person.id === 'adarsh') {
+      positionText = 'Legal | Advocate';
+    } else {
+      positionText = `${person.discipline} | ${person.badge || 'Member'}`;
+    }
+
+    const parts = positionText.split(' | ');
+    if (parts.length === 2) {
+      return (
+        <>
+          {parts[0]} <br />
+          {parts[1]}
+        </>
+      );
+    }
+    return positionText;
   }
 
-  function getPersonTitle(person: Person) {
-    if (person.id === 'anshuman') return 'Founding Partner, Strategy Consulting';
-    if (person.id === 'suman-thakur') return 'Founding Partner, Legal Practice';
-    if (person.id === 'yash-thakur') return 'Associate Counsel';
-    if (person.id === 'sweta') return 'Advocate, High Court & Arbitral Advocacy';
-    if (person.id === 'adarsh') return 'Advocate, High Court & Banking Appellate';
-    return person.title;
-  }
-
-  const renderFounderCard = (person: Person) => (
+  const renderCard = (person: Person) => (
     <div 
       key={person.id} 
       onClick={() => setSelectedPerson(person)}
-      className="cursor-pointer group flex flex-col w-full text-left"
+      className="bg-white rounded-none cursor-pointer group flex flex-col w-full border border-black/5 hover:shadow-xl transition-all duration-300 pb-4"
     >
-      <div className="relative w-full aspect-[3/2] overflow-hidden bg-neutral-100 border border-black/5 rounded-[1px]">
+      <div className={`relative w-full overflow-hidden bg-neutral-50 ${
+        person.category === 'Founding Partner' ? 'aspect-[4/3]' : 'aspect-[4/5]'
+      }`}>
         <Image
           src={person.imagePath}
           alt={person.name}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover transition-all duration-700 ease-in-out scale-100 group-hover:scale-[1.02]"
+          className="object-cover transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
         />
       </div>
-      <div className="pt-5 flex flex-col items-start w-full">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-black font-semibold group-hover:text-[#fa0249] transition-colors duration-300 whitespace-nowrap">
-          {person.name}
+      <div className="px-4 pt-6 flex flex-col items-center text-center w-full">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-black font-semibold group-hover:text-[#fcbe03] transition-colors w-full leading-tight">
+          {person.cardName || person.name}
         </h3>
-        {/* Accent color underline: thick at middle, thin at extremes */}
-        <div className="w-full h-[2.5px] bg-gradient-to-r from-transparent via-[#fa0249] to-transparent mt-2 mb-2.5 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-        <p className="text-xs sm:text-sm font-sans text-black/60 font-medium tracking-wide">
-          {getPersonTitle(person)}
-        </p>
-        <p className="text-[11px] sm:text-xs font-sans text-black/40 mt-1 uppercase tracking-widest font-semibold">
-          {getLocation(person.id)}
-        </p>
-      </div>
-    </div>
-  );
-
-  const renderMemberCard = (person: Person) => (
-    <div 
-      key={person.id} 
-      onClick={() => setSelectedPerson(person)}
-      className="cursor-pointer group flex flex-col w-full text-left"
-    >
-      <div className="relative w-full aspect-[4/5] overflow-hidden bg-neutral-100 border border-black/5 rounded-[1px]">
-        <Image
-          src={person.imagePath}
-          alt={person.name}
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-all duration-700 ease-in-out scale-100 group-hover:scale-[1.02]"
-        />
-      </div>
-      <div className="pt-4 flex flex-col items-start w-full">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-black font-semibold group-hover:text-[#fa0249] transition-colors duration-300 whitespace-nowrap">
-          {person.name}
-        </h3>
-        <p className="text-xs sm:text-sm font-sans text-black/60 mt-1.5 font-medium tracking-wide">
-          {getPersonTitle(person)}
-        </p>
-        <p className="text-[11px] sm:text-xs font-sans text-black/40 mt-1 uppercase tracking-widest font-semibold">
-          {getLocation(person.id)}
+        <p className="text-xs sm:text-sm md:text-base font-sans text-black/60 mt-2 font-medium w-full">
+          {getDomainPosition(person)}
         </p>
       </div>
     </div>
@@ -165,8 +144,8 @@ export default function OurPeoplePage() {
   return (
     <main className="min-h-screen bg-white pb-0">
       <Navbar />
-      {/* 1. Hero Section */}
-       <section className="relative w-full min-h-[60vh] md:min-h-[75vh] flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-16 border-b border-white/10 text-white overflow-hidden pt-28 bg-black">
+      {/* HERO VIDEO BANNER */}
+      <section className="relative w-full min-h-[60vh] md:min-h-[75vh] flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-16 border-b border-white/10 text-white overflow-hidden pt-28 bg-black">
         {/* Background Video */}
         <video 
           autoPlay 
@@ -187,117 +166,167 @@ export default function OurPeoplePage() {
             <RevealHeading>OUR PEOPLE</RevealHeading>
           </h1>
           <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
-            Arventis is led by founding partners across strategy and law, supported by senior advocates and experienced consultants with decades of experience. Every engagement is handled by someone who has done the work before, not handed off to whoever is available.
+            A bench of senior strategists and Supreme Court advocates drawn from the highest tiers of their respective disciplines.
           </p>
         </div>
       </section>
 
-
       {/* 2. Team Sections */}
-      <section className="max-w-5xl mx-auto px-6 md:px-12 py-20 space-y-28">
-        {/* Founding Partners Grid */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20 space-y-20">
+        {/* Founding Partners */}
         <div className="space-y-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-black inline-block border-b-[3px] border-[#fa0249] pb-3 tracking-tight">
-              Founding members
+          <div className="relative flex flex-col items-center justify-center pb-6 scroll-fade-up">
+            <h2 className="text-2xl md:text-3xl font-serif font-light text-black text-center">
+              Founding Partners
             </h2>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] h-[2px] bg-gradient-to-r from-transparent via-[#fcbe03] to-transparent opacity-90" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-            {foundingPartners.map(renderFounderCard)}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-2xl mx-auto">
+            {foundingPartners.map(renderCard)}
           </div>
         </div>
 
-        {/* Other Team Members Grid */}
-        <div className="space-y-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light text-black inline-block border-b-[3px] border-[#fa0249] pb-3 tracking-tight">
+        {/* Other Team Members */}
+        <div className="space-y-12 pt-12">
+          <div className="relative flex flex-col items-center justify-center pb-6 scroll-fade-up">
+            <h2 className="text-2xl md:text-3xl font-serif font-light text-black text-center">
               Team
             </h2>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] h-[2px] bg-gradient-to-r from-transparent via-[#fcbe03] to-transparent opacity-90" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-            {otherMembers.map(renderMemberCard)}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-16 max-w-4xl mx-auto">
+            {otherMembers.map(renderCard)}
           </div>
         </div>
       </section>
 
       {/* 3. The Detail View (Modal) */}
       {selectedPerson && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 lg:p-12 bg-black/75 backdrop-blur-sm animate-in fade-in duration-300">
-          <div 
-            className="bg-white w-full max-w-6xl max-h-[95vh] overflow-y-auto rounded-none shadow-2xl relative animate-in slide-in-from-bottom-8 duration-500"
-          >
+        <div 
+          className="fixed inset-0 z-50 overflow-y-auto bg-black/75 backdrop-blur-sm animate-in fade-in duration-300"
+          data-lenis-prevent="true"
+        >
+          <div className="min-h-full flex items-center justify-center p-4 md:p-8 lg:p-12">
+            <div 
+              className="bg-white w-full max-w-6xl rounded-none shadow-2xl relative animate-in slide-in-from-bottom-8 duration-500"
+            >
             {/* Close Button */}
             <button 
               onClick={() => setSelectedPerson(null)}
-              className="absolute top-6 right-6 p-2 rounded-full bg-black/5 hover:bg-black/10 text-black transition-colors z-20 group"
+              className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 rounded-full bg-black/5 hover:bg-black/10 text-black transition-colors z-20 group"
             >
-              <X className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <X className="w-4 h-4 group-hover:scale-110 transition-transform" />
             </button>
 
-            <div className="flex flex-col md:flex-row h-full">
-              {/* Left Column (30%) */}
-              <div className="w-full md:w-1/3 bg-neutral-50 p-8 md:p-12 border-r border-black/5 flex flex-col">
-                <div className="relative w-full aspect-square md:aspect-[4/5] mb-8 overflow-hidden shadow-md">
+            <div className="flex flex-col md:flex-row">
+              {/* Left Column */}
+              <div className="w-full md:w-[35%] lg:w-[30%] bg-neutral-50 p-6 md:p-8 border-r border-black/5 flex flex-col">
+                <div className={`relative w-full mb-4 md:mb-6 overflow-hidden shadow-md ${
+                  selectedPerson.category === 'Founding Partner' ? 'aspect-[4/3]' : 'aspect-[4/5]'
+                }`}>
                   <Image
                     src={selectedPerson.imagePath}
                     alt={selectedPerson.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 30vw"
                     className="object-cover"
                   />
                 </div>
-                <h2 className="text-4xl font-serif text-black mb-2">{selectedPerson.name}</h2>
-                <p className="text-black/70 font-medium text-lg mb-8">{selectedPerson.title}</p>
-                
-                <div className="space-y-6 mt-auto">
-                  <div>
-                    <span className="text-xs font-bold text-black/55 uppercase tracking-widest block mb-2">Experience</span>
-                    <p className="text-base font-medium text-black">{selectedPerson.experience}</p>
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-black/55 uppercase tracking-widest block mb-3">Geographies</span>
-                    <ul className="space-y-3">
-                      {selectedPerson.geographies.map((geo, idx) => (
-                        <li key={idx} className="flex items-start text-sm font-medium text-black">
-                          <MapPin className="w-4 h-4 mr-3 text-black/40 shrink-0 mt-0.5" />
-                          <span>{geo}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-serif text-black mb-1 tracking-tight leading-snug">{selectedPerson.name}</h2>
+                <div className="mb-6 space-y-1 mt-2">
+                  <p className="text-black/80 font-bold text-[10px] md:text-xs uppercase tracking-wider">{selectedPerson.title}</p>
+                  {selectedPerson.badge && <p className="text-[#fcbe03] font-bold text-[10px] md:text-xs uppercase tracking-wider">{selectedPerson.badge}</p>}
                 </div>
+                
               </div>  
 
-              {/* Right Column (70%) */}
-              <div className="w-full md:w-2/3 p-8 md:p-16 lg:p-20 flex flex-col justify-center bg-white">
-                <p className="text-2xl md:text-3xl font-serif text-black leading-tight mb-8 font-medium">
-                  "{selectedPerson.shortBio}"
-                </p>
-                <div className="text-lg text-black/75 leading-relaxed mb-12 whitespace-pre-line">
-                  {selectedPerson.fullBio}
+              {/* Right Column */}
+              <div className="w-full md:w-[65%] lg:w-[70%] p-6 md:p-8 pr-8 md:pr-12 flex flex-col justify-start bg-white">
+                <div className="space-y-4 mb-4">
+                  {selectedPerson.bio.map((paragraph, idx) => (
+                    <p key={idx} className="text-sm md:text-[15px] text-black/75 leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
 
-                <div className="mt-auto">
-                  <h4 className="text-xs font-bold text-black uppercase tracking-widest mb-6 border-b border-black/10 pb-3">
-                    Practice Highlights
-                  </h4>
-                  <ul className="space-y-5">
-                    {selectedPerson.highlights.map(highlight => (
-                      <li key={highlight.id} className="flex items-start group">
-                        <CheckCircle2 className="w-6 h-6 mr-4 text-[#fa0249] shrink-0 mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity" />
-                        <span className="text-base text-black/80 leading-relaxed font-medium group-hover:text-black transition-colors">
-                          {highlight.text}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                {selectedPerson.customSectionTitle && selectedPerson.customSectionContent && (
+                  <div className="mb-4">
+                    <h4 className="text-[10px] md:text-xs font-bold text-black uppercase tracking-widest mb-3">
+                      {selectedPerson.customSectionTitle}
+                    </h4>
+                    <div className="space-y-3 text-sm md:text-[15px] text-black/75 leading-relaxed">
+                      {selectedPerson.customSectionContent.map((para, idx) => (
+                        <p key={idx}>{para}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-4 pt-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* Left Data Column */}
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-[10px] md:text-xs font-bold text-black uppercase tracking-widest mb-3">
+                          Geographies
+                        </h4>
+                        {selectedPerson.geographies && selectedPerson.geographies.length > 0 && (
+                          <ul className="mt-2 space-y-1.5">
+                            {selectedPerson.geographies.map((geo, idx) => (
+                              <li key={idx} className="flex items-start text-xs md:text-sm font-medium text-black/80">
+                                <MapPin className="w-3.5 h-3.5 mr-1.5 text-black/40 shrink-0 mt-0.5" />
+                                <span>{geo}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Right Data Column */}
+                    <div className="space-y-6">
+                      {selectedPerson.clientList && selectedPerson.clientList.length > 0 && (
+                        <div>
+                          <h4 className="text-[10px] md:text-xs font-bold text-black uppercase tracking-widest mb-3">
+                            Representative Clients
+                          </h4>
+                          <div className="flex flex-wrap gap-2">
+                            {selectedPerson.clientList.map((client, idx) => (
+                              <span key={idx} className="bg-black/5 px-3 py-1.5 text-[10px] md:text-xs font-medium text-black/80 rounded-sm">
+                                {client}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      <div>
+                        <h4 className="text-[10px] md:text-xs font-bold text-black uppercase tracking-widest mb-3">
+                          Practice Highlights
+                        </h4>
+                        <ul className="space-y-3">
+                          {selectedPerson.highlights.map(highlight => (
+                            <li key={highlight.id} className="flex items-start group">
+                              <CheckCircle2 className="w-4 h-4 mr-3 text-[#fcbe03] shrink-0 mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity" />
+                              <span className="text-xs md:text-sm text-black/80 leading-snug font-medium group-hover:text-black transition-colors">
+                                {highlight.text}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
+    )}
 
-     <ContactUs />
+       <ContactUs />
 
       <Footer />
     </main>
