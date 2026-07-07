@@ -155,8 +155,8 @@ export default function ContactUsPage() {
             <div className="text-center py-16 space-y-4 animate-fade-in flex flex-col items-center">
               <div className="relative mb-6">
                 {/* Background jagged circle imitation */}
-                <div className="absolute inset-0 bg-[#fa0249] rounded-full scale-110 opacity-20 blur-sm rotate-45"></div>
-                <div className="relative w-24 h-24 bg-[#fa0249] rounded-full flex items-center justify-center shadow-lg border-4 border-white">
+                <div className="absolute inset-0 bg-[#fcbe03] rounded-full scale-110 opacity-20 blur-sm rotate-45"></div>
+                <div className="relative w-24 h-24 bg-[#fcbe03] rounded-full flex items-center justify-center shadow-lg border-4 border-white">
                   <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function ContactUsPage() {
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="mt-8 inline-flex justify-center bg-neutral-800 hover:bg-[#fa0249] text-white font-medium text-sm px-8 py-3 transition-all duration-300 rounded-full"
+                className="mt-8 inline-flex justify-center bg-neutral-800 hover:bg-[#fcbe03] text-white font-medium text-sm px-8 py-3 transition-all duration-300 rounded-full"
               >
                 Submit Another Inquiry
               </button>
@@ -178,7 +178,7 @@ export default function ContactUsPage() {
                   We work with ambitious leaders who want to define the future, not hide from it. Together, we achieve extraordinary outcomes.
                 </p>
                 <p className="font-sans text-xs sm:text-sm text-black/80 text-center font-light italic">
-                  Required fields are marked with an asterisk (<span className="text-[#fa0249]">*</span>).
+                  Required fields are marked with an asterisk (<span className="text-[#fcbe03]">*</span>).
                 </p>
               </div>
 
@@ -201,7 +201,7 @@ export default function ContactUsPage() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-[1px]"
                     placeholder="Your name"
                   />
                 </div>
@@ -217,7 +217,7 @@ export default function ContactUsPage() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-[1px]"
                     placeholder="Your email address"
                   />
                 </div>
@@ -231,7 +231,7 @@ export default function ContactUsPage() {
                     <select
                       value={formData.countryCode}
                       onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
-                      className="bg-gray-50 border border-r-0 border-black/20 px-3 py-3 text-sm text-[#000000] focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-l-[1px] w-[120px] cursor-pointer"
+                      className="bg-gray-50 border border-r-0 border-black/20 px-3 py-3 text-sm text-[#000000] focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-l-[1px] w-[120px] cursor-pointer"
                     >
                       {countryCodes.map((c, i) => (
                         <option key={i} value={c.code}>
@@ -245,7 +245,7 @@ export default function ContactUsPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="flex-1 w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-r-[1px]"
+                      className="flex-1 w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-r-[1px]"
                       placeholder="Your phone number"
                     />
                   </div>
@@ -261,7 +261,7 @@ export default function ContactUsPage() {
                     type="text"
                     value={formData.organisation}
                     onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans rounded-[1px]"
                     placeholder="Your organization name"
                   />
                 </div>
@@ -279,8 +279,8 @@ export default function ContactUsPage() {
                         onClick={() => setServiceInterest(opt)}
                         className={`px-6 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border ${
                           serviceInterest === opt
-                            ? 'bg-[#fa0249] border-[#fa0249] text-white shadow-sm'
-                            : 'bg-white border-black/20 text-[#000000] hover:border-[#fa0249] hover:text-[#fa0249]'
+                            ? 'bg-[#fcbe03] border-[#fcbe03] text-white shadow-sm'
+                            : 'bg-white border-black/20 text-[#000000] hover:border-[#fcbe03] hover:text-[#fcbe03]'
                         }`}
                       >
                         {opt}
@@ -300,7 +300,7 @@ export default function ContactUsPage() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fa0249] transition-all duration-300 font-sans resize-none rounded-[1px]"
+                    className="w-full bg-white border border-black/20 px-4 py-3 text-sm text-[#000000] placeholder:text-slate-400 focus:outline-none focus:border-[#fcbe03] transition-all duration-300 font-sans resize-none rounded-[1px]"
                     placeholder="Please describe your parameters of enquiry"
                   />
                 </div>
@@ -313,15 +313,15 @@ export default function ContactUsPage() {
                     required
                     checked={agreedToTerms}
                     onChange={(e) => setAgreedToTerms(e.target.checked)}
-                    className="mt-1 w-4 h-4 text-[#fa0249] border-black/20 rounded focus:ring-[#fa0249] cursor-pointer"
+                    className="mt-1 w-4 h-4 text-[#fcbe03] border-black/20 rounded focus:ring-[#fcbe03] cursor-pointer"
                   />
                   <label htmlFor="terms" className="font-sans text-sm text-black/75 leading-relaxed">
                     I agree to the{' '}
-                    <a href="/terms-of-use" className="text-black underline hover:text-[#fa0249] transition-colors duration-300">
+                    <a href="/terms-of-use" className="text-black underline hover:text-[#fcbe03] transition-colors duration-300">
                       terms of use
                     </a>
                     {' '}and{' '}
-                    <a href="/privacy-policy" className="text-black underline hover:text-[#fa0249] transition-colors duration-300">
+                    <a href="/privacy-policy" className="text-black underline hover:text-[#fcbe03] transition-colors duration-300">
                       privacy policy
                     </a>.
                   </label>
@@ -342,7 +342,7 @@ export default function ContactUsPage() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full sm:w-auto px-16 bg-[#fa0249] hover:bg-[#000000] disabled:bg-[#fa0249]/50 text-white text-xs font-bold tracking-[0.2em] uppercase py-4 transition-all duration-300 rounded-[1px] shadow-md flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-16 bg-[#fcbe03] hover:bg-[#000000] disabled:bg-[#fcbe03]/50 text-white text-xs font-bold tracking-[0.2em] uppercase py-4 transition-all duration-300 rounded-[1px] shadow-md flex items-center justify-center gap-2"
                   >
                     {isLoading ? (
                       <>
@@ -366,22 +366,21 @@ export default function ContactUsPage() {
             <h2 className="text-3xl md:text-4xl font-sans text-black text-center font-bold tracking-wide uppercase">
               Offices
             </h2>
-            <svg className="w-48 h-2 mt-2 text-[#fa0249]" viewBox="0 0 100 4" fill="currentColor" preserveAspectRatio="none">
+            <svg className="w-48 h-2 mt-2 text-[#fcbe03]" viewBox="0 0 100 4" fill="currentColor" preserveAspectRatio="none">
               <path d="M 0 2 Q 50 0 100 2 Q 50 4 0 2 Z" />
             </svg>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 w-full max-w-4xl mx-auto font-sans text-sm md:text-base text-black/85 font-normal tracking-wide">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 md:gap-x-24 gap-y-6 w-fit mx-auto font-sans text-sm md:text-base text-black/85 font-normal tracking-wide">
             {officeLocations.map((office, idx) => (
-              <div key={idx} className="flex items-start gap-2.5 transition-colors duration-300 text-black/85 hover:text-[#fa0249]">
-                <MapPin className="w-5 h-5 text-[#fa0249] shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-2.5 transition-colors duration-300 text-black/85 hover:text-[#fcbe03]">
+                <MapPin className="w-5 h-5 text-[#fcbe03] shrink-0 mt-0.5" />
                 <a
                   href={office.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="leading-relaxed text-inherit hover:underline transition-colors duration-300"
-                >
-                  {office.city}, {office.state}, {office.pin}, {office.country}
+                > {office.city} 
                 </a>
               </div>
             ))}

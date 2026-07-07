@@ -20,7 +20,7 @@ const Footer = () => {
               width={450}
               height={120}
               unoptimized
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain scale-200 sm:scale-120 md:scale-180 origin-left mix-blend-multiply filter contrast-[1.08]"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain origin-left mix-blend-multiply filter contrast-[1.08]"
             />
           </div>
 
@@ -33,10 +33,10 @@ const Footer = () => {
               <Link href="/faq" className="hover:underline hover:text-black">
                 FAQ
               </Link>
-              <Link href="/privacy-policy" className="hover:underline hover:text-black hover:text-[#fa0249] transition-colors">
+              <Link href="/privacy-policy" className="hover:underline hover:text-black hover:text-[#fcbe03] transition-colors">
                 Privacy policy
               </Link>
-              <Link href="/terms-of-use" className="hover:underline hover:text-black hover:text-[#fa0249] transition-colors">
+              <Link href="/terms-of-use" className="hover:underline hover:text-black hover:text-[#fcbe03] transition-colors">
                 Terms of use
               </Link>
             </div>

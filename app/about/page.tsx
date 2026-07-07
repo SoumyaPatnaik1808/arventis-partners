@@ -124,7 +124,7 @@ export default function AboutPage() {
                   <span className="block md:whitespace-nowrap"><RevealHeading>Two Disciplines.</RevealHeading></span>
                   <span className="block md:whitespace-nowrap"><RevealHeading>No Translation Required.</RevealHeading></span>
                 </h2>
-                <div className="h-[1px] w-24 bg-[#fa0249] mt-4" />
+                <div className="h-[1px] w-24 bg-[#fcbe03] mt-4" />
               </div>
 
               <div className="space-y-3 mt-8 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
@@ -168,7 +168,7 @@ export default function AboutPage() {
               <div className="flex justify-center w-full mt-6 scroll-fade-up transition-delay-300">
                 <Link
                   href="/our-people"
-                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>MEET OUR TEAM</span>
                   <span>&rarr;</span>
@@ -193,62 +193,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. GLOBAL REACH (TEXT LEFT, IMAGE RIGHT) */}
-      <section className="relative w-full bg-white py-8 md:py-12 px-6 md:px-16 text-black">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
-            {/* Left Column: Text */}
-            <div className="lg:col-span-8 flex flex-col justify-between pt-0 pb-2 space-y-6">
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-black scroll-fade-up">
-                <span className="block md:whitespace-nowrap">Local depth.</span>
-                <span className="block md:whitespace-nowrap">International fluency.</span>
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="scroll-fade-up bg-white p-4 border-t-2 border-t-[#fa0249] border-x border-b border-black/10 rounded-[1px] shadow-sm">
-                  <h3 className="font-serif text-xl font-medium text-black sm:whitespace-nowrap mb-2">
-                    Legal Practice Scope
-                  </h3>
-                  <div className="font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light space-y-2">
-                    <p>Our advocates practice before courts and regulatory bodies at the national level and beyond, handling matters that range from high-stakes commercial disputes to constitutional questions with public consequence.</p>
-                    <p>The practice covers litigation, arbitration, corporate advisory, employment, intellectual property, real estate, and constitutional law.</p>
-                  </div>
-                </div>
-
-                <div className="scroll-fade-up bg-white p-4 border-t-2 border-t-[#fa0249] border-x border-b border-black/10 rounded-[1px] shadow-sm transition-delay-200">
-                  <h3 className="font-serif text-xl font-medium text-black sm:whitespace-nowrap mb-2">
-                    Consulting Engagement Footprint
-                  </h3>
-                  <div className="font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light space-y-2">
-                    <p>Engagements across India, Saudi Arabia, the UAE, Kuwait, the UK, the US, and South Korea. Government, BFSI, EdTech, manufacturing, consumer.</p>
-                    <p>From first-time founders to established mid-market players redesigning for growth.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center w-full mt-6 scroll-fade-up transition-delay-300">
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
-                >
-                  <span>SEE OUR EXPERTISE</span>
-                  <span>&rarr;</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: Image */}
-            <div className="lg:col-span-4 relative min-h-[300px] lg:h-auto w-full bg-white border border-black/10 rounded-[1px] overflow-hidden shadow-xl scroll-fade-up">
-              <Image
-                src="/int_fluency.jpeg"
-                alt="Global Footprint"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+  
+    
 
       {/* 4. WHO WE WORK WITH (IMAGE LEFT, TEXT RIGHT) */}
       <section className="relative w-full bg-white pt-8 md:pt-12 pb-16 md:pb-24 px-6 md:px-16 text-black">
@@ -275,7 +221,7 @@ export default function AboutPage() {
                 <p className="font-sans text-sm sm:text-base text-black/85 font-light">
                   If you're building, defending, or expanding something that matters, <br /> you're probably on this list.
                 </p>
-                <ul className="list-disc pl-5 space-y-2 marker:text-[#fa0249]">
+                <ul className="list-disc pl-5 space-y-2 marker:text-[#fcbe03]">
                   {[
                     'Founders and CXOs navigating regulatory complexity, in India and abroad',
                     'Startups building commercial and legal infrastructure from day one',

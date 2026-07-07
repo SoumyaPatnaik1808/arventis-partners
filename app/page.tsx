@@ -44,16 +44,16 @@ export default function Home() {
   const slides = [
     {
       navTitle: "Two Disciplines",
-      title: "Two Disciplines.\nOne Standard of Rigour.",
-      subtitle: "Strategy and law, under one accountable team,\nso neither one ever works alone.",
+      title: "One Firm, Two Disciplines.",
+      subtitle: "Strategy consulting and legal advocacy, led by the same founding partners from day one.",
       image: "/hero building.png",
       primaryBtnText: "Meet the Firm",
       primaryBtnHref: "/about",
     },
     {
-      navTitle: "Strategy Built for Execution",
-      title: "Strategy Execution",
-      subtitle: "We stay in the room until the strategy becomes the result,\nnot just a deck.",
+      navTitle: "Strategy Consulting",
+      title: "Strategy Consulting",
+      subtitle: "Growth, GTM, and operating model design, delivered across India, the Gulf, the UK, the US, and South Korea.",
       image: "/hero strategy.png",
       primaryBtnText: "Explore Consulting",
       primaryBtnHref: "/services#consulting",
@@ -61,10 +61,10 @@ export default function Home() {
       secondaryBtnHref: "/contact-us"
     },
     {
-      navTitle: "Courtroom Credibility",
-      title: "Courtroom Credibility,\nAcross Every Practice Area.",
-      subtitle: "Advocacy built for the moments that decide outcomes.",
-      image: "/hero legal.png",
+      navTitle: "Legal Advisory",
+      title: "Legal Advisory",
+      subtitle: "Litigation, compliance, and constitutional law, from trial courts to the Supreme Court of India.",
+      image: "/hero_legal.png",
       primaryBtnText: "Explore Practice Areas",
       primaryBtnHref: "/services#legal",
       secondaryBtnText: "Initiate Mandate",
@@ -73,7 +73,7 @@ export default function Home() {
     {
       navTitle: "International Fluency",
       title: "Local Depth.\nInternational Fluency.",
-      subtitle: "A bench built across India and the GCC,\nwith a team that knows every market firsthand.",
+      subtitle: "Full-spectrum legal and strategy advisory for clients across India, the Gulf, the UK, the US, and South Korea.",
       description: "Litigation and advisory across Indian courts and regulatory bodies. Consulting engagements delivered in India, Saudi Arabia, the UAE, Kuwait, the UK, the US, and South Korea — with the same preparation and the same standard of delivery, every time.",
       image: "/hero international.png",
       primaryBtnText: "Our Story",
@@ -227,7 +227,7 @@ export default function Home() {
                   {/* Horizontal Progress Bar above the title */}
                   <div className="absolute top-0 left-0 w-full h-[3px] bg-white/20 overflow-hidden">
                     <div
-                      className={`h-full bg-[#fa0249] transition-all ${
+                      className={`h-full bg-[#fcbe03] transition-all ${
                         currentSlide === idx ? 'w-full animate-slide-progress' : 'w-0'
                       }`}
                       style={{
@@ -299,26 +299,25 @@ export default function Home() {
               </h2>
               <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
                 <p>
-                  Most clients brief one advisor on strategy and a different one on legal risk, <br /> 
-                  then deal with the two not lining up and face consequences.
+                 
                 </p>
                 <p>
-                  At Arventis, the same leadership handles both of the domains from the start. Thus, saving you from the hastle of jumping between two diffrent practices.
+                  Strategy consulting and legal advocacy, led by the same founding partners from day one.
                 </p>
                 <p>
-                 Every step is taken with both business goals and legal implications in mind.
+                
                 </p>
                 <p>
-                 Your time is spent making decisions, not coordinating between advisors.
+                
                 </p>
                 <p>
-                  You explain the problem once. 
+                   
                 </p>
               </div>
               <div className="flex justify-center w-full">
                 <Link
                   href="/our-people"
-                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>MEET THE TEAM</span>
                   <span>&rarr;</span>
@@ -342,8 +341,8 @@ export default function Home() {
             {/* Left Column: Image */}
             <div className="lg:col-span-6 scroll-fade-up relative h-[300px] lg:h-[400px] border border-black/10 rounded-[1px] overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="/global_reach_bg.png"
-                alt="Experience Across Markets"
+                src="/hero strategy.png"
+                alt="Strategy Consulting"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -352,24 +351,107 @@ export default function Home() {
             {/* Right Column: Text */}
             <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-2 scroll-fade-up order-1 lg:order-2">
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black">
-                Experience Across Markets
+                Strategy Consulting
               </h2>
               <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
                 <p>
-                  Over more than a decade, our leadership has worked on market entry, government mandates, and enterprise strategy across India, the GCC, the UK, the US, and South Korea.
+                  Growth, GTM, and operating model design, delivered across India, the Gulf, the UK, the US, and South Korea.
                 </p>
                 <p>
-                  That range means we've already dealt with the regulatory, cultural, and commercial differences most firms are encountering for the first time.
+                  
                 </p>
                 <p>
-                  We believe in learning from the past, not repeating it. <br />
-                  Our experience helps you avoid familiar pitfalls before they cost you money and time.
+                 
                 </p>
               </div>
               <div className="flex justify-center w-full">
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                >
+                  <span>EXPLORE STRATEGY</span>
+                  <span>&rarr;</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
+            {/* Left Column: Text */}
+            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-2 scroll-fade-up order-1">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black">
+                Legal Advisory
+              </h2>
+              <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
+                <p>
+                 
+                </p>
+                <p>
+                  Litigation, compliance, and constitutional law, from trial courts to the Supreme Court of India.
+                </p>
+                <p>
+                
+                </p>
+                <p>
+                
+                </p>
+                <p>
+                   
+                </p>
+              </div>
+              <div className="flex justify-center w-full">
+                <Link
+                  href="/services/legal"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                >
+                  <span>EXPLORE LEGAL</span>
+                  <span>&rarr;</span>
+                </Link>
+              </div>
+            </div>
+            {/* Right Column: Image */}
+            <div className="lg:col-span-6 scroll-fade-up relative h-[300px] lg:h-[400px] border border-black/10 rounded-[1px] overflow-hidden shadow-lg order-2">
+              <Image
+                src="/hero_legal.png"
+                alt="Legal Advisory"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch pt-8">
+            {/* Left Column: Image */}
+            <div className="lg:col-span-6 scroll-fade-up relative h-[300px] lg:h-[400px] border border-black/10 rounded-[1px] overflow-hidden shadow-lg order-2 lg:order-1">
+              <Image
+                src="/int_fluency.jpeg"
+                alt="Strategy Consulting"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+            {/* Right Column: Text */}
+            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-2 scroll-fade-up order-1 lg:order-2">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black">
+                Local Depth. International Fluency.
+              </h2>
+              <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
+                <p>
+                  Full-spectrum legal and strategy advisory for clients across India, the Gulf, the UK, the US, and South Korea.
+                </p>
+                <p>
+                  
+                </p>
+                <p>
+                 
+                </p>
+              </div>
+              <div className="flex justify-center w-full">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>SEE OUR EXPERTISE</span>
                   <span>&rarr;</span>
@@ -377,6 +459,8 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+            
         </div>
       </section>
 
@@ -416,7 +500,7 @@ export default function Home() {
                 <div className="pt-6 flex justify-center">
                   <Link
                     href="/services/consulting"
-                    className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                    className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                   >
                     <span>EXPLORE CONSULTING</span>
                     <span>&rarr;</span>
@@ -448,7 +532,7 @@ export default function Home() {
                 <div className="pt-6 flex justify-center">
                   <Link
                     href="/services/legal"
-                    className="inline-flex items-center gap-3 bg-[#fa0249] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                    className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                   >
                     <span>EXPLORE LEGAL</span>
                     <span>&rarr;</span>

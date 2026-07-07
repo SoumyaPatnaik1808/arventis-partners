@@ -231,7 +231,7 @@ export default function LegalPage() {
         <div className="max-w-7xl mx-auto w-full relative z-20 mt-4 md:mt-8">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 bg-white/5 hover:bg-[#fa0249] text-white text-xs tracking-[0.2em] font-bold uppercase border border-white/20 hover:border-[#fa0249] px-5 py-3 transition-all duration-300 hover-target backdrop-blur-sm"
+            className="inline-flex items-center gap-2 bg-white/5 hover:bg-[#fcbe03] text-white text-xs tracking-[0.2em] font-bold uppercase border border-white/20 hover:border-[#fcbe03] px-5 py-3 transition-all duration-300 hover-target backdrop-blur-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>BACK TO OUR SERVICES</span>

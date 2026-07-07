@@ -56,7 +56,7 @@ export default function ServiceDrawerItem({
       {/* GSAP Hover Accent Bar */}
       <div
         ref={accentBarRef}
-        className="absolute left-0 top-0 bottom-0 w-1 origin-left pointer-events-none z-20 bg-[#fa0249]"
+        className="absolute left-0 top-0 bottom-0 w-1 origin-left pointer-events-none z-20 bg-[#fcbe03]"
         style={{ transform: 'scaleX(0)' }}
       />
 
@@ -77,7 +77,7 @@ export default function ServiceDrawerItem({
 
         <div
           className={`w-8 h-8 rounded-full border border-black/15 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-            isOpen ? 'rotate-180 bg-[#fa0249] text-white border-[#fa0249]' : 'text-black group-hover:border-black/40'
+            isOpen ? 'rotate-180 bg-[#fcbe03] text-white border-[#fcbe03]' : 'text-black group-hover:border-black/40'
           }`}
         >
           <ChevronDown className="w-4 h-4" />
@@ -104,13 +104,13 @@ export default function ServiceDrawerItem({
 
           {/* Scope of Practice Bullets */}
           <div className="pt-4 space-y-4">
-            <span className="font-sans text-[10px] sm:text-xs tracking-[0.25em] uppercase font-bold block text-[#fa0249]">
+            <span className="font-sans text-[10px] sm:text-xs tracking-[0.25em] uppercase font-bold block text-[#fcbe03]">
               SCOPE OF PRACTICE
             </span>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
               {bullets.map((bullet, bIdx) => (
                 <div key={bIdx} className="flex items-start gap-3 py-1 px-0">
-                  <span className="w-1.5 h-1.5 rounded-full mt-2 bg-[#fa0249] flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full mt-2 bg-[#fcbe03] flex-shrink-0" />
                   <span className="font-sans text-xs sm:text-sm font-medium text-black/90 leading-normal">
                     {bullet}
                   </span>

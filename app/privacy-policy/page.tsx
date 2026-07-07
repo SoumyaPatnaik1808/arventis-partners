@@ -8,7 +8,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Top Thin Accent Border */}
-      <div className="w-full h-1 bg-[#fa0249]"></div>
+      <div className="w-full h-1 bg-[#fcbe03]"></div>
       
       <Navbar />
 
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
           <div className="space-y-12">
             <section>
               <h2 className="font-serif text-2xl font-bold mb-4">1. Information We Collect</h2>
-              <ul className="font-sans text-base md:text-lg leading-[1.8] list-disc pl-5 space-y-3 marker:text-[#fa0249]">
+              <ul className="font-sans text-base md:text-lg leading-[1.8] list-disc pl-5 space-y-3 marker:text-[#fcbe03]">
                 <li><span className="font-semibold">Information you provide directly.</span> Name, designation, organization, and any details submitted through our contact or consultation forms.</li>
                 <li><span className="font-semibold">Information collected automatically.</span> Technical information such as IP address, browser type, device information, and pages visited, collected through cookies and similar technologies.</li>
                 <li><span className="font-semibold">Information from engagements.</span> Where you become a client, we may collect additional information necessary to deliver strategy consulting or legal services, governed by the specific engagement agreement executed between us.</li>
@@ -62,7 +62,7 @@ export default function PrivacyPolicyPage() {
               <p className="font-sans text-base md:text-lg leading-[1.8] mb-4">
                 We do not sell, rent, or trade personal information. Information may be shared only in the following circumstances:
               </p>
-              <ul className="font-sans text-base md:text-lg leading-[1.8] list-disc pl-5 space-y-2 marker:text-[#fa0249] mb-4">
+              <ul className="font-sans text-base md:text-lg leading-[1.8] list-disc pl-5 space-y-2 marker:text-[#fcbe03] mb-4">
                 <li>With Firm personnel on a need-to-know basis</li>
                 <li>With service providers who support our operations, under confidentiality obligations</li>
                 <li>Where required by law or regulatory authority</li>

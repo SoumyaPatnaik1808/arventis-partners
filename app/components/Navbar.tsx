@@ -81,7 +81,7 @@ export default function Navbar() {
               height={120}
               priority
               unoptimized
-              className={`h-full max-h-10 sm:max-h-12 md:max-h-14 w-auto object-contain transition-all duration-500 scale-200 sm:scale-120 md:scale-180 origin-left ${
+              className={`h-full max-h-8 sm:max-h-10 md:max-h-12 w-auto object-contain transition-all duration-500 origin-left ${
                 isHeaderWhite ? 'mix-blend-multiply filter contrast-[1.08]' : 'opacity-90'
               }`}
             />
@@ -101,10 +101,10 @@ export default function Navbar() {
                   href={item.href}
                   className={`inline-flex items-center justify-center px-6 py-3 text-xs tracking-[0.25em] font-bold uppercase transition-all duration-300 border rounded-[2px] hover-target ${
                     isContactActive
-                      ? 'bg-[#fa0249] text-white border-[#fa0249]'
+                      ? 'bg-[#fcbe03] text-white border-[#fcbe03]'
                       : isHeaderWhite
-                        ? 'border-black/80 text-black hover:bg-[#fa0249] hover:text-white hover:border-black'
-                        : 'border-[#fa0249] text-white hover:bg-[#fa0249] hover:text-white hover:border-[#fa0249]'
+                        ? 'border-black/80 text-black hover:bg-[#fcbe03] hover:text-white hover:border-black'
+                        : 'border-[#fcbe03] text-white hover:bg-[#fcbe03] hover:text-white hover:border-[#fcbe03]'
                   }`}
                 >
                   {item.label}
@@ -118,10 +118,10 @@ export default function Navbar() {
                 href={item.href}
                 className={`font-sans text-sm font-bold tracking-widest uppercase transition-all duration-300 hover-target nav-link-hover ${
                   isActive
-                    ? 'text-[#fa0249] font-bold border-b-2 border-[#fa0249] pb-1 after:hidden'
+                    ? 'text-[#fcbe03] font-bold border-b-2 border-[#fcbe03] pb-1 after:hidden'
                     : isHeaderWhite
-                      ? 'text-black/85 hover:text-[#fa0249]'
-                      : 'text-white hover:text-[#fa0249]'
+                      ? 'text-black/85 hover:text-[#fcbe03]'
+                      : 'text-white hover:text-[#fcbe03]'
                 }`}
               >
                 {item.label}
@@ -137,10 +137,10 @@ export default function Navbar() {
             aria-label="Toggle navigation menu"
             className={`relative z-50 p-1.5 sm:p-2 transition-colors duration-300 focus:outline-none hover-target ${
               isMenuOpen 
-                ? 'text-black hover:text-[#fa0249]'
+                ? 'text-black hover:text-[#fcbe03]'
                 : isHeaderWhite
-                  ? 'text-black hover:text-[#fa0249]'
-                  : 'text-white hover:text-[#fa0249]'
+                  ? 'text-black hover:text-[#fcbe03]'
+                  : 'text-white hover:text-[#fcbe03]'
             }`}
           >
             {isMenuOpen ? <X className="w-8 h-8 sm:w-9 sm:h-9" /> : <Menu className="w-8 h-8 sm:w-9 sm:h-9" />}
@@ -167,7 +167,7 @@ export default function Navbar() {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-widest uppercase transition-all duration-300 hover:scale-105 hover-target nav-link-hover ${
-                  isActive ? 'text-[#fa0249] font-bold after:hidden' : 'text-black/80 hover:text-[#fa0249]'
+                  isActive ? 'text-[#fcbe03] font-bold after:hidden' : 'text-black/80 hover:text-[#fcbe03]'
                 }`}
               >
                 {item.label}
