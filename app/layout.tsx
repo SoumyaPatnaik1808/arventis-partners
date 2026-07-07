@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/favicon-final.png?v=5",
-    shortcut: "/favicon-final.png?v=5",
-    apple: "/favicon-final.png?v=5",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "Arventis Partners | Strategy & Legal Advisory",
@@ -154,9 +154,9 @@ export default function RootLayout({
       className={`h-full antialiased selection:bg-[#fcbe03] selection:text-[#000000] ${graphik.variable}`}
     >
       <head>
-        <link rel="icon" href="/favicon-final.png?v=5" type="image/png" sizes="any" />
-        <link rel="shortcut icon" href="/favicon-final.png?v=5" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon-final.png?v=5" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
