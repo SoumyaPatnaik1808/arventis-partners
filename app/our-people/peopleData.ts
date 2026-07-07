@@ -58,8 +58,8 @@ export const peopleData: Person[] = [
       { id: 'a2', text: 'Architect of sales operating models & GTM strategies in 5 countries' },
       { id: 'a3', text: 'Digital transformation lead recognised at World Economic Forum' }
     ],
-    imagePath: '/Anshuman_new.png',
-    image: '/Anshuman_new.png',
+    imagePath: '/anshuman_new.png',
+    image: '/anshuman_new.png',
     badge: '11+ Years Experience',
     credentials: 'MBA, IIM Lucknow  |  11+ Years  |  India – GCC – UK – US – South Korea',
     linkedin: 'https://linkedin.com',

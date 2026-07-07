@@ -99,6 +99,7 @@ export default function RootLayout({
         "logo": "https://arventispartners.com/logo-extended.png",
         "description": "Elite dual-discipline firm combining strategy consulting and legal advocacy.",
         "slogan": "Where Strategy meets standing",
+        "email": "contact@arventispartners.com",
         "address": [
           {
             "@type": "PostalAddress",
@@ -132,10 +133,12 @@ export default function RootLayout({
         ],
         "founder": [
           { "@type": "Person", "name": "Suman Thakur", "jobTitle": "Founding Partner - Legal Practice" },
-          { "@type": "Person", "name": "Yash Thakur", "jobTitle": "Founding Partner" },
-          { "@type": "Person", "name": "Sweta Verma", "jobTitle": "Founding Partner" },
-          { "@type": "Person", "name": "Adarsh Kashyap", "jobTitle": "Founding Partner" },
-          { "@type": "Person", "name": "Anshuman Mohanty", "jobTitle": "Strategy Consulting Practice Lead" }
+          { "@type": "Person", "name": "Anshuman Mohanty", "jobTitle": "Founding Partner - Strategy Consulting Practice" }
+        ],
+        "employee": [
+          { "@type": "Person", "name": "Yash Thakur", "jobTitle": "Associate Counsel" },
+          { "@type": "Person", "name": "Sweta Verma", "jobTitle": "Advocate" },
+          { "@type": "Person", "name": "Adarsh Prabhat Asthana", "jobTitle": "Advocate" }
         ],
         "areaServed": ["Delhi", "Mumbai", "Pune", "Shimla", "Chandigarh", "Kolkata", "Hyderabad", "Lucknow", "Cuttack", "GCC", "UK", "US"],
         "sameAs": [
@@ -151,7 +154,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased selection:bg-[#fcbe03] selection:text-[#000000] ${graphik.variable}`}
+      className={`h-full antialiased selection:bg-[#fc8403] selection:text-[#000000] ${graphik.variable}`}
     >
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />

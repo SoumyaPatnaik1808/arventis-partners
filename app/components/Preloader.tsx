@@ -95,7 +95,7 @@ export default function Preloader() {
     }
     .preloader-line {
       height: 1.5px;
-      background-color: #fcbe03;
+      background-color: #fc8403;
       width: 0%;
       opacity: 0;
       animation: preloaderLineGrow 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
@@ -108,7 +108,7 @@ export default function Preloader() {
 
   return (
     <div
-      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-white transition-transform duration-[1200ms] ${
+      className={`fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#01142d] transition-transform duration-[1200ms] ${
         exitAnimation ? '-translate-y-full' : 'translate-y-0'
       }`}
       style={{
@@ -118,24 +118,19 @@ export default function Preloader() {
       {/* Inject styling safely */}
       <style dangerouslySetInnerHTML={{ __html: rawCss }} />
 
-      {/* DESKTOP PRELOADER (TEXT VIEW) - Hidden on mobile, shown on medium & up */}
+      {/* DESKTOP PRELOADER (LOGO VIEW) - Hidden on mobile, shown on medium & up */}
       <div className="hidden md:flex flex-col items-center select-none text-center px-4">
-        {/* Brand Text Container */}
-        <div className="flex overflow-hidden py-2">
-          {brandText.split("").map((char, index) => (
-            <span
-              key={index}
-              className="preloader-letter font-sans text-xl sm:text-2xl md:text-3xl font-bold tracking-[0.25em] sm:tracking-[0.35em] text-[#fcbe03]"
-              style={{
-                // Stagger delay: 45ms per character
-                animationDelay: `${index * 45}ms`,
-                // Space width adjustment
-                marginRight: char === " " ? '0.4em' : '0',
-              }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </span>
-          ))}
+        {/* Logo Image */}
+        <div className="preloader-logo py-2 flex items-center justify-center">
+          <Image
+            src="/logo X white.png"
+            alt="Arventis Partners Logo"
+            width={450}
+            height={120}
+            priority
+            unoptimized
+            className="w-auto h-28 md:h-36 lg:h-40 object-contain opacity-90"
+          />
         </div>
 
         {/* Elegant Underline */}
@@ -143,10 +138,7 @@ export default function Preloader() {
           <div className="preloader-line mx-auto" />
         </div>
 
-        {/* Tagline */}
-        <p className="preloader-tagline font-sans text-[10px] sm:text-xs font-medium tracking-[0.25em] text-[#fcbe03] mt-5 uppercase">
-          Where Strategy meets Standing
-        </p>
+       
       </div>
 
       {/* MOBILE PRELOADER (LOGO VIEW) - Shown on mobile/tablet, hidden on medium & up */}
@@ -154,13 +146,13 @@ export default function Preloader() {
         {/* Logo Image */}
         <div className="preloader-logo py-2 flex items-center justify-center">
           <Image
-            src="/logo.png"
+            src="/logo X white.png"
             alt="Arventis Partners Logo"
             width={380}
             height={100}
             priority
             unoptimized
-            className="w-auto h-12 sm:h-14 object-contain mix-blend-multiply filter contrast-[1.08]"
+            className="w-auto h-16 sm:h-20 object-contain opacity-90"
           />
         </div>
 
@@ -169,10 +161,8 @@ export default function Preloader() {
           <div className="preloader-line mx-auto" />
         </div>
 
-        {/* Tagline */}
-        <p className="preloader-tagline font-sans text-[10px] sm:text-xs font-medium tracking-[0.25em] text-[#fcbe03] mt-5 uppercase">
-          Where Strategy meets Standing
-        </p>
+      
+        
       </div>
     </div>
   );

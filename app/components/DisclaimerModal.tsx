@@ -14,16 +14,18 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
   useEffect(() => {
     setIsMounted(true);
     if (typeof window !== 'undefined') {
-      const accepted = localStorage.getItem('arventis_disclaimer_accepted');
+      const accepted = localStorage.getItem('arventis_disclaimer_accepted_v2');
       if (accepted !== 'true') {
         setIsOpen(true);
+        document.body.style.overflow = 'hidden';
       }
     }
   }, []);
 
   const handleProceed = () => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('arventis_disclaimer_accepted', 'true');
+      localStorage.setItem('arventis_disclaimer_accepted_v2', 'true');
+      document.body.style.overflow = '';
     }
     setIsOpen(false);
     if (onAccept) {
@@ -40,7 +42,7 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
         
         {/* Header */}
         <div className="mb-6">
-          <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#fcbe03] font-bold block mb-1">
+          <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#fc8403] font-bold block mb-1">
             REGULATORY DISCLAIMER
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-tight text-black">
@@ -69,13 +71,14 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
         <div className="flex flex-col sm:flex-row gap-4 w-full">
           <button
             onClick={handleProceed}
-            className="flex-1 py-3.5 px-6 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 rounded-[1px] shadow-lg shadow-[#fcbe03]/10"
+            className="flex-1 py-3.5 px-6 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 rounded-[1px] shadow-lg shadow-[#fc8403]/10"
           >
             I AGREE
           </button>
           <button
             onClick={() => {
               if (typeof window !== 'undefined') {
+                document.body.style.overflow = '';
                 window.location.href = 'https://google.com';
               }
             }}

@@ -64,7 +64,7 @@ export default function Home() {
       navTitle: "Legal Advisory",
       title: "Legal Advisory",
       subtitle: "Litigation, compliance, and constitutional law, from trial courts to the Supreme Court of India.",
-      image: "/hero_legal.png",
+      image: "/Hero-legal.png",
       primaryBtnText: "Explore Practice Areas",
       primaryBtnHref: "/services#legal",
       secondaryBtnText: "Initiate Mandate",
@@ -227,7 +227,7 @@ export default function Home() {
                   {/* Horizontal Progress Bar above the title */}
                   <div className="absolute top-0 left-0 w-full h-[3px] bg-white/20 overflow-hidden">
                     <div
-                      className={`h-full bg-[#fcbe03] transition-all ${
+                      className={`h-full bg-[#fc8403] transition-all ${
                         currentSlide === idx ? 'w-full animate-slide-progress' : 'w-0'
                       }`}
                       style={{
@@ -286,38 +286,37 @@ export default function Home() {
         
         </div>
       </section>
-
       {/* 5. DETAILED FEATURES */}
       <section className="relative w-full bg-white text-black py-12 md:py-16 px-6 md:px-16 relative z-20">
         <div className="max-w-7xl mx-auto space-y-16 md:space-y-20">
           {/* Feature 1 */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             {/* Left Column: Text */}
-            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-2 scroll-fade-up order-1">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black">
-                One Team, Start to Finish
-              </h2>
-              <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
-                <p>
-                 
-                </p>
-                <p>
-                  Strategy consulting and legal advocacy, led by the same founding partners from day one.
-                </p>
-                <p>
-                
-                </p>
-                <p>
-                
-                </p>
-                <p>
-                   
-                </p>
+            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-0 scroll-fade-up order-1">
+              <div className="space-y-4 md:space-y-6">
+                <h2 className="font-serif text-4xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black lg:-mt-[10px]">
+                  One Team, Start to Finish
+                </h2>
+                <div className="font-sans text-[17px] text-black/75 leading-relaxed font-light space-y-3">
+                  <p>
+                    Most clients brief one advisor on strategy and a different one on legal risk, then deal with the two not lining up and face consequences.
+                  </p>
+                  <p>
+                    At Arventis, the same leadership handles both of the domains from the start. Thus, saving you from the hassle of jumping between two different practices.
+                  </p>
+                  <p>
+                    Every step is taken with both business goals and legal implications in mind.
+                  </p>
+                  <p>
+                    Your time is spent making decisions, not coordinating between advisors.
+                  </p>
+                  
+                </div>
               </div>
               <div className="flex justify-center w-full">
                 <Link
                   href="/our-people"
-                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>MEET THE TEAM</span>
                   <span>&rarr;</span>
@@ -336,92 +335,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Feature 2 */}
+
+          {/* Feature 4 */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch pt-8">
-            {/* Left Column: Image */}
-            <div className="lg:col-span-6 scroll-fade-up relative h-[300px] lg:h-[400px] border border-black/10 rounded-[1px] overflow-hidden shadow-lg order-2 lg:order-1">
-              <Image
-                src="/hero strategy.png"
-                alt="Strategy Consulting"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            {/* Right Column: Text */}
-            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-2 scroll-fade-up order-1 lg:order-2">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black">
-                Strategy Consulting
-              </h2>
-              <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
-                <p>
-                  Growth, GTM, and operating model design, delivered across India, the Gulf, the UK, the US, and South Korea.
-                </p>
-                <p>
-                  
-                </p>
-                <p>
-                 
-                </p>
-              </div>
-              <div className="flex justify-center w-full">
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
-                >
-                  <span>EXPLORE STRATEGY</span>
-                  <span>&rarr;</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
-            {/* Left Column: Text */}
-            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-2 scroll-fade-up order-1">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black">
-                Legal Advisory
-              </h2>
-              <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
-                <p>
-                 
-                </p>
-                <p>
-                  Litigation, compliance, and constitutional law, from trial courts to the Supreme Court of India.
-                </p>
-                <p>
-                
-                </p>
-                <p>
-                
-                </p>
-                <p>
-                   
-                </p>
-              </div>
-              <div className="flex justify-center w-full">
-                <Link
-                  href="/services/legal"
-                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
-                >
-                  <span>EXPLORE LEGAL</span>
-                  <span>&rarr;</span>
-                </Link>
-              </div>
-            </div>
-            {/* Right Column: Image */}
-            <div className="lg:col-span-6 scroll-fade-up relative h-[300px] lg:h-[400px] border border-black/10 rounded-[1px] overflow-hidden shadow-lg order-2">
-              <Image
-                src="/hero_legal.png"
-                alt="Legal Advisory"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch pt-8">
             {/* Left Column: Image */}
             <div className="lg:col-span-6 scroll-fade-up relative h-[300px] lg:h-[400px] border border-black/10 rounded-[1px] overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
@@ -433,25 +349,24 @@ export default function Home() {
               />
             </div>
             {/* Right Column: Text */}
-            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-2 scroll-fade-up order-1 lg:order-2">
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black">
-                Local Depth. International Fluency.
-              </h2>
-              <div className="font-sans text-base text-black/75 leading-relaxed font-light space-y-3">
-                <p>
-                  Full-spectrum legal and strategy advisory for clients across India, the Gulf, the UK, the US, and South Korea.
-                </p>
-                <p>
-                  
-                </p>
-                <p>
-                 
-                </p>
+            <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-0 scroll-fade-up order-1 lg:order-2">
+              <div className="space-y-4 md:space-y-6">
+                <h2 className="font-serif text-4xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black lg:-mt-[10px]">
+                  Experience Across Markets
+                </h2>
+                <div className="font-sans text-[17px] text-black/75 leading-relaxed font-light space-y-3">
+                  <p>
+                    Over more than a decade, our leadership has worked on market entry, government mandates, and enterprise strategy across India, the GCC, the UK, the US, and South Korea.
+                  </p>
+                  <p>
+                    That range means we've already dealt with the regulatory, cultural, and commercial complexities that define these jurisdictions, ensuring seamless operations across borders.
+                  </p>
+                </div>
               </div>
               <div className="flex justify-center w-full">
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>SEE OUR EXPERTISE</span>
                   <span>&rarr;</span>
@@ -460,7 +375,6 @@ export default function Home() {
             </div>
           </div>
 
-            
         </div>
       </section>
 
@@ -471,7 +385,7 @@ export default function Home() {
             <h2 className="font-serif text-[20px] sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-[#000000] whitespace-nowrap">
               Which one would you like to start with ? 
             </h2>
-            <div className="font-sans text-base text-[#000000]/75 leading-relaxed font-light mt-2">
+            <div className="font-sans text-[17px] text-[#000000]/75 leading-relaxed font-light mt-2">
               <p>Most engagements need both eventually. Start with whichever one fits your problem, right now.</p>
             </div>
           </div>
@@ -493,14 +407,15 @@ export default function Home() {
                   <h3 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black">
                     Strategy Consulting
                   </h3>
-                  <p className="font-sans text-sm text-black/70 font-light leading-relaxed">
-                    Growth strategy, GTM expansion, and operational work for organizations that need execution, not just plans.
+                  <p className="font-sans text-[15px] text-black/70 font-light leading-relaxed">
+                    Growth strategy, GTM expansion, and operational work 
+                    <br/>  for organizations that need execution, not just plans.
                   </p>
                 </div>
                 <div className="pt-6 flex justify-center">
                   <Link
                     href="/services/consulting"
-                    className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                    className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                   >
                     <span>EXPLORE CONSULTING</span>
                     <span>&rarr;</span>
@@ -525,14 +440,15 @@ export default function Home() {
                   <h3 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black">
                     Legal Advisory
                   </h3>
-                  <p className="font-sans text-sm text-black/75 font-light leading-relaxed">
-                    Commercial dispute resolution and advocacy for businesses that need counsel as sharp as their ambition.
+                  <p className="font-sans text-[15px] text-black/75 font-light leading-relaxed">
+                    Commercial dispute resolution and advocacy for businesses
+                    <br/> that need counsel as sharp as their ambition.
                   </p>
                 </div>
                 <div className="pt-6 flex justify-center">
                   <Link
                     href="/services/legal"
-                    className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                    className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                   >
                     <span>EXPLORE LEGAL</span>
                     <span>&rarr;</span>

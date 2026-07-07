@@ -101,7 +101,7 @@ export default function ServicesPage() {
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-normal text-white mb-6 drop-shadow-lg">
             <RevealHeading>SERVICES</RevealHeading>
           </h1>
-          <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
+          <p className="scroll-fade-up font-sans text-[15px] sm:text-[17px] md:text-[19px] text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
             Unified strategic management consulting and elite legal advocacy, <br className="hidden sm:inline" />
             engineered for high-stakes execution.
           </p>
@@ -127,7 +127,7 @@ export default function ServicesPage() {
                 <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black text-center">
                   ARVENTIS CONSULTING
                 </h2>
-                <p className="font-sans text-sm text-black/70 font-light leading-relaxed text-center">
+                <p className="font-sans text-[15px] text-black/70 font-light leading-relaxed text-center">
                   Senior strategy advisory engineered for execution.<br />
                   From growth planning, sales transformation, and operating model design to AI integration and cross-border market expansion.
                 </p>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
               <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/consulting"
-                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>EXPLORE CONSULTING</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -159,7 +159,7 @@ export default function ServicesPage() {
                 <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-wider leading-tight text-black text-center">
                   ARVENTIS LEGAL
                 </h2>
-                <p className="font-sans text-sm text-black/75 font-light leading-relaxed text-center">
+                <p className="font-sans text-[15px] text-black/75 font-light leading-relaxed text-center">
                   Courtroom credibility and senior advocacy across trial courts, high courts, arbitral tribunals, and the Supreme Court of India.<br />
                   Covering litigation, corporate compliance, and constitutional law.
                 </p>
@@ -167,7 +167,7 @@ export default function ServicesPage() {
               <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/legal"
-                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>EXPLORE LEGAL</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -184,7 +184,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             {/* Left Column: Text */}
-            <div className="lg:col-span-8 lg:min-h-[380px] flex flex-col justify-between py-2 space-y-6">
+            <div className="lg:col-span-8 lg:min-h-[380px] flex flex-col justify-between py-0 space-y-6">
               <div className="scroll-fade-up">
                 <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-black">
                   Industries
@@ -195,8 +195,8 @@ export default function ServicesPage() {
               {/* 3 columns of industry text items with thin bottom border */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 scroll-fade-up transition-delay-200">
                 {industries.map((ind, idx) => (
-                  <div key={idx} className={ind ? "border-b border-black/10 pb-3 pt-1 hover:border-[#fcbe03]/30 transition-all duration-300" : "pb-3 pt-1"}>
-                    <span className={`font-sans text-xs sm:text-sm font-semibold tracking-wider block ${ind ? 'text-[#fcbe03] hover:text-black transition-colors duration-300' : 'opacity-0 select-none'}`}>
+                  <div key={idx} className={ind ? "border-b border-black/10 pb-3 pt-1 hover:border-[#fc8403]/30 transition-all duration-300" : "pb-3 pt-1"}>
+                    <span className={`font-sans text-[13px] sm:text-[15px] font-semibold tracking-wider block ${ind ? 'text-[#fc8403] hover:text-black transition-colors duration-300' : 'opacity-0 select-none'}`}>
                       {ind || 'Spacer'}
                     </span>
                   </div>

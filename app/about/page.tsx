@@ -85,7 +85,7 @@ export default function AboutPage() {
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-normal text-white mb-6 drop-shadow-lg">
             <RevealHeading>ABOUT</RevealHeading>
           </h1>
-          <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
+          <p className="scroll-fade-up font-sans text-[15px] sm:text-[17px] md:text-[19px] text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
             A premier advisory firm combining senior strategy consulting and elite legal authority under a single engagement framework.
           </p>
         </div>
@@ -117,17 +117,17 @@ export default function AboutPage() {
             </div>
 
             {/* Right Column: Title and Subtitle */}
-            <div className="lg:col-span-7 flex flex-col justify-start pt-0 pb-2 order-1 lg:order-2">
+            <div className="lg:col-span-7 flex flex-col justify-start pt-0 pb-0 order-1 lg:order-2">
               <div className="space-y-4">
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up lg:-mt-[8px]">
                   <span className="block md:whitespace-nowrap"><RevealHeading>One Firm.</RevealHeading></span>
                   <span className="block md:whitespace-nowrap"><RevealHeading>Two Disciplines.</RevealHeading></span>
                   <span className="block md:whitespace-nowrap"><RevealHeading>No Translation Required.</RevealHeading></span>
                 </h2>
-                <div className="h-[1px] w-24 bg-[#fcbe03] mt-4" />
+                <div className="h-[1px] w-24 bg-[#fc8403] mt-4" />
               </div>
 
-              <div className="space-y-3 mt-8 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
+              <div className="space-y-3 mt-8 font-sans text-[15px] sm:text-[17px] text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
                 <p>Legal authority and strategy consulting, working under a single engagement model.</p>
                 <p>Every decision here is weighed twice before it reaches you: once for what it builds, once for what it risks.</p>
                 <p>You get one answer, already tested from both sides.</p>
@@ -145,12 +145,12 @@ export default function AboutPage() {
           {/* THE FIRM (TEXT LEFT, IMAGE RIGHT) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
             {/* Left Column: Text */}
-            <div className="lg:col-span-7 lg:min-h-[380px] flex flex-col justify-between pt-0 pb-2">
+            <div className="lg:col-span-7 lg:min-h-[380px] flex flex-col justify-between pt-0 pb-0">
               <div>
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up lg:whitespace-nowrap">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-light tracking-tight leading-[1.15] text-black w-full scroll-fade-up lg:whitespace-nowrap lg:-mt-[8px]">
                   Built So Clients Don't Have to Choose
                 </h2>
-                <div className="space-y-3 mt-6 mb-4 font-sans text-sm sm:text-base text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
+                <div className="space-y-3 mt-6 mb-4 font-sans text-[15px] sm:text-[17px] text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
                   <p>
                     Founded by Suman Thakur, an advocate with a decade in litigation, and Anshuman Mohanty, a strategy leader with 11 years across global markets.
                   </p>
@@ -168,7 +168,7 @@ export default function AboutPage() {
               <div className="flex justify-center w-full mt-6 scroll-fade-up transition-delay-300">
                 <Link
                   href="/our-people"
-                  className="inline-flex items-center gap-3 bg-[#fcbe03] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>MEET OUR TEAM</span>
                   <span>&rarr;</span>
@@ -218,10 +218,10 @@ export default function AboutPage() {
               </h2>
               
               <div className="space-y-4 scroll-fade-up transition-delay-200">
-                <p className="font-sans text-sm sm:text-base text-black/85 font-light">
+                <p className="font-sans text-[15px] sm:text-[17px] text-black/85 font-light">
                   If you're building, defending, or expanding something that matters, <br /> you're probably on this list.
                 </p>
-                <ul className="list-disc pl-5 space-y-2 marker:text-[#fcbe03]">
+                <ul className="list-disc pl-5 space-y-2 marker:text-[#fc8403]">
                   {[
                     'Founders and CXOs navigating regulatory complexity, in India and abroad',
                     'Startups building commercial and legal infrastructure from day one',
@@ -231,7 +231,7 @@ export default function AboutPage() {
                     'Landowners and individuals fighting for what\'s theirs',
                     'International companies entering India or the GCC, without local blind spots'
                   ].map((profile, idx) => (
-                    <li key={idx} className="font-sans text-sm sm:text-base text-black/85 font-light pl-1">
+                    <li key={idx} className="font-sans text-[15px] sm:text-[17px] text-black/85 font-light pl-1">
                       {profile}
                     </li>
                   ))}
