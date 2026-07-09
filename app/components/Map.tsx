@@ -93,7 +93,7 @@ export default function Map({ cities, activeCityIdx, onCitySelect }: MapProps) {
         /* Tailwind img reset conflict fix */
         .leaflet-container img { max-width: none !important; max-height: none !important; }
         .custom-gps-marker { display: flex !important; align-items: center !important; justify-content: center !important; }
-        .marker-pin { width: 12px; height: 12px; border-radius: 50%; background: #fc8403; border: 2px solid white; box-shadow: 0 0 0 4px rgba(252, 190, 3, 0.4), 0 0 10px rgba(252, 190, 3, 0.8); animation: pulse 2s infinite; }
+        .marker-pin { width: 12px; height: 12px; border-radius: 50%; background: #0a0862; border: 2px solid white; box-shadow: 0 0 0 4px rgba(252, 190, 3, 0.4), 0 0 10px rgba(252, 190, 3, 0.8); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0px rgba(252, 190, 3, 0.7), 0 0 10px rgba(252, 190, 3, 0.8); } 70% { box-shadow: 0 0 0 10px rgba(252, 190, 3, 0), 0 0 10px rgba(252, 190, 3, 0.8); } 100% { box-shadow: 0 0 0 0px rgba(252, 190, 3, 0), 0 0 10px rgba(252, 190, 3, 0.8); } }
         .custom-map-tooltip { background: black !important; color: white !important; border: none !important; font-family: inherit !important; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; padding: 4px 8px !important; box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important; border-radius: 2px !important; }
         .leaflet-tooltip-top:before { border-top-color: black !important; }

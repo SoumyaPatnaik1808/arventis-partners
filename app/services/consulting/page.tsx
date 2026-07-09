@@ -191,7 +191,7 @@ export default function ConsultingPage() {
         <div className="max-w-7xl mx-auto w-full relative z-20 mt-4 md:mt-8">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 bg-white/5 hover:bg-[#fc8403] text-white text-xs tracking-[0.2em] font-bold uppercase border border-white/20 hover:border-[#fc8403] px-5 py-3 transition-all duration-300 hover-target backdrop-blur-sm"
+            className="inline-flex items-center gap-2 bg-white/5 hover:bg-[#0a0862] text-white text-xs tracking-[0.2em] font-bold uppercase border border-white/20 hover:border-[#0a0862] px-5 py-3 transition-all duration-300 hover-target backdrop-blur-sm"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>BACK TO OUR SERVICES</span>
@@ -237,24 +237,7 @@ export default function ConsultingPage() {
       </section>
 
       {/* CONTACT CTA SECTION */}
-      <section className="relative w-full bg-[#fc8403] py-10 md:py-12 px-6 md:px-16 text-center text-black z-20">
-        <div className="max-w-4xl mx-auto space-y-6 scroll-fade-up">
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-black">
-            Let's Start the Conversation
-          </h2>
-          <p className="font-sans text-sm md:text-base text-black/70 font-light max-w-2xl mx-auto leading-relaxed">
-            Establish a direct partner relationship or initiate a mandate. Our strategy and legal practices operate under strict NDA protocols.
-          </p>
-          <div className="pt-4">
-            <Link
-              href="/contact-us"
-              className="inline-block bg-white hover:bg-black text-black hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-10 py-4 transition-all duration-300 hover-target shadow-xl rounded-[1px]"
-            >
-              CONTACT US
-            </Link>
-          </div>
-        </div>
-      </section>
+     <ContactUs/>
 
      <Footer/>
     </div>

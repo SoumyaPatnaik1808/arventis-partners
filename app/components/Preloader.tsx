@@ -95,7 +95,7 @@ export default function Preloader() {
     }
     .preloader-line {
       height: 1.5px;
-      background-color: #fc8403;
+      background-color: #ffffff;
       width: 0%;
       opacity: 0;
       animation: preloaderLineGrow 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
@@ -123,19 +123,22 @@ export default function Preloader() {
         {/* Logo Image */}
         <div className="preloader-logo py-2 flex items-center justify-center">
           <Image
-            src="/logo X white.png"
+            src="/logo-blackbg.png"
             alt="Arventis Partners Logo"
             width={450}
             height={120}
             priority
             unoptimized
-            className="w-auto h-28 md:h-36 lg:h-40 object-contain opacity-90"
+            className="w-auto h-28 md:h-36 lg:h-40 object-contain"
           />
         </div>
 
         {/* Elegant Underline */}
         <div className="w-[180px] sm:w-[240px] md:w-[300px] mt-3">
           <div className="preloader-line mx-auto" />
+           <h1 className="font-serif text-md sm:text-2xl md:text-3xl font-light text-white">
+            Where Strategy meets Standing
+           </h1>
         </div>
 
        
@@ -146,19 +149,20 @@ export default function Preloader() {
         {/* Logo Image */}
         <div className="preloader-logo py-2 flex items-center justify-center">
           <Image
-            src="/logo X white.png"
+            src="/logo-blackbg.png"
             alt="Arventis Partners Logo"
             width={380}
             height={100}
             priority
             unoptimized
-            className="w-auto h-16 sm:h-20 object-contain opacity-90"
+            className="w-auto h-16 sm:h-20 object-contain"
           />
         </div>
 
         {/* Elegant Underline */}
         <div className="w-[180px] sm:w-[240px] mt-3">
           <div className="preloader-line mx-auto" />
+         
         </div>
 
       

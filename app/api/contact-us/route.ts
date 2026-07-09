@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 4px; background-color: #ffffff;">
         <div style="background-color: #000000; color: #ffffff; padding: 20px; text-align: center; border-radius: 4px 4px 0 0;">
           <h1 style="margin: 0; font-size: 20px; letter-spacing: 2px;">ARVENTIS PARTNERS</h1>
-          <p style="margin: 5px 0 0 0; font-style: italic; font-size: 12px; color: #fc8403;">New Client Mandate Enquiry</p>
+          <p style="margin: 5px 0 0 0; font-style: italic; font-size: 12px; color: #0a0862;">New Client Mandate Enquiry</p>
         </div>
         <div style="padding: 20px; color: #000000; line-height: 1.6;">
           <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
               <td style="padding: 8px 0;"><a href="tel:${phone}">${phone}</a></td>
             </tr>
           </table>
-          <div style="margin-top: 20px; padding: 15px; background-color: #ffffff; border-left: 4px solid #fc8403; border-radius: 2px;">
+          <div style="margin-top: 20px; padding: 15px; background-color: #ffffff; border-left: 4px solid #0a0862; border-radius: 2px;">
             <strong style="display: block; margin-bottom: 8px; color: #000000;">Enquiry Parameters / Message:</strong>
             <p style="margin: 0; white-space: pre-wrap; font-size: 14px; color: #333333;">${message}</p>
           </div>

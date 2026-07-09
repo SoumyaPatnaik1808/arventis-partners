@@ -53,8 +53,8 @@ export default function Home() {
     {
       navTitle: "Strategy Consulting",
       title: "Strategy Consulting",
-      subtitle: "Growth, GTM, and operating model design, delivered across India, the Gulf, the UK, the US, and South Korea.",
-      image: "/hero strategy.png",
+      subtitle: "Growth, GTM, and operating model design, delivered across India, the GCC, the UK, the US, and South Korea.",
+      image: "/ArvBiz-bg.jpg",
       primaryBtnText: "Explore Consulting",
       primaryBtnHref: "/services#consulting",
       secondaryBtnText: "Discuss Growth",
@@ -73,7 +73,7 @@ export default function Home() {
     {
       navTitle: "International Fluency",
       title: "Local Depth.\nInternational Fluency.",
-      subtitle: "Full-spectrum legal and strategy advisory for clients across India, the Gulf, the UK, the US, and South Korea.",
+      subtitle: "Full-spectrum legal and strategy advisory for clients across India, the GCC, the UK, the US, and South Korea.",
       description: "Litigation and advisory across Indian courts and regulatory bodies. Consulting engagements delivered in India, Saudi Arabia, the UAE, Kuwait, the UK, the US, and South Korea — with the same preparation and the same standard of delivery, every time.",
       image: "/hero international.png",
       primaryBtnText: "Our Story",
@@ -227,7 +227,7 @@ export default function Home() {
                   {/* Horizontal Progress Bar above the title */}
                   <div className="absolute top-0 left-0 w-full h-[3px] bg-white/20 overflow-hidden">
                     <div
-                      className={`h-full bg-[#fc8403] transition-all ${
+                      className={`h-full bg-[#0a0862] transition-all ${
                         currentSlide === idx ? 'w-full animate-slide-progress' : 'w-0'
                       }`}
                       style={{
@@ -295,28 +295,27 @@ export default function Home() {
             <div className="lg:col-span-6 lg:h-[400px] flex flex-col justify-between py-0 scroll-fade-up order-1">
               <div className="space-y-4 md:space-y-6">
                 <h2 className="font-serif text-4xl sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-black lg:-mt-[10px]">
-                  One Team, Start to Finish
+                  Strategy and Legal, <br/> Under One Mandate
                 </h2>
                 <div className="font-sans text-[17px] text-black/75 leading-relaxed font-light space-y-3">
                   <p>
-                    Most clients brief one advisor on strategy and a different one on legal risk, then deal with the two not lining up and face consequences.
+                    Most clients brief one advisor on strategy and a separate advisor on legal risk, then manage the gaps between the two on their own.
                   </p>
                   <p>
-                    At Arventis, the same leadership handles both of the domains from the start. Thus, saving you from the hassle of jumping between two different practices.
+                    At Arventis, the same leadership handles both domains from the start, so you are not moving between two disconnected practices.
                   </p>
                   <p>
-                    Every step is taken with both business goals and legal implications in mind.
+                    Every recommendation accounts for business goals and legal implications together.
+
                   </p>
-                  <p>
-                    Your time is spent making decisions, not coordinating between advisors.
-                  </p>
+                  
                   
                 </div>
               </div>
               <div className="flex justify-center w-full">
                 <Link
                   href="/our-people"
-                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#0a0862] hover:bg-[#1915e1] text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>MEET THE TEAM</span>
                   <span>&rarr;</span>
@@ -326,7 +325,7 @@ export default function Home() {
             {/* Right Column: Image */}
             <div className="lg:col-span-6 scroll-fade-up relative h-[300px] lg:h-[400px] border border-black/10 rounded-[1px] overflow-hidden shadow-lg order-2">
               <Image
-                src="/strategic_foresight.png"
+                src="/TwoDisciplines-heropg.jpg"
                 alt="One Team, Start to Finish"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -359,14 +358,14 @@ export default function Home() {
                     Over more than a decade, our leadership has worked on market entry, government mandates, and enterprise strategy across India, the GCC, the UK, the US, and South Korea.
                   </p>
                   <p>
-                    That range means we've already dealt with the regulatory, cultural, and commercial complexities that define these jurisdictions, ensuring seamless operations across borders.
+                    That experience covers the regulatory, cultural, and commercial considerations specific to each jurisdiction, which shapes how we advise you in new markets.
                   </p>
                 </div>
               </div>
               <div className="flex justify-center w-full">
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#0a0862] hover:bg-[#1915e1] text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>SEE OUR EXPERTISE</span>
                   <span>&rarr;</span>
@@ -415,7 +414,7 @@ export default function Home() {
                 <div className="pt-6 flex justify-center">
                   <Link
                     href="/services/consulting"
-                    className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                    className="inline-flex items-center gap-3 bg-[#0a0862] hover:bg-[#1915e1] text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                   >
                     <span>EXPLORE CONSULTING</span>
                     <span>&rarr;</span>
@@ -448,7 +447,7 @@ export default function Home() {
                 <div className="pt-6 flex justify-center">
                   <Link
                     href="/services/legal"
-                    className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                    className="inline-flex items-center gap-3 bg-[#0a0862] hover:bg-[#1915e1] text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                   >
                     <span>EXPLORE LEGAL</span>
                     <span>&rarr;</span>

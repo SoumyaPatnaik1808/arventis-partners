@@ -15,12 +15,12 @@ const Footer = () => {
           {/* Left: Brand Header */}
           <div className="flex items-center justify-start py-0">
             <Image
-              src="/LOGO X.png"
+              src="/logo-whitebg.png"
               alt="Arventis footer logo"
               width={450}
               height={120}
               unoptimized
-              className="h-[54px] sm:h-[68px] md:h-[82px] w-auto object-contain origin-left mix-blend-multiply filter contrast-[1.08]"
+              className="h-[54px] sm:h-[68px] md:h-[82px] w-auto object-contain origin-left"
             />
           </div>
 
@@ -33,10 +33,10 @@ const Footer = () => {
               <Link href="/faq" className="hover:underline hover:text-black">
                 FAQ
               </Link>
-              <Link href="/privacy-policy" className="hover:underline hover:text-black hover:text-[#fc8403] transition-colors">
+              <Link href="/privacy-policy" className="hover:underline hover:text-black hover:text-[#0a0862] transition-colors">
                 Privacy policy
               </Link>
-              <Link href="/terms-of-use" className="hover:underline hover:text-black hover:text-[#fc8403] transition-colors">
+              <Link href="/terms-of-use" className="hover:underline hover:text-black hover:text-[#0a0862] transition-colors">
                 Terms of use
               </Link>
             </div>

@@ -8,7 +8,7 @@ export default function TermsOfUsePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Top Thin Accent Border */}
-      <div className="w-full h-1 bg-[#fc8403]"></div>
+      <div className="w-full h-1 bg-[#0a0862]"></div>
       
       <Navbar />
 

@@ -13,18 +13,14 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
 
   useEffect(() => {
     setIsMounted(true);
+    setIsOpen(true);
     if (typeof window !== 'undefined') {
-      const accepted = localStorage.getItem('arventis_disclaimer_accepted_v2');
-      if (accepted !== 'true') {
-        setIsOpen(true);
-        document.body.style.overflow = 'hidden';
-      }
+      document.body.style.overflow = 'hidden';
     }
   }, []);
 
   const handleProceed = () => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('arventis_disclaimer_accepted_v2', 'true');
       document.body.style.overflow = '';
     }
     setIsOpen(false);
@@ -42,7 +38,7 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
         
         {/* Header */}
         <div className="mb-6">
-          <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#fc8403] font-bold block mb-1">
+          <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-[#0a0862] font-bold block mb-1">
             REGULATORY DISCLAIMER
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-light tracking-tight text-black">
@@ -55,7 +51,7 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
         {/* Disclaimer Body Text */}
         <div className="space-y-4 font-sans text-xs sm:text-sm text-black/75 font-light leading-relaxed max-h-[45vh] overflow-y-auto pr-2 custom-scrollbar">
           <p>
-            The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing this website, <strong className="text-black font-semibold">www.arventispartners.com</strong>, you acknowledge and confirm that you are seeking information relating to <strong className="text-black font-semibold">Arventis Partners</strong> of your own accord and that there has been no form of solicitation, advertisement or inducement by Arventis Partners or its members.
+            The Bar Council of India does not permit advertisement or solicitation by advocates in any form or manner. By accessing this website, <strong className="text-black font-semibold">www.arventispartners.com</strong>, you acknowledge and confirm that you are seeking information relating to <br/> <strong className="text-black font-semibold">Arventis Partners</strong> of your own accord and that there has been no form of solicitation, advertisement or inducement by Arventis Partners or its members.
           </p>
           <p>
             The content of this website is for informational purposes only and should not be interpreted as soliciting or advertisement. No material/information provided on this website should be construed as legal advice.
@@ -71,7 +67,7 @@ export default function DisclaimerModal({ onAccept }: DisclaimerModalProps) {
         <div className="flex flex-col sm:flex-row gap-4 w-full">
           <button
             onClick={handleProceed}
-            className="flex-1 py-3.5 px-6 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 rounded-[1px] shadow-lg shadow-[#fc8403]/10"
+            className="flex-1 py-3.5 px-6 bg-[#0a0862] hover:bg-[#1915e1] text-white font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 rounded-[1px] shadow-lg shadow-[#0a0862]/10"
           >
             I AGREE
           </button>

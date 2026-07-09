@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ScrollProvider from "./components/ScrollProvider";
 import DisclaimerModal from "./components/DisclaimerModal";
@@ -10,6 +11,13 @@ const graphik = localFont({
   variable: '--font-graphik',
   display: 'swap',
   weight: '500',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['900'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -154,7 +162,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`h-full antialiased selection:bg-[#fc8403] selection:text-[#000000] ${graphik.variable}`}
+      className={`h-full antialiased selection:bg-[#0a0862] selection:text-[#000000] ${graphik.variable} ${playfair.variable}`}
     >
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />

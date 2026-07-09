@@ -117,7 +117,7 @@ export default function OurPeoplePage() {
     <div 
       key={person.id} 
       onClick={() => setSelectedPerson(person)}
-      className="bg-white rounded-none cursor-pointer group flex flex-col w-full border border-black/5 hover:bg-[#fc8403] hover:shadow-xl transition-all duration-300 pb-4"
+      className="bg-white rounded-none cursor-pointer group flex flex-col w-full border border-black/5 hover:bg-[#0a0862] hover:shadow-xl transition-all duration-300 pb-4"
     >
       <div className="relative w-full overflow-hidden bg-neutral-50 aspect-[4/5]">
         <Image
@@ -129,10 +129,10 @@ export default function OurPeoplePage() {
         />
       </div>
       <div className="px-4 pt-6 flex flex-col items-center text-center w-full">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#fc8403] font-semibold group-hover:text-black transition-colors duration-300 w-full leading-tight">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-[#0a0862] font-semibold group-hover:text-white transition-colors duration-300 w-full leading-tight">
           {person.cardName || person.name}
         </h3>
-        <p className="text-xs sm:text-sm md:text-base font-sans text-black/60 mt-2 font-medium w-full group-hover:text-black transition-colors duration-300">
+        <p className="text-xs sm:text-sm md:text-base font-sans text-black/60 mt-2 font-medium w-full group-hover:text-white/80 transition-colors duration-300">
           {getDomainPosition(person)}
         </p>
       </div>
@@ -175,12 +175,12 @@ export default function OurPeoplePage() {
         {/* Founding Partners */}
         <div className="space-y-12">
           <div className="relative flex flex-col items-center justify-center pb-6 scroll-fade-up">
-            <h2 className="text-2xl md:text-3xl font-serif font-light text-black text-center">
+            <h2 className="text-2xl md:text-3xl font-serif font-light text-black  text-center">
               Founding Partners
             </h2>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] h-[2px] bg-gradient-to-r from-transparent via-[#fc8403] to-transparent opacity-90" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] h-[2px] bg-gradient-to-r from-transparent via-[#0a0862] to-transparent opacity-90" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 max-w-2xl mx-auto hover:text-white">
             {foundingPartners.map(renderCard)}
           </div>
         </div>
@@ -191,9 +191,9 @@ export default function OurPeoplePage() {
             <h2 className="text-2xl md:text-3xl font-serif font-light text-black text-center">
               Team
             </h2>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] h-[2px] bg-gradient-to-r from-transparent via-[#fc8403] to-transparent opacity-90" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90vw] h-[2px] bg-gradient-to-r from-transparent via-[#0a0862] to-transparent opacity-90" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-16 max-w-4xl mx-auto hover:text-white">
             {otherMembers.map(renderCard)}
           </div>
         </div>
@@ -232,7 +232,7 @@ export default function OurPeoplePage() {
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-serif text-black mb-1 tracking-tight leading-snug">{selectedPerson.name}</h2>
                 <div className="mb-6 space-y-1 mt-2">
                   <p className="text-black/80 font-bold text-[10px] md:text-xs uppercase tracking-wider">{selectedPerson.title}</p>
-                  {selectedPerson.badge && <p className="text-[#fc8403] font-bold text-[10px] md:text-xs uppercase tracking-wider">{selectedPerson.badge}</p>}
+                  {selectedPerson.badge && <p className="text-[#0a0862] font-bold text-[10px] md:text-xs uppercase tracking-wider">{selectedPerson.badge}</p>}
                 </div>
                 
               </div>  
@@ -305,7 +305,7 @@ export default function OurPeoplePage() {
                         <ul className="space-y-3">
                           {selectedPerson.highlights.map(highlight => (
                             <li key={highlight.id} className="flex items-start group">
-                              <CheckCircle2 className="w-4 h-4 mr-3 text-[#fc8403] shrink-0 mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity" />
+                              <CheckCircle2 className="w-4 h-4 mr-3 text-[#0a0862] shrink-0 mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity" />
                               <span className="text-xs md:text-sm text-black/80 leading-snug font-medium group-hover:text-black transition-colors">
                                 {highlight.text}
                               </span>

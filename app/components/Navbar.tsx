@@ -18,8 +18,7 @@ export default function Navbar() {
     pathname === '/services' ||
     pathname === '/services/consulting' ||
     pathname === '/services/legal' ||
-    pathname === '/our-people' ||
-    pathname === '/contact';
+    pathname === '/our-people';
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -65,7 +64,11 @@ export default function Navbar() {
   return (
     <>
       <header className={`fixed top-0 left-0 w-full z-50 h-[64px] sm:h-[78px] md:h-[92px] px-2 sm:px-6 md:px-12 lg:px-16 flex items-center justify-between transition-all duration-500 ${
-        isHeaderWhite ? 'bg-white/95 backdrop-blur-md shadow-sm text-black' : 'bg-transparent text-white'
+        isHeaderWhite 
+          ? 'bg-white/95 backdrop-blur-sm text-black' 
+          : pathname === '/'
+            ? 'bg-black/25 backdrop-blur-sm border-b border-white/10 text-white'
+            : 'bg-transparent text-white'
       }`}>
         {/* Left column: Logo */}
         <div className="flex items-center justify-start h-full py-1 sm:py-1 z-20">
@@ -75,15 +78,13 @@ export default function Navbar() {
             className="hover-target inline-flex items-center h-full relative transition-transform duration-300 hover:scale-[1.02]"
           >
             <Image
-              src={isHeaderWhite ? "/LOGO X.png" : "/logo X white.png"}
+              src={isHeaderWhite ? "/logo-whitebg.png" : "/logo-blackbg.png"}
               alt="Arventis Partners Logo"
               width={450}
               height={120}
               priority
               unoptimized
-              className={`h-full max-h-[54px] sm:max-h-[68px] md:max-h-[82px] w-auto object-contain transition-all duration-500 origin-left ${
-                isHeaderWhite ? 'mix-blend-multiply filter contrast-[1.08]' : 'opacity-90'
-              }`}
+              className="h-full max-h-[54px] sm:max-h-[68px] md:max-h-[82px] w-auto object-contain transition-all duration-500 origin-left"
             />
           </Link>
         </div>
@@ -101,10 +102,10 @@ export default function Navbar() {
                   href={item.href}
                   className={`inline-flex items-center justify-center px-6 py-3 text-xs tracking-[0.25em] font-bold uppercase transition-all duration-300 border rounded-[2px] hover-target ${
                     isContactActive
-                      ? 'bg-[#fc8403] text-white border-[#fc8403]'
+                      ? 'bg-[#1915e1] text-white border-[#1915e1]'
                       : isHeaderWhite
-                        ? 'border-black/80 text-black hover:bg-[#fc8403] hover:text-white hover:border-black'
-                        : 'border-[#fc8403] text-white hover:bg-[#fc8403] hover:text-white hover:border-[#fc8403]'
+                        ? 'border-black/80 text-black hover:bg-[#1915e1] hover:text-white hover:border-black'
+                        : 'border-[#0a0862] text-white hover:bg-[#1915e1] hover:text-white hover:border-[#0a0862]'
                   }`}
                 >
                   {item.label}
@@ -118,10 +119,10 @@ export default function Navbar() {
                 href={item.href}
                 className={`font-sans text-sm font-bold tracking-widest uppercase transition-all duration-300 hover-target nav-link-hover ${
                   isActive
-                    ? 'text-[#fc8403] font-bold border-b-2 border-[#fc8403] pb-1 after:hidden'
+                    ? 'text-[#1915e1] font-bold border-b-2 border-[#1915e1] pb-1 after:hidden'
                     : isHeaderWhite
-                      ? 'text-black/85 hover:text-[#fc8403]'
-                      : 'text-white hover:text-[#fc8403]'
+                      ? 'text-black/85 hover:text-[#1915e1]'
+                      : 'text-white hover:text-[#1915e1]'
                 }`}
               >
                 {item.label}
@@ -137,10 +138,10 @@ export default function Navbar() {
             aria-label="Toggle navigation menu"
             className={`relative z-50 p-1.5 sm:p-2 transition-colors duration-300 focus:outline-none hover-target ${
               isMenuOpen 
-                ? 'text-black hover:text-[#fc8403]'
+                ? 'text-black hover:text-[#0a0862]'
                 : isHeaderWhite
-                  ? 'text-black hover:text-[#fc8403]'
-                  : 'text-white hover:text-[#fc8403]'
+                  ? 'text-black hover:text-[#0a0862]'
+                  : 'text-white hover:text-[#0a0862]'
             }`}
           >
             {isMenuOpen ? <X className="w-8 h-8 sm:w-9 sm:h-9" /> : <Menu className="w-8 h-8 sm:w-9 sm:h-9" />}
@@ -167,7 +168,7 @@ export default function Navbar() {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-widest uppercase transition-all duration-300 hover:scale-105 hover-target nav-link-hover ${
-                  isActive ? 'text-[#fc8403] font-bold after:hidden' : 'text-black/80 hover:text-[#fc8403]'
+                  isActive ? 'text-[#1915e1] font-bold after:hidden' : 'text-black/80 hover:text-[#1915e1]'
                 }`}
               >
                 {item.label}

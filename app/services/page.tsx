@@ -135,7 +135,7 @@ export default function ServicesPage() {
               <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/consulting"
-                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#0a0862] hover:bg-[#1915e1] text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>EXPLORE CONSULTING</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -160,14 +160,14 @@ export default function ServicesPage() {
                   ARVENTIS LEGAL
                 </h2>
                 <p className="font-sans text-[15px] text-black/75 font-light leading-relaxed text-center">
-                  Courtroom credibility and senior advocacy across trial courts, high courts, arbitral tribunals, and the Supreme Court of India.<br />
+                  Courtroom credibility and senior advocacy across trial courts, High Courts, arbitral tribunals, and the Supreme Court of India.<br />
                   Covering litigation, corporate compliance, and constitutional law.
                 </p>
               </div>
               <div className="pt-6 flex justify-center w-full">
                 <Link
                   href="/services/legal"
-                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#0a0862] hover:bg-[#1915e1] text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>EXPLORE LEGAL</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -195,8 +195,8 @@ export default function ServicesPage() {
               {/* 3 columns of industry text items with thin bottom border */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4 scroll-fade-up transition-delay-200">
                 {industries.map((ind, idx) => (
-                  <div key={idx} className={ind ? "border-b border-black/10 pb-3 pt-1 hover:border-[#fc8403]/30 transition-all duration-300" : "pb-3 pt-1"}>
-                    <span className={`font-sans text-[13px] sm:text-[15px] font-semibold tracking-wider block ${ind ? 'text-[#fc8403] hover:text-black transition-colors duration-300' : 'opacity-0 select-none'}`}>
+                  <div key={idx} className={ind ? "border-b border-black/10 pb-3 pt-1 hover:border-[#0a0862]/30 transition-all duration-300" : "pb-3 pt-1"}>
+                    <span className={`font-sans text-[13px] sm:text-[15px] font-semibold tracking-wider block ${ind ? 'text-[#0a0862] hover:text-black transition-colors duration-300' : 'opacity-0 select-none'}`}>
                       {ind || 'Spacer'}
                     </span>
                   </div>

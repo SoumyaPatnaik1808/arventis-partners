@@ -62,7 +62,7 @@ export default function DisclaimerPage() {
       {/* 1. HERO BANNER (LIGHT THEME) */}
       <section className="relative w-full bg-white pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-16">
         <div className="max-w-5xl mx-auto relative z-10 space-y-4">
-          <span className="font-sans text-xs tracking-[0.3em] uppercase text-[#fc8403] font-bold block">
+          <span className="font-sans text-xs tracking-[0.3em] uppercase text-[#0a0862] font-bold block">
             STATUTORY COMPLIANCE & LEGAL NOTICE
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-black leading-tight">
@@ -79,9 +79,9 @@ export default function DisclaimerPage() {
         <div className="max-w-5xl mx-auto space-y-12">
           
           {/* Highlight Card */}
-          <div className="scroll-fade-up p-8 bg-white border border-black/10 border-l-4 border-l-[#fc8403] shadow-md rounded-[1px] space-y-3">
+          <div className="scroll-fade-up p-8 bg-white border border-black/10 border-l-4 border-l-[#0a0862] shadow-md rounded-[1px] space-y-3">
             <div className="flex items-center gap-3 text-black">
-              <ShieldAlert className="w-5 h-5 text-[#fc8403] flex-shrink-0" />
+              <ShieldAlert className="w-5 h-5 text-[#0a0862] flex-shrink-0" />
               <h3 className="font-serif text-xl font-semibold">Bar Council Compliance Notice</h3>
             </div>
             <p className="font-sans text-xs sm:text-sm text-black/80 leading-relaxed font-light">
@@ -92,7 +92,7 @@ export default function DisclaimerPage() {
           {/* Section 1: Non-Solicitation */}
           <div className="scroll-fade-up bg-white p-8 md:p-10 border border-black/10 shadow-sm space-y-4">
             <h3 className="font-serif text-2xl font-light text-black flex items-center gap-3">
-              <Scale className="w-5 h-5 text-[#fc8403]" />
+              <Scale className="w-5 h-5 text-[#0a0862]" />
               <span>1. Purpose of Information & Non-Solicitation</span>
             </h3>
             <div className="space-y-3 font-sans text-xs sm:text-sm text-black/75 leading-relaxed font-light">
@@ -108,7 +108,7 @@ export default function DisclaimerPage() {
           {/* Section 2: No Binding Legal Advice */}
           <div className="scroll-fade-up bg-white p-8 md:p-10 border border-black/10 shadow-sm space-y-4">
             <h3 className="font-serif text-2xl font-light text-black flex items-center gap-3">
-              <FileText className="w-5 h-5 text-[#fc8403]" />
+              <FileText className="w-5 h-5 text-[#0a0862]" />
               <span>2. Informational Accuracy & Limitation of Liability</span>
             </h3>
             <div className="space-y-3 font-sans text-xs sm:text-sm text-black/75 leading-relaxed font-light">
@@ -124,7 +124,7 @@ export default function DisclaimerPage() {
           {/* Section 3: Intellectual Property & Contact */}
           <div className="scroll-fade-up bg-white p-8 md:p-10 border border-black/10 shadow-sm space-y-4">
             <h3 className="font-serif text-2xl font-light text-black flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 text-[#fc8403]" />
+              <CheckCircle2 className="w-5 h-5 text-[#0a0862]" />
               <span>3. Intellectual Property & Mandate Engagement</span>
             </h3>
             <div className="space-y-3 font-sans text-xs sm:text-sm text-black/75 leading-relaxed font-light">
@@ -134,7 +134,7 @@ export default function DisclaimerPage() {
               <div className="pt-4 flex justify-center">
                 <Link
                   href="/contact-us"
-                  className="inline-flex items-center gap-2 bg-[#fc8403] hover:bg-black text-white text-xs font-bold tracking-[0.2em] uppercase px-8 py-3.5 transition-colors duration-300 shadow-md"
+                  className="inline-flex items-center gap-2 bg-[#0a0862] hover:bg-[#1915e1] text-white text-xs font-bold tracking-[0.2em] uppercase px-8 py-3.5 transition-colors duration-300 shadow-md"
                 >
                   <span>Initiate Formal Mandate Inquiry</span>
                   <ArrowRight size={14} />

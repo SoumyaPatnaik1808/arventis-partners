@@ -124,7 +124,7 @@ export default function AboutPage() {
                   <span className="block md:whitespace-nowrap"><RevealHeading>Two Disciplines.</RevealHeading></span>
                   <span className="block md:whitespace-nowrap"><RevealHeading>No Translation Required.</RevealHeading></span>
                 </h2>
-                <div className="h-[1px] w-24 bg-[#fc8403] mt-4" />
+                <div className="h-[1px] w-24 bg-[#0a0862] mt-4" />
               </div>
 
               <div className="space-y-3 mt-8 font-sans text-[15px] sm:text-[17px] text-black/75 leading-relaxed font-light scroll-fade-up transition-delay-200">
@@ -168,7 +168,7 @@ export default function AboutPage() {
               <div className="flex justify-center w-full mt-6 scroll-fade-up transition-delay-300">
                 <Link
                   href="/our-people"
-                  className="inline-flex items-center gap-3 bg-[#fc8403] hover:bg-black text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
+                  className="inline-flex items-center gap-3 bg-[#0a0862] hover:bg-[#1915e1] text-white hover:text-white font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 transition-all duration-300 hover-target shadow-xl"
                 >
                   <span>MEET OUR TEAM</span>
                   <span>&rarr;</span>
@@ -221,7 +221,7 @@ export default function AboutPage() {
                 <p className="font-sans text-[15px] sm:text-[17px] text-black/85 font-light">
                   If you're building, defending, or expanding something that matters, <br /> you're probably on this list.
                 </p>
-                <ul className="list-disc pl-5 space-y-2 marker:text-[#fc8403]">
+                <ul className="list-disc pl-5 space-y-2 marker:text-[#0a0862]">
                   {[
                     'Founders and CXOs navigating regulatory complexity, in India and abroad',
                     'Startups building commercial and legal infrastructure from day one',
