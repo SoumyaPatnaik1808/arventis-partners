@@ -137,9 +137,7 @@ export default function Preloader() {
         <div className="w-[180px] sm:w-[240px] md:w-[300px] mt-3">
           <div className="preloader-line mx-auto" />
         </div>
-        <p className="font-serif text-base sm:text-lg md:text-xl font-light tracking-wide text-white/90 mt-5 preloader-tagline whitespace-nowrap">
-          When Strategy Meets Standing
-        </p>
+      
       </div>
 
       {/* MOBILE PRELOADER (LOGO VIEW) - Shown on mobile/tablet, hidden on medium & up */}
@@ -161,9 +159,7 @@ export default function Preloader() {
         <div className="w-[180px] sm:w-[240px] mt-3">
           <div className="preloader-line mx-auto" />
         </div>
-        <p className="font-serif text-sm sm:text-base font-light tracking-wide text-white/90 mt-4 preloader-tagline whitespace-nowrap">
-          When Strategy Meets Standing
-        </p>
+        
 
       
         
