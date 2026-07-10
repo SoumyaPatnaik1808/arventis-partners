@@ -144,8 +144,8 @@ export default function ContactUsPage() {
       <main className="flex-grow flex flex-col items-center justify-start pt-20 pb-16 px-6 relative">
         {/* Animated transparent heading banner */}
         <div className="text-center pt-10 pb-6 w-full max-w-4xl mx-auto z-10">
-          <h1 className="font-serif text-[clamp(12px,4vw,4rem)] font-bold text-[#000000] tracking-normal leading-tight px-2 flex justify-center text-center whitespace-nowrap overflow-visible">
-            <RevealHeading className="!flex-nowrap !gap-x-[1vw] sm:!gap-x-2">Thank You  for  Showing  Your  Interest</RevealHeading>
+          <h1 className="font-serif text-[clamp(12px,4vw,4rem)] font-bold text-[#000000] tracking-normal leading-tight px-2 flex justify-center text-center md:whitespace-nowrap overflow-visible">
+            <RevealHeading className="sm:!gap-x-2">Thank You  for  Showing  Your  Interest</RevealHeading>
           </h1>
         </div>
 
@@ -160,8 +160,8 @@ export default function ContactUsPage() {
                   <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>
                 </div>
               </div>
-              <h3 className="font-serif text-3xl md:text-4xl font-medium text-black whitespace-nowrap">Thank You For Contacting Us</h3>
-              <p className="font-sans text-base md:text-lg text-slate-600 max-w-md mx-auto whitespace-nowrap">
+              <h3 className="font-serif text-3xl md:text-4xl font-medium text-black md:whitespace-nowrap">Thank You For Contacting Us</h3>
+              <p className="font-sans text-base md:text-lg text-slate-600 max-w-md mx-auto">
                 Our Team will reach you shortly
               </p>
               <button

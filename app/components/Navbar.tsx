@@ -63,7 +63,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full z-50 h-[64px] sm:h-[78px] md:h-[92px] px-2 sm:px-6 md:px-12 lg:px-16 flex items-center justify-between transition-all duration-500 ${
+      <header className={`fixed top-0 left-0 w-full z-50 h-[64px] sm:h-[78px] md:h-[92px] px-6 sm:px-6 md:px-12 lg:px-16 flex items-center justify-between transition-all duration-500 ${
         isHeaderWhite 
           ? 'bg-white/95 backdrop-blur-sm text-black' 
           : 'bg-black/25 backdrop-blur-sm border-b border-white/10 text-white'
@@ -117,10 +117,10 @@ export default function Navbar() {
                 href={item.href}
                 className={`font-sans text-sm font-bold tracking-widest uppercase transition-all duration-300 hover-target nav-link-hover ${
                   isActive
-                    ? 'text-[#1915e1] font-bold border-b-2 border-[#1915e1] pb-1 after:hidden'
+                    ? 'text-[#16284C] font-bold border-b-2 border-[#16284C] pb-1 after:hidden'
                     : isHeaderWhite
-                      ? 'text-black/85 hover:text-[#1915e1]'
-                      : 'text-white hover:text-[#1915e1]'
+                      ? 'text-black/85 hover:text-[#16284C]'
+                      : 'text-white hover:text-[#16284C]'
                 }`}
               >
                 {item.label}
@@ -166,7 +166,7 @@ export default function Navbar() {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-widest uppercase transition-all duration-300 hover:scale-105 hover-target nav-link-hover ${
-                  isActive ? 'text-[#1915e1] font-bold after:hidden' : 'text-black/80 hover:text-[#1915e1]'
+                  isActive ? 'text-[#16284C] font-bold after:hidden' : 'text-black/80 hover:text-[#16284C]'
                 }`}
               >
                 {item.label}

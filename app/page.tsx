@@ -384,7 +384,7 @@ export default function Home() {
       <section className="relative w-full bg-[#ffffff] text-[#000000] py-12 md:py-16 px-6 md:px-16 relative z-20">
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="scroll-fade-up text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="font-serif text-[20px] sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-[#000000] whitespace-nowrap">
+            <h2 className="font-serif text-[20px] sm:text-4xl md:text-5xl font-light tracking-tight leading-tight text-[#000000] md:whitespace-nowrap">
               Which Practice Would You Like to Start With?
             </h2>
             <div className="font-sans text-[17px] text-[#000000]/75 leading-relaxed font-light mt-2">

@@ -15,13 +15,13 @@
 ::-moz-selection {
   background: transparent;
   text-decoration: underline;
-  text-decoration-color: #1915e1;
+  text-decoration-color: #16284C;
 }
 
 ::selection {
   background: transparent;
   text-decoration: underline;
-  text-decoration-color: #1915e1;
+  text-decoration-color: #16284C;
 }
 
 @theme {
