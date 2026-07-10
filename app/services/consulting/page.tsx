@@ -11,9 +11,9 @@ import ContactUs from '@/app/components/ContactUs';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
-  const words = children.split(' ');
+  const words = children.split(' ').filter(Boolean);
   return (
-    <span className={`reveal-text flex flex-wrap gap-x-2 gap-y-1 ${className}`}>
+    <span className={`reveal-text flex flex-wrap gap-x-[0.35em] gap-y-[0.15em] ${className}`}>
       {words.map((word, idx) => (
         <span key={idx} className="reveal-text-line inline-block overflow-hidden">
           <span
@@ -160,11 +160,12 @@ export default function ConsultingPage() {
         </div>
 
         <div className="max-w-7xl mx-auto w-full relative z-20 mt-auto pt-16">
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-white mb-6 max-w-4xl drop-shadow-lg">
-            <RevealHeading>ARVENTIS CONSULTING</RevealHeading>
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight text-white mb-6 drop-shadow-lg">
+            <RevealHeading>ARVENTIS   CONSULTING</RevealHeading>
           </h1>
           <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
-            Strategy consulting for growth, operating model design, and market expansion, delivered across India, the GCC, and international jurisdictions.
+            Strategy consulting for growth, operating model design, and market expansion, 
+            <br/>delivered across India, the GCC, and international jurisdictions.
           </p>
         </div>
       </section>
@@ -194,7 +195,7 @@ export default function ConsultingPage() {
             ))}
           </div>
         </div>
-           <h3 className="m-5 p-5">For further information on any of these practice areas, please contact us at <a href="mailto:hello@arventispartners.com" className="text-[#004be1] hover:underline">hello@arventispartners.com</a> or visit <a href="https://arventispartners.com/contact" className="text-[#004be1] hover:underline">arventispartners.com/contact</a>.</h3>
+          
       </section>
 
       {/* CONTACT CTA SECTION */}

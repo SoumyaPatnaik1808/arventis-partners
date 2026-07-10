@@ -11,9 +11,9 @@ import ContactUs from '@/app/components/ContactUs';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
-  const words = children.split(' ');
+  const words = children.split(' ').filter(Boolean);
   return (
-    <span className={`reveal-text flex flex-wrap gap-x-2 gap-y-1 ${className}`}>
+    <span className={`reveal-text flex flex-wrap gap-x-[0.35em] gap-y-[0.15em] ${className}`}>
       {words.map((word, idx) => (
         <span key={idx} className="reveal-text-line inline-block overflow-hidden">
           <span
@@ -33,7 +33,7 @@ const legalPractices = [
     num: '01',
     title: 'Civil and Commercial Litigation',
     description: [
-      "Commercial disputes require more than technical legal knowledge. They require a thorough understanding of the commercial context in which the dispute arose, a candid assessment of litigation risk on both sides, and the quality of advocacy before trial courts, High Courts, and the Supreme Court to protect or advance the client's position as proceedings develop.",
+      "Commercial disputes require more than technical legal knowledge. They require a thorough understanding of the commercial context in which the dispute arose, a candid assessment of litigation risk on both sides, and the quality of advocacy before Trial Courts, High Courts, and the Supreme Court to protect or advance the client's position as proceedings develop.",
       "Arventis Legal represents businesses and individuals in contract disputes, recovery proceedings, and multi-party commercial litigation. Our bench's standing before the Supreme Court of India means that complex, high-value matters do not require a change of counsel as they escalate through the judicial hierarchy. Clients benefit from continuity: the same team that understands the matter at inception argues it at the apex court."
     ],
     bullets: [
@@ -41,7 +41,7 @@ const legalPractices = [
       'Commercial recovery proceedings: debt, damages, and specific performance',
       'Inter-party commercial litigation: shareholder, partnership, joint venture',
       'Multi-party disputes and applications for urgent interim relief',
-      'Representation before trial courts, High Courts, and the Supreme Court of India'
+      'Representation before Trial Courts, High Courts, and the Supreme Court of India'
     ]
   },
   {
@@ -243,7 +243,7 @@ export default function LegalPage() {
             <RevealHeading>ARVENTIS LEGAL</RevealHeading>
           </h1>
           <p className="scroll-fade-up font-sans text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-3xl transition-delay-300 drop-shadow-md">
-            Legal advisory and advocacy across trial courts, High Courts, arbitral tribunals, and the Supreme Court of India.
+            Legal advisory and advocacy across Trial Courts, High Courts, Arbitral Tribunals, and the Supreme Court of India.
           </p>
         </div>
       </section>
@@ -273,7 +273,7 @@ export default function LegalPage() {
             ))}
           </div>
         </div>
-        <h3 className="m-5 p-5">For further information on any of these practice areas, please contact us at <a href="mailto:hello@arventispartners.com" className="text-[#004be1] hover:underline">hello@arventispartners.com</a> or visit <a href="https://arventispartners.com/contact" className="text-[#004be1] hover:underline">arventispartners.com/contact</a>.</h3>
+        
       </section>
 
       <ContactUs />

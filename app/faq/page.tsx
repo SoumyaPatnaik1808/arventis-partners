@@ -7,9 +7,9 @@ import Link from 'next/link';
 import { ChevronDown, HelpCircle, ArrowRight, MapPin, Shield, Briefcase } from 'lucide-react';
 
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
-  const words = children.split(' ');
+  const words = children.split(' ').filter(Boolean);
   return (
-    <span className={`reveal-text flex flex-wrap gap-x-2 gap-y-1 ${className}`}>
+    <span className={`reveal-text flex flex-wrap gap-x-[0.35em] gap-y-[0.15em] ${className}`}>
       {words.map((word, idx) => (
         <span key={idx} className="reveal-text-line inline-block overflow-hidden">
           <span
@@ -71,7 +71,7 @@ export default function FAQPage() {
     {
       category: 'OFFICES and FOOTPRINT',
       question: 'Where are Arventis Partners offices and practice footprints located?',
-      answer: 'We maintain physical offices in Hyderabad (Yusufguda), Lucknow (Lalbagh), Cuttack (CDA Sector 8), and Shimla (CPRI). Additionally, our team regularly appears before High Courts, arbitral tribunals, and regulatory bodies across Delhi, Mumbai, Pune, Chandigarh, and Kolkata, as well as managing international consulting mandates across GCC, UK, US, and South Korea.'
+      answer: 'We maintain physical offices in Hyderabad (Yusufguda), Lucknow (Lalbagh), Cuttack (CDA Sector 8), and Shimla (CPRI). Additionally, our team regularly appears before High Courts, Arbitral Tribunals, and regulatory bodies across Delhi, Mumbai, Pune, Chandigarh, and Kolkata, as well as managing international consulting mandates across GCC, UK, US, and South Korea.'
     },
     {
       category: 'CONFIDENTIALITY and NDAs',

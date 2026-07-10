@@ -11,9 +11,9 @@ import ContactUs from '../components/ContactUs';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
-  const words = children.split(' ');
+  const words = children.split(' ').filter(Boolean);
   return (
-    <span className={`reveal-text flex flex-wrap gap-x-2 gap-y-1 ${className}`}>
+    <span className={`reveal-text flex flex-wrap gap-x-[0.35em] gap-y-[0.15em] ${className}`}>
       {words.map((word, idx) => (
         <span key={idx} className="reveal-text-line inline-block overflow-hidden">
           <span
@@ -240,7 +240,7 @@ export default function OurPeoplePage() {
                     <h4 className="text-[10px] md:text-xs font-bold text-black uppercase tracking-widest mb-3">
                       Geographies
                     </h4>
-                    <div className="flex flex-wrap gap-x-4 gap-y-2">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
                       {selectedPerson.geographies.map((geo, idx) => (
                         <div key={idx} className="flex items-center text-xs md:text-sm font-medium text-black/80">
                           <MapPin className="w-3.5 h-3.5 mr-1.5 text-black/40 shrink-0" />

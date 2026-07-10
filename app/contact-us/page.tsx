@@ -9,9 +9,9 @@ import { MapPin } from 'lucide-react';
 
 // Custom component to reveal text word-by-word with a calming stagger
 function RevealHeading({ children, className = "" }: { children: string; className?: string }) {
-  const words = children.split(' ');
+  const words = children.split(' ').filter(Boolean);
   return (
-    <span className={`reveal-text flex flex-wrap justify-center gap-x-2 gap-y-1 ${className}`}>
+    <span className={`reveal-text flex flex-wrap justify-center gap-x-[0.35em] gap-y-[0.15em] ${className}`}>
       {words.map((word, idx) => (
         <span key={idx} className="reveal-text-line inline-block overflow-hidden">
           <span
